@@ -194,3 +194,7 @@ bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
+
+
+
+#exec_always ( sleep 1s && bash /usr/local/bin/lemonbar.sh | lemonbar -p -F#FFFFFFFF -B#FF222222 -f "DejaVu Sans Mono"-8 -f FontAwesome-8 ) &
