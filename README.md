@@ -1,3 +1,13 @@
+### Thomamason's dotfiles ###
+
+       100x more trash
+
+#############################
+
+
+
+
+
 # Luke's GNU/Linux Dotfiles
 
 These are my dotfiles! The name of the repo, "voidrice", came from the fact they were originally on my Void Linux machine, but these files are distro-independent. In fact, I now push changes from my X200 running Parabola or my X220 running Arch.
