@@ -1,0 +1,18 @@
+{
+  "segments": [
+    "virtual_env",
+    "username",
+    "hostname",
+    "cwd",
+    "git",
+    "newline",
+    "root"
+  ],
+  "mode": "patched",
+  "cwd": {
+    "mode": "plain",
+    "max_depth": 4
+  },
+  "theme": "gruvbox"
+}
+
