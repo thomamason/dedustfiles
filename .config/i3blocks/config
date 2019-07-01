@@ -12,11 +12,6 @@ label=🎼
 interval=once
 signal=11
 
-[news]
-label=📰
-interval=once
-signal=6
-
 #[iplocate]
 #interval=30
 
@@ -32,11 +27,6 @@ signal=7
 [weather]
 interval=18000
 signal=5
-
-[mailbox]
-label=📬
-interval=180
-signal=12
 
 [memory]
 interval=30
@@ -71,3 +61,4 @@ interval=10
 
 [help]
 interval=once
+
