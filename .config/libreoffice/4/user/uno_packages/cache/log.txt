@@ -1,3 +1,0 @@
-###### Progress log entry 2019-07-11 11:33:26 ######
-Reinstalling all deployed packages...
-###### Progress log entry 2019-07-11 11:33:29 ######
