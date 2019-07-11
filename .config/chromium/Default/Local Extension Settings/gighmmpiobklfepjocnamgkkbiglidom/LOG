@@ -1,0 +1,78 @@
+2019/07/11-11:05:55.459 9df Reusing MANIFEST /home/thomamason/.config/chromium/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/MANIFEST-000001
+2019/07/11-11:05:55.459 9df Recovering log #216
+2019/07/11-11:05:55.557 9df Reusing old log /home/thomamason/.config/chromium/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/000216.log 
+2019/07/11-11:06:57.178 e68 Level-0 table #220: started
+2019/07/11-11:06:57.358 e68 Level-0 table #220: 4243667 bytes OK
+2019/07/11-11:06:57.395 e68 Delete type=0 #216
+2019/07/11-11:07:03.245 e68 Level-0 table #222: started
+2019/07/11-11:07:03.445 e68 Level-0 table #222: 4243809 bytes OK
+2019/07/11-11:07:03.487 e68 Delete type=0 #219
+2019/07/11-12:06:57.055 e68 Level-0 table #224: started
+2019/07/11-12:06:57.228 e68 Level-0 table #224: 4243760 bytes OK
+2019/07/11-12:06:57.268 e68 Delete type=0 #221
+2019/07/11-12:06:57.271 e68 Compacting 4@0 + 2@1 files
+2019/07/11-12:06:57.563 e68 Generated table #225@0: 1 keys, 4243496 bytes
+2019/07/11-12:06:57.607 e68 Generated table #226@0: 5 keys, 424 bytes
+2019/07/11-12:06:57.607 e68 Compacted 4@0 + 2@1 files => 4243920 bytes
+2019/07/11-12:06:57.641 e68 compacted to: files[ 0 2 1 0 0 0 0 ]
+2019/07/11-12:06:57.641 e68 Delete type=2 #220
+2019/07/11-12:06:57.643 e68 Delete type=2 #222
+2019/07/11-12:06:57.644 e68 Delete type=2 #214
+2019/07/11-12:06:57.645 e68 Delete type=2 #217
+2019/07/11-12:06:57.646 e68 Delete type=2 #215
+2019/07/11-12:06:57.646 e68 Delete type=2 #224
+2019/07/11-13:06:56.524 e68 Level-0 table #228: started
+2019/07/11-13:06:56.696 e68 Level-0 table #228: 4243812 bytes OK
+2019/07/11-13:06:56.734 e68 Delete type=0 #223
+2019/07/11-13:06:57.064 e68 Level-0 table #230: started
+2019/07/11-13:06:57.255 e68 Level-0 table #230: 4243571 bytes OK
+2019/07/11-13:06:57.293 e68 Delete type=0 #227
+2019/07/11-14:06:56.452 e68 Level-0 table #232: started
+2019/07/11-14:06:56.638 e68 Level-0 table #232: 4243502 bytes OK
+2019/07/11-14:06:56.674 e68 Delete type=0 #229
+2019/07/11-14:06:56.902 e68 Level-0 table #234: started
+2019/07/11-14:06:57.064 e68 Level-0 table #234: 4243260 bytes OK
+2019/07/11-14:06:57.099 e68 Delete type=0 #231
+2019/07/11-14:06:57.102 e68 Compacting 4@0 + 2@1 files
+2019/07/11-14:06:57.332 e68 Generated table #235@0: 1 keys, 4243260 bytes
+2019/07/11-14:06:57.374 e68 Generated table #236@0: 5 keys, 424 bytes
+2019/07/11-14:06:57.374 e68 Compacted 4@0 + 2@1 files => 4243684 bytes
+2019/07/11-14:06:57.414 e68 compacted to: files[ 0 2 1 0 0 0 0 ]
+2019/07/11-14:06:57.415 e68 Delete type=2 #232
+2019/07/11-14:06:57.416 e68 Delete type=2 #228
+2019/07/11-14:06:57.418 e68 Delete type=2 #234
+2019/07/11-14:06:57.419 e68 Delete type=2 #230
+2019/07/11-14:06:57.421 e68 Delete type=2 #226
+2019/07/11-14:06:57.421 e68 Delete type=2 #225
+2019/07/11-15:06:56.469 e68 Level-0 table #238: started
+2019/07/11-15:06:56.680 e68 Level-0 table #238: 4243549 bytes OK
+2019/07/11-15:06:56.719 e68 Delete type=0 #233
+2019/07/11-15:06:57.000 e68 Level-0 table #240: started
+2019/07/11-15:06:57.181 e68 Level-0 table #240: 4243309 bytes OK
+2019/07/11-15:06:57.218 e68 Delete type=0 #237
+2019/07/11-15:22:29.239 e68 Level-0 table #242: started
+2019/07/11-15:22:29.515 e68 Level-0 table #242: 4248968 bytes OK
+2019/07/11-15:22:29.555 e68 Delete type=0 #239
+2019/07/11-16:06:57.013 e68 Level-0 table #244: started
+2019/07/11-16:06:57.332 e68 Level-0 table #244: 4248823 bytes OK
+2019/07/11-16:06:57.370 e68 Delete type=0 #241
+2019/07/11-16:06:57.377 e68 Compacting 4@0 + 2@1 files
+2019/07/11-16:06:57.725 e68 Generated table #245@0: 1 keys, 4248732 bytes
+2019/07/11-16:06:57.766 e68 Generated table #246@0: 5 keys, 424 bytes
+2019/07/11-16:06:57.767 e68 Compacted 4@0 + 2@1 files => 4249156 bytes
+2019/07/11-16:06:57.802 e68 compacted to: files[ 0 2 1 0 0 0 0 ]
+2019/07/11-16:06:57.802 e68 Delete type=2 #235
+2019/07/11-16:06:57.804 e68 Delete type=2 #236
+2019/07/11-16:06:57.805 e68 Delete type=2 #240
+2019/07/11-16:06:57.807 e68 Delete type=2 #238
+2019/07/11-16:06:57.808 e68 Delete type=2 #242
+2019/07/11-16:06:57.810 e68 Delete type=2 #244
+2019/07/11-16:07:01.410 e68 Level-0 table #248: started
+2019/07/11-16:07:01.576 e68 Level-0 table #248: 4248974 bytes OK
+2019/07/11-16:07:01.612 e68 Delete type=0 #243
+2019/07/11-17:06:56.546 e68 Level-0 table #250: started
+2019/07/11-17:06:56.735 e68 Level-0 table #250: 4248661 bytes OK
+2019/07/11-17:06:56.771 e68 Delete type=0 #247
+2019/07/11-17:06:57.066 e68 Level-0 table #252: started
+2019/07/11-17:06:57.253 e68 Level-0 table #252: 4248663 bytes OK
+2019/07/11-17:06:57.289 e68 Delete type=0 #249

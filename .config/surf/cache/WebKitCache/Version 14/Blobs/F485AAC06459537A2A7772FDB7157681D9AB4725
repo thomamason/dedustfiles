@@ -1,0 +1,900 @@
+$(document).ready(function () {
+
+getlocation();//needs to be commented to enable badges
+
+	var count=0;
+	$(window).scroll(function () {
+		var height = $(window).scrollTop();
+		if (height >= 10) {
+			count =0;
+			$('.lia-quilt-row.lia-quilt-row-static-header').css({'visibility':'visible','display':'block'});
+			$('.lia-quilt-row.lia-quilt-row-top-header').css({'visibility':'hidden','display':'none'});
+		} else  { 
+			if(count == 0){
+				count = count + 1;
+				$('.lia-quilt-row.lia-quilt-row-static-header').slideUp(10);
+				$('.lia-quilt-row.lia-quilt-row-top-header').css({'visibility':'visible','display':'block'});
+			}
+		}
+	});
+
+	$('.burger-menu').on('click',function(){
+		$('.search-wrapper').hide();
+		$('.community').next('ul[role="menu"]').hide();
+		$('.support').next('ul[role="menu"]').hide();
+		$('nav[role="navigation"]').slideToggle();
+	});
+	$('.searchbox').on('click',function(){
+		$('.search-wrapper').slideToggle();
+		$('nav[role="navigation"]').hide();
+	});
+	$('.support').on('click',function(){
+		$(this).next('ul[role="menu"]').slideToggle();
+		$('.community').next('ul[role="menu"]').hide();
+		$('.search-wrapper').hide();
+	});
+	$('.community').on('click',function(){
+		$('.support').next('ul[role="menu"]').hide();
+		$('.search-wrapper').hide();
+		$(this).next('ul[role="menu"]').slideToggle();
+	});
+	
+	$("#viewFullBoardListLink").on('click', function (e){
+		$("#custom-full-board-list-contents").css("display", "block");
+		setTimeout(function() {
+		var x = $('#custom-full-board-list-contents').position();
+		
+		window.scrollTo(0, x.top+220);},50)
+	});
+
+	$("td.cThreadInfoColumn.lia-data-cell-primary.lia-data-cell-text .MessageSubject").each(function() {
+	    var pagination_element = $(this).find(".lia-list-standard-inline");
+	    var pgEleWidth = 0;
+		var paddingBtwImages = 3;
+		var maxCellWidth = 590;
+		var numOfImages = $(this).find('.lia-fa-message').length;
+	    if(pagination_element.length != 0){
+			var imageWidth = $(this).find('.lia-fa-message').outerWidth();
+	        pgEleWidth = $(pagination_element).outerWidth() + numOfImages*imageWidth + numOfImages*paddingBtwImages;
+			var msgSubIconWidth = Math.round(maxCellWidth - pgEleWidth);
+			$(this).find(".message-subject").find("span").css( "maxWidth", msgSubIconWidth + "px" );
+	    }else{
+			pgEleWidth = 0;
+			$(this).find(".message-subject").find("span").css( "width", "auto" );
+			$(this).find(".message-subject").find("span").css( "maxWidth", maxCellWidth + "px" );
+		}
+		
+	});
+	
+	$(".lia-forum-topic-page-solution-link, .accepted-solution-link").on('click', function (e){
+		setTimeout(function() {
+		goToSolution();},50);
+	});
+	
+	/* setTimeout(function() { goToSolution();},100); */
+	
+	function goToSolution(){
+		if($(".linear-message-list.message-list")[0] == undefined)
+			return;
+		$(".lia-linear-display-message-view").each(function() {
+			var objValue = $(this).position();
+			var solutionObj = $(this).find('.lia-message-subject .solution');
+			var xvalue = $(solutionObj).position();
+			if(xvalue != undefined){
+				//debugger;
+				window.scrollTo(0, xvalue.top+objValue.top+180);
+				console.log(xvalue);	 
+			}
+		});
+	}
+
+	$.moveColumn = function (table, from, to) {
+    var rows = $('tr', table);
+    var cols;
+    rows.each(function() {
+			cols = $(this).children('th, td');
+			cols.eq(from).detach().insertBefore(cols.eq(to));
+		});
+	}
+
+	var tbl = $('.CategoryPage .lia-browser-category-show .BoardList .lia-list-wide');
+//	$.moveColumn(tbl, 3, 2);
+
+	$('.CategoryPage .lia-browser-category-list .BoardList .newMessageCountColumn').css({'display':'table-cell','width':'auto'});
+    $('.CategoryPage .lia-browser-category-list .lia-data-cell-integer').css({'text-align': 'right'});	
+	
+		
+	/* code for add remove from group */
+	var clickedCount = 0;
+	$('.join-group-link').click(function(){
+		var url      = window.location.href; 
+		var privateGroup = url.substr(url.lastIndexOf('/')+1, url.length) ;
+		//if(checkIfUserBelongsToProductGroups(privateGroup) == false)
+		//	return true;
+		if(clickedCount != 0){
+			return true;
+		}
+		clickedCount = 1;
+		//debugger;
+			
+		var arr = window.location.href.split("/");
+		var hostName = arr[0] + "//" + arr[2];
+		//var url = "http://lnv.stage.lithium.com/lnv/plugins/custom/lenovo/lnv/custom-user-join-remove-group?group_id="+privateGroup+"&"+"current_action=check";
+		var url = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-user-join-remove-group?group_id="+privateGroup+"&"+"current_action=check";
+		var saveData = $.ajax({
+			  type: 'POST',
+			  dataType: "json",
+			  url: url,
+				error: function (jqXHR, exception) {
+				//debugger;
+			},
+			success: function(resultData) {
+				//debugger;
+				if(resultData.data[0].bflag == true){
+					
+					if (confirm("Are you sure you want to leave " + resultData.data[0].belongs_to + " and join " + resultData.data[0].current_selected_group +" ?")) {
+						//debugger;
+						addRemoveFromGroup();
+						$('.join-group-link')[0].click();
+					} else {
+						clickedCount = 0;
+						//debugger;
+					}
+				}else{
+					//debugger;
+					$('.join-group-link')[0].click();
+					return true;
+				}
+			}
+		});
+			return false;
+	}); 
+
+	function addRemoveFromGroup(){
+		var url      = window.location.href; 
+		var privateGroup = url.substr(url.lastIndexOf('/')+1, url.length) ;
+		var arr = window.location.href.split("/");
+		var hostName = arr[0] + "//" + arr[2];
+		//var url = "http://lnv.stage.lithium.com/lnv/plugins/custom/lenovo/lnv/custom-user-join-remove-group?group_id="+privateGroup+"&"+"current_action=add";
+		var url = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-user-join-remove-group?group_id="+privateGroup+"&"+"current_action=add";
+		var saveData = $.ajax({
+			type: 'POST',
+			dataType: "json",
+			url: url,
+			error: function (jqXHR, exception) {
+				//debugger;
+			},
+			success: function(resultData) {
+				//debugger;
+			}
+		});
+	}
+		
+	function checkIfUserBelongsToProductGroups(privateGroup){
+		var productArr = ["YogaTeam","ThinkTeam","MotoTeam"];
+		var teamFlag = false;
+		for(var i=0;i<productArr.length;i++){
+			if(productArr[i] == privateGroup){
+				teamFlag = true;
+				break;
+			}
+		}
+		return teamFlag;
+	}
+		
+	/* code for Badge implementation */
+	var postmanclickecount = 0;
+	var currentClickObject;
+	var currentSelectedItem = "";
+	var resultData1;
+	var userSSOId;
+	var user_solution_received_count;
+	var user_posts_count;
+	var rolesArr;
+	var isUserLoggedIn = false;
+	var user_last_login_time ;
+	var user_online_status;
+	var userSSOId_for_accepted_solution = "";
+	
+	function getUserLatestLoginTime(userLoginDateTime){
+		//debugger;
+		var callAPI = false;
+		var date = new Date();
+		var currentDateUTC = convertToUTC(date); 
+		var currentTime = currentDateUTC.getTime();
+		var loginTime = new Date(userLoginDateTime); 
+		var loginTimeUTC = convertToUTC(loginTime); 
+		var loginTime = loginTimeUTC.getTime();
+		var result = Math.round(((currentTime - loginTime)/1000));
+		callAPI = result<65 ? true : false;
+		return callAPI;
+	}
+	
+	function convertToUTC(date){
+		return new Date( date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds() ); 
+	}
+	
+	function checkIfUserLoggedIn(){
+	var arr = window.location.href.split("/");
+	var hostName = arr[0] + "//" + arr[2];	
+	var isUserLoggedInn = $.ajax({
+		type: 'POST',
+		dataType: "xml",
+		url: hostName+"/restapi/vc/events/subscriptions/events/name/UserSignOn/subscribe?event.callback_url="+hostName,
+		error: function (jqXHR, exception) {
+			//debugger;
+		},
+		success: function(resultData) { 
+			//debugger;
+			var responseText = resultData.documentElement.innerHTML;
+			var xmlDoc = $.parseXML( responseText );
+			var jsonText = JSON.stringify(xmlToJson(xmlDoc));
+			var obj = JSON.parse(jsonText);
+			if(obj.value == undefined){
+				console.log(obj.error["#text"]);
+			}else{
+				console.log(obj.value["#text"]);
+				isUserLoggedIn = getUserLatestLoginTime(user_last_login_time);
+				getBadge(currentSelectedItem);
+			}
+		  }
+		});	
+	}
+	
+	$('.PostPage .MessageEditorForm.lia-component-editor .lia-button-Submit-action, .ReplyPage .MessageEditorForm .lia-form-submit .lia-button-Submit-action').click(function(event){
+			//event.preventDefault();
+			$(".PostPage .MessageEditorForm.lia-component-editor .lia-button-Submit-action, .ReplyPage .MessageEditorForm .lia-form-submit .lia-button-Submit-action").css( "opacity", "0.7" );
+			$(".PostPage .MessageEditorForm.lia-component-editor .lia-button-Submit-action, .ReplyPage .MessageEditorForm .lia-form-submit .lia-button-Submit-action").css( "cursor", "default" );
+			$(".PostPage .MessageEditorForm.lia-component-editor .lia-button-Submit-action, .ReplyPage .MessageEditorForm .lia-form-submit .lia-button-Submit-action").css( "pointer-events", "none" );
+		return true;//needs to be commented to enable badges
+		if(postmanclickecount == 0){
+			postmanclickecount = 1;
+			currentClickObject = $(this);
+			currentSelectedItem = "Posts";
+			getUserSSOID();
+			return false; 
+		}else{
+			//debugger;
+			return true;
+		}
+	});
+
+	$('.lia-component-accepted-solutions-actions-mark-message-as-accepted-solution-secondary-button .lia-link-ticket-post-action').click(function(event){
+			//event.preventDefault();
+			$(".lia-component-accepted-solutions-actions-mark-message-as-accepted-solution-secondary-button .lia-link-ticket-post-action").css( "opacity", "0.7" );
+			$(".lia-component-accepted-solutions-actions-mark-message-as-accepted-solution-secondary-button .lia-link-ticket-post-action").css( "cursor", "default" );
+			$(".lia-component-accepted-solutions-actions-mark-message-as-accepted-solution-secondary-button .lia-link-ticket-post-action").css( "pointer-events", "none" );
+		return true;//needs to be commented to enable badges
+		if(postmanclickecount == 0){
+			postmanclickecount = 1;
+			currentClickObject = $(this);
+			currentSelectedItem = "Solutions";
+			//getUserSSOID();
+			var userId = findIndex(event);
+			getUserSSOID_forSolution(userId);
+			return false; 
+		}else{
+			return true;  
+		}
+	});
+	
+	function getUserSSOID(){
+		var arr = window.location.href.split("/");
+		var hostName = arr[0] + "//" + arr[2];
+		var stageEndpoint = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-get-user-info";
+		var saveData = $.ajax({
+			  type: 'GET',
+			  dataType: "json",
+			  url: stageEndpoint,
+			  error: function (jqXHR, exception) {
+					//debugger;
+			},
+			 success: function(resultData) { 
+				//debugger;
+				userSSOId = resultData.data[0].sso_id;
+				user_solution_received_count = Number(resultData.data[0].solution_received_count) + 1;
+				user_posts_count = Number(resultData.data[0].posts_count) + 1;
+				rolesArr = resultData.data[0].role;
+				user_last_login_time = resultData.data[0].last_visit_time;
+				user_online_status = resultData.data[0].online_status;
+				if(user_online_status == "online"){
+					isUserLoggedIn = getUserLatestLoginTime(user_last_login_time);
+					getBadge(currentSelectedItem);
+				}
+			}
+		});
+	}
+	function getUserSSOID_forSolution(userId){
+		var arr = window.location.href.split("/");
+		var hostName = arr[0] + "//" + arr[2];
+		var stageEndpoint = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-get-user-info?user_id="+userId;
+		var saveData = $.ajax({
+			  type: 'GET',
+			  dataType: "json",
+			  url: stageEndpoint,
+			  error: function (jqXHR, exception) {
+					//debugger;
+			},
+			 success: function(resultData) { 
+				//debugger;
+				userSSOId_for_accepted_solution = resultData.data[0].sso_id;
+				//userSSOId = resultData.data[0].sso_id;
+				user_solution_received_count = Number(resultData.data[0].solution_received_count) + 1;
+				getBadge(currentSelectedItem);
+			}
+		});
+	}
+	
+	function findIndex(eventObj){
+	var idobj = eventObj.target.id;
+	var userId = "";
+			$(".ForumTopicPage .lia-linear-display-message-view").each(function(index) {
+				var user_login_name = $(this).find(".lia-user-name-link");
+				var url      = user_login_name[0].href; 
+				var user_login_id = url.substr(url.lastIndexOf('/')+1, url.length) ;
+				var accepted_solution = $(this).find('.lia-component-accepted-solutions-actions-mark-message-as-accepted-solution-secondary-button')[0];
+				if(accepted_solution != undefined){
+					//debugger;
+					var id = accepted_solution.children[0].id;
+					if(idobj == accepted_solution.children[0].id){
+						//userId = user_login_name[0].text;
+						userId = user_login_id;
+					}
+				}
+		});
+		return userId;
+	}
+
+	function getBadge(whichType){
+		//debugger;
+		var userLang = getLanguage();
+		var url = "";
+		//http://cerpsit.community.lenovo.com/
+		//https://preprdcommunity.lenovo.com/
+		//var solutions = "http://preprdakamai.community.lenovo.com/api/lenovobadge/Solution?ssoid="+userSSOId+"&language="+userLang+"&number="+user_solution_received_count;
+		var solutions = "http://preprdakamai.community.lenovo.com/api/lenovobadge/Solution?ssoid="+userSSOId_for_accepted_solution+"&language="+userLang+"&number="+user_solution_received_count;
+		var posts = "http://preprdakamai.community.lenovo.com/api/lenovobadge/Posts?ssoid="+userSSOId+"&language="+userLang+"&number="+user_posts_count;
+		var GetMyBadges = "http://preprdakamai.community.lenovo.com/api/lenovobadge/GetMyBadges?ssoId="+userSSOId+"&language="+userLang+"&number="+user_solution_received_count; 
+		var GetReadLatestBadges = "http://preprdakamai.community.lenovo.com/api/lenovobadge/readlatest?ssoId="+userSSOId+"&language="+userLang; 
+		if(whichType == "Solutions"){
+			url = solutions;
+		}else if(whichType == "Posts"){
+			url = posts;
+		}else if(whichType == "ReadLatest"){
+			if(isUserLoggedIn == false){
+				console.log("API SKIPPED");
+				getlocation();
+				return;
+			}else{
+				console.log("API HIT!!!!");
+				url = GetReadLatestBadges;
+			}
+		}
+		
+		var saveData = $.ajax({
+			  type: 'POST',
+			  dataType: "json",
+			  url: url,
+				error: function (jqXHR, exception) {
+				//debugger;
+				if(currentClickObject != null || currentClickObject != undefined){
+					 $(currentClickObject)[0].click();
+				}
+				getlocation();
+			},
+			  success: function(resultData) { 
+				//debugger;
+				/*for(var i =0 ;i<rolesArr.length;i++){
+					if(rolesArr[i] == "Administrator"){
+						if(currentClickObject != null || currentClickObject != undefined){
+							 $(currentClickObject)[0].click();
+							 	getlocation();
+						}
+						return;
+					}
+				}*/
+				resultData1 = resultData;
+				//loadjscssfile('http://lnv.stage.lithium.com/html/assets/badgeIndex.js');
+				//loadjscssfile('http://cerpsit.support.lenovo.com/dist/plugins/badgeDialog/index.js');
+				loadjscssfile('https://uataccount.lenovo.com/dist/plugins/badgeDialog/index.js');
+			  }
+		});
+	}
+
+	function loadjscssfile(filename){
+		$.getScript(filename, function(data, textStatus, jqxhr) {
+			//$('head').append('<link rel="stylesheet" href="http://lnv.stage.lithium.com/html/assets/cerpReward.css" type="text/css" />');
+			getBadgePopup();
+		});
+	}
+
+	function getBadgePopup(){
+		//debugger;
+		if(resultData1.result == false && (resultData1.data == null || resultData1.data == "")){
+			if(currentClickObject != null || currentClickObject != undefined)
+				$(currentClickObject)[0].click();
+			getlocation();
+		}else {
+			var opts = {
+				id: resultData1.data.Id,
+				type: resultData1.data.ColorScheme,
+				imageClass:resultData1.data.LargeCssClass,
+				title: resultData1.data.Title,
+				badgeIntro: resultData1.data.Description
+				/* shareOptions: {
+					"facebook": "https://www.facebook.com/sharer.php?u=http%3A%2F%2Fbadgealc.lenovo.com%2Fus%2Fen%2Fsharepage%2Fff20cec5-5bb0-4395-a1d5-a6da00a37049&title=1st%20Post&summary=First%20Post&images=http%3A%2F%2Fbadgealc.lenovo.com%2Fdist%2Fimages%2Falc%2Fbadge_icon.gif"
+				} */
+			};
+			if(userSSOId_for_accepted_solution != ""){
+				if(userSSOId != userSSOId_for_accepted_solution){
+					
+					if(currentClickObject != null || currentClickObject != undefined){
+						 $(currentClickObject)[0].click();
+					}
+					getlocation();
+					return;
+				}else if(userSSOId == userSSOId_for_accepted_solution){
+					for(var i =0 ;i<rolesArr.length;i++){
+						if(rolesArr[i] == "Administrator"){
+							if(currentClickObject != null || currentClickObject != undefined){
+								 $(currentClickObject)[0].click();
+							}
+							getlocation();
+							return;
+						}
+					}
+				}
+			}
+			$('body').badgeDialog(opts);
+			
+			$('.close').on('click',function(){
+				//debugger;
+				if(currentClickObject != null || currentClickObject != undefined){
+					 $(currentClickObject)[0].click();
+				}
+				getlocation();
+			});
+		}
+	} 
+
+	/* calling the readLatest while document load */
+	//readLatestBadge();//needs to be uncommented to enable badges
+	
+	function readLatestBadge(){
+		currentSelectedItem = "ReadLatest";
+		getUserSSOID();
+	}
+	
+	function getLanguage(){
+		var lang = window.navigator.languages ? window.navigator.languages[0] : null;
+			lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+		if (lang.indexOf('-') !== -1)
+			lang = lang.split('-')[0];
+
+		if (lang.indexOf('_') !== -1)
+			lang = lang.split('_')[0];
+		return lang;
+	}
+	
+	// Changes XML to JSON
+	function xmlToJson(xml) {
+		
+		// Create the return object
+		var obj = {};
+
+		if (xml.nodeType == 1) { // element
+			// do attributes
+			if (xml.attributes.length > 0) {
+			obj["@attributes"] = {};
+				for (var j = 0; j < xml.attributes.length; j++) {
+					var attribute = xml.attributes.item(j);
+					obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+				}
+			}
+		} else if (xml.nodeType == 3) { // text
+			obj = xml.nodeValue;
+		}
+
+		// do children
+		if (xml.hasChildNodes()) {
+			for(var i = 0; i < xml.childNodes.length; i++) {
+				var item = xml.childNodes.item(i);
+				var nodeName = item.nodeName;
+				if (typeof(obj[nodeName]) == "undefined") {
+					obj[nodeName] = xmlToJson(item);
+				} else {
+					if (typeof(obj[nodeName].push) == "undefined") {
+						var old = obj[nodeName];
+						obj[nodeName] = [];
+						obj[nodeName].push(old);
+					}
+					obj[nodeName].push(xmlToJson(item));
+				}
+			}
+		}
+		return obj;
+	};
+	
+	/* CLI-16 issue fix */
+		
+	function pageHistory(pageName)
+	{
+		var flag="";
+		var page = $('.'+pageName);
+		var breadcrumb = page.find('.lia-breadcrumb > .lia-list-standard-inline > li');
+		if(document.referrer!="")
+		{
+			var pre_url=document.referrer.split("/");
+			var community_id=pre_url[pre_url.length-1].toLowerCase();
+			var value=pre_url[pre_url.length-2].toLowerCase();
+			var lang_array=[];
+			for(var i=0;i<document.getElementById("fieldname").length;i++)
+				{
+					var lang_url=document.getElementsByTagName("option")[i].value.split("/");
+					var lang_id=lang_url[lang_url.length-1].split("?")[0].toLowerCase();
+					lang_array.push(lang_id);
+				}
+			for(var i=0;i<lang_array.length;i++)
+			{
+				if(community_id==lang_array[i])
+				{
+					if(value=='ct-p')
+					{
+						flag=true;
+						break;
+					}
+				}
+			}
+			if(flag==true)
+			{
+				if(breadcrumb.length != 0)
+				{
+					if (breadcrumb[0] != null) {
+						var breadcrumb_element = breadcrumb[0];
+						$(breadcrumb_element).on('click', function (){
+							window.history.back();
+							return false;
+						});
+						
+					}
+				}
+			}
+		}
+	}
+	pageHistory(LITHIUM.CommunityJsonObject.Page.name);
+	
+	
+	/* fix for extra padding getting added for solved solution div */
+	if($(".custom-thread-solved" ).children().length == 0){
+		$( ".custom-thread-solved" ).css( "background-color", "transparent" );
+	}
+	else{
+		$( "#lia-body.ForumTopicPage .custom-forum-topic-controls .button-controls-wrapper .custom-thread-solved" ).css( "background-color", "#6abf4a" );
+	}
+	
+	function setlocation(user_id, selected_user_location) {
+		console.log(user_id);
+		console.log(selected_user_location);
+		var arr = window.location.href.split("/");
+		var hostName = arr[0] + "//" + arr[2];
+		var url = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-location-popup?user_id="+user_id+"&value="+selected_user_location;
+
+		var saveData = $.ajax({
+			type: 'POST',
+			dataType: "json",
+			url: url,
+			error: function (jqXHR, exception) {
+				//debugger;
+				console.log(jqXHR);
+				//getErrorMessage(jqXHR, exception);
+			},
+			success: function (resultData) {
+				//debugger;
+				resultData1 = resultData;
+			}
+		});
+	}
+
+	function getlocation() {
+		var arr = window.location.href.split("/");
+		var hostName = arr[0] + "//" + arr[2];
+		var jsonlUrl = hostName+"/html/assets/Countries.json";
+		
+		$.ajax({
+			type: 'GET',
+			dataType: "json",
+			url: jsonlUrl,
+			error: function (jqXHR, exception) {
+				//console.log("Inside JSON load Error");
+			},
+			success: function (data) {
+				//debugger;
+				console.log("Inside JSON success");
+				getuserlocation(data);
+			}
+		});
+	}
+	
+	function getuserlocation(country_list) {
+			var arr = window.location.href.split("/");
+			var hostName = arr[0] + "//" + arr[2];
+			var stageEndpoint = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-get-user-info";
+			var user_location;
+			var match_location = false;
+			var user_id = "";
+			var selected_user_location = "";
+			
+			var saveData = $.ajax({
+				type: 'GET',
+				dataType: "json",
+				url: stageEndpoint,
+				error: function (jqXHR, exception) {
+					//debugger;
+					//console.log("Inside Error");
+				},
+				success: function (resultData) {
+					user_id = resultData.data[0].user_id;
+					user_location = resultData.data[0].location;
+
+					var arrayLength = country_list.length;
+					for (var i = 0; i < arrayLength; i++) {
+						if (user_location == country_list[i].value) {
+							match_location = true;
+							//match_location = false;
+						}
+					}
+					//console.log("Inside Success");
+					//console.log(user_location);
+					console.log(match_location);
+					if ((user_location == "") || !match_location) {
+						var arr = window.location.href.split("/");
+						var hostName = arr[0] + "//" + arr[2];
+						var hmtlUrl = hostName+"/html/assets/location_popup.html";
+						$.ajax({
+							type: 'GET',
+							url: hmtlUrl,
+							error: function (jqXHR, exception) {
+								//console.log("Inside HTML load Error");
+							},
+							success: function (resultData) {
+								console.log("Inside HTML load success: ");
+								//console.log("Appended data:",resultData);
+								$("body").append(resultData);
+								document.getElementById("modalTitle").innerHTML = location_popup_text_key;
+								$('#drop').change(function () {
+									//alert('Value change to ' + $(this).attr('value'));
+									console.log(document.getElementById("drop").value);
+									if (document.getElementById("drop").value != "0"){
+										selected_user_location = document.getElementById("drop").value;
+									}
+								});
+								$('#myModal .close').click(function () {
+									//debugger;
+									$('#myModal').css("display", "none");
+								});
+								$('#myModal .modal-footer > button').click(function () {
+									//debugger;
+									if ((user_id != "") && selected_user_location != "") {
+										setlocation(user_id, selected_user_location);
+									}
+									$('#myModal').css("display", "none");
+								});
+							}
+						});
+					}
+				}
+
+			});
+		
+	}
+	
+	function showHideLabelCloud() {
+		if(LITHIUM.CommunityJsonObject.Page.object.page == "ForumPage") {
+			if ((LITHIUM.CommunityJsonObject.Page.object.id == "sh01_en") || LITHIUM.CommunityJsonObject.Page.object.id == "sh02_en"){
+			  $("#lia-body .lia-component-labels-widget-labels-list").show();
+			}else{
+			  $("#lia-body .lia-component-labels-widget-labels-list").hide();
+			}
+		}
+      };
+	/* calling the showHideLabelCloud while document load */ 
+	showHideLabelCloud();
+	
+	$('.lia-link-navigation.mark-thread-read.lia-link-ticket-post-action.lia-component-forums-action-mark-thread-read').click(function(event){
+			//debugger;
+			 var userPath=$('.lia-user-name-link')[0].href;
+			 var path=window.location.href;
+			 if(userPath != null && path !=null)
+			 {
+				 var userId=userPath.substring(userPath.lastIndexOf("/")+1,userPath.length);
+				 var messageId=path.substring(path.lastIndexOf("/")+1,path.length);
+				 if(userId != null && messageId!=null)
+				 {
+					markAsRead(userId,messageId);
+					return true;
+				 }		  
+				 else{
+					 return false; 
+				 }
+			 }
+			else{
+				 return false; 
+			 }
+	  });
+              
+	  function markAsRead(user_id,messageId){
+		 var arr = window.location.href.split("/");
+		 var hostName = arr[0] + "//" + arr[2];
+		 var devEndpoint = hostName+"/lnv/plugins/custom/lenovo/lnv/custom-mark-all-thread-as-read?userId="+user_id+"&messageId="+messageId;
+		 var saveData = $.ajax({
+						 type: 'GET',
+						 dataType: "json",
+						 url: devEndpoint,
+						 error: function (jqXHR, exception) {
+							//debugger;
+							console.log(jqXHR);
+					   },
+					   success: function(resultData) { 
+						  //debugger;
+						  console.log(resultData);
+						}
+		 });
+	  }
+		
+	  /*CLI-18 hide Orange highlight circle beside Notifications and Messages when the number is 0 */
+	function hideOrangeCircle()
+	{
+		if($(".lia-component-notes-widget-summary-modern .lia-header-nav-component-unread-count").html() == 0)
+		{
+			$(".lia-component-notes-widget-summary-modern .lia-header-nav-component-unread-count").hide();
+			$(".lia-component-notes-widget-summary-modern").css({'padding-right':'12px'});
+		}
+		else
+		{
+			$(".lia-component-notes-widget-summary-modern .lia-header-nav-component-unread-count").css({'background-color':'#ff6a00','min-width':'10px','padding':'3px 7px 3px 7px'});
+		}
+		
+		if($(".lia-component-notificationfeed-widget-indicator .lia-header-nav-component-unread-count").html() == 0)
+		{
+			$(".lia-component-notificationfeed-widget-indicator .lia-header-nav-component-unread-count").hide(); 
+			$(".lia-component-notificationfeed-widget-indicator").css({'padding-right':'12px'});
+		}
+		else
+		{
+			$(".lia-component-notificationfeed-widget-indicator .lia-header-nav-component-unread-count").css({'background-color':'#ff6a00','min-width':'10px','padding':'3px 7px 3px 7px'});
+		}
+	}
+	hideOrangeCircle();
+	
+	/*CLI-54 Message Options missing at KB level*/
+	$(".TkbPage .lia-menu-bar #dropDownLink").html("Options");
+	
+	/*CLI-14 Post-Thread navigational issue from User's posts page*/
+	$( ".CategoryPage .kb-tabbed-solution .recent-topics-tab .lia-component-forums-widget-message-list tbody tr" ).each(function( index ) 
+	{
+		var link_url =$(this).find('.subject > a').attr("href");
+		if(link_url!=undefined)
+		{
+			var replace_url=link_url.split("#")[0];
+			$(this).find('.subject > a').attr("href",replace_url);
+		}
+    });
+	
+	var link_url = window.location.href;
+	if(link_url!=undefined)
+	{
+		//debugger;
+		var replace_url=link_url.split("#")[0];
+		var topic_id = replace_url.substr(replace_url.lastIndexOf('/')+1, replace_url.length) ;
+		if(topic_id!=undefined)
+		{
+			if(topic_id.indexOf("?") == -1 && topic_id.indexOf("%20") == -1)
+			{
+				var x = $(".message-list .lia-linear-display-message-view .lia-message-view.message-uid-"+topic_id).position();
+				//window.scrollTo(0, window.scrollY+x.top);
+				//window.scrollTo(0, window.screen.height+x.top+50);
+				//window.scrollTo(0, window.pageYOffset-x.top+50);
+				if(x!=undefined)
+				{
+					var new_x = x.top+290;
+					console.log("In X");
+					console.log(new_x);
+					window.scrollTo(0,new_x);
+				}
+				else
+				{
+					var y = $(".lia-component-comments .CommentList .lia-message-view.message-uid-"+topic_id).position();
+					if(y!=undefined)
+					{
+						var new_y = y.top+290;
+						console.log("In Y");
+						console.log(new_y);
+						window.scrollTo(0,new_y);
+					}
+				}
+			}
+		}
+	}
+	
+	/*$( ".RecentPostsPage .lia-quilt-recent-posts-page .lia-component-forums-widget-message-list tbody tr" ).each(function( index ) 
+	{
+		var link_url =$(this).find('.message-subject span > a').attr("href");
+		if(link_url!=undefined)
+		{
+			var replace_url=link_url.split("#")[0];
+			$(this).find('.message-subject span > a').attr("href",replace_url);
+		}
+    });*/
+
+	/*CLI-129 Yoga Book Recent Discussions Widget*/
+	if(LITHIUM.CommunityJsonObject.CoreNode.id=="yb_en")
+	{
+		$(".tabbed-nav li:first-child>a").text("Recent Discussions");
+		$(".lia-component-forums-widget-recent-threads .lia-component-forums-widget-message-list .lia-list-wide > tbody > tr:first-child td").css({'border-top':'none'});
+		$(".kb-tabbed-solution .recent-topics-tab .lia-component-forums-widget-recent-threads a.more-link.capsLock").css({'margin-bottom':'10px','margin-top':'20px'});
+	}
+	
+	/* CLI-47 New UX for Ideation areas */
+	var tabRow = $('.IdeaExchangePage .tabbed-pane .recent-activity .recent-activity-listings tr');
+	$.each(tabRow,function(){
+		$(".IdeaExchangePage .tabbed-pane .recent-activity .recent-activity-listings .message-labels .labels-info ul.lia-list-standard-inline").each(function(i){
+		if(this!= undefined && this.children.length != 0){ 
+			$(this).addClass('addLabelContent');
+		}
+		else {
+				$(this).removeClass('addLabelContent');
+				$(this).addClass('removeLabelContent');
+			}
+		});
+	});
+
+	$(".IdeaExchangePage .custom-top-ideas .desktop-top-ideas-view .lia-messages-message-card.card-item .message-labels .labels-info ul.lia-list-standard-inline").each(function(i){
+		if(this!= undefined && this.children.length != 0){ 
+			$(this).addClass('addLabelContent');
+		}
+		else {
+				$(this).removeClass('addLabelContent');
+				$(this).addClass('removeLabelContent');
+			}
+	});
+
+	$('#lia-body .lia-content section.custom-filter-articles .lia-menu-navigation-wrapper .lia-menu-dropdown-items > li a').click(function(event){
+	var selectedLabel = "All labels";
+	var label_url = "";
+		if($(this) != undefined && $(this).length > 0){
+			label_url=$(this)[0].href;
+			selectedLabel = label_url.substr(label_url.lastIndexOf('/')+1, label_url.length);
+			if(selectedLabel != "All labels"){
+				window.location.replace(label_url);
+			}
+		}
+	});
+	
+	$('#lia-body .lia-content .ideas-tabbed-solution .tabbed-wrapper .tabbed-nav > li > a').click(function(event){
+		var selectedTab = "most-recent";
+		var tab_url = "";
+		if($(this) != undefined && $(this).length > 0){
+			tab_url=$(this)[0].href;
+			selectedTab = tab_url.substr(tab_url.lastIndexOf('/')+1, tab_url.length);
+			window.location.replace(tab_url);
+		}
+	});
+	
+	$("#lia-body .lia-content .ideas-tabbed-solution .tabbed-wrapper .tabbed-nav > li").each(function(i){
+		var requestedPage = window.location.href;
+		if(requestedPage!=undefined){
+			if(this != undefined && this.children.length != 0){
+				if(requestedPage.search("popular") != -1){
+					if($(this)[0].children[0].href.search("popular") != -1){
+						$(this).addClass('selected');
+					}
+				}
+				else if(requestedPage.search("most-recent") != -1){
+					if($(this)[0].children[0].href.search("most-recent") != -1){
+						$(this).addClass('selected');
+					}
+				}
+			}
+		}
+	});
+});

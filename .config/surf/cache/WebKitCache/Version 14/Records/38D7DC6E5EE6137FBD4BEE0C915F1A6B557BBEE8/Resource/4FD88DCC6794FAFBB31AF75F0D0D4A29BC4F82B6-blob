@@ -1,0 +1,1947 @@
+
+<!doctype html >
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+
+<head>
+
+<title>Install HandBrake on Linux Mint, Ubuntu, and elementary OS | FOSS Linux</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="pingback" href="https://www.fosslinux.com/xmlrpc.php" />
+
+<title>Install HandBrake on Linux Mint, Ubuntu, and elementary OS - FOSS Linux</title>
+<script type="text/javascript">
+var trackScrolling=false;
+var trackScrollingPercentage=false;
+var ScrollingPercentageNumber=25;
+var stLogInterval=10*1000;
+var cutOffTime=900;
+var trackNoEvents=false;
+var trackNoMaxTime=false;
+var docTitle='Install HandBrake on Linux Mint, Ubuntu, and elementary OS';
+</script>
+<script type='text/javascript'>function ctSetCookie(c_name, value, def_value){document.cookie = c_name + '=' + escape(value) + '; path=/';}ctSetCookie('ct_checkjs', '1485054255', '0');</script><meta property="og:image" content="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg" /><link rel="icon" type="image/png" href="https://www.fosslinux.com/wp-content/uploads/2016/02/fosslinux100.png"><meta name="dc.title" content="Install HandBrake on Linux Mint, Ubuntu, and elementary OS - FOSS Linux" />
+<meta name="dc.description" content="HandBrake 1.0 video converter got released with a slew of new features including support for Intel QuickSync Video H.265/HEVC encoding and support for Passthru of E-AC-3, FLAC, and TrueHD audio formats. It also comes with several handy presets for quick encoding. Full feature list of HandBrake is available here. In this&hellip;" />
+<meta name="dc.relation" content="https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm/" />
+<meta name="dc.source" content="https://www.fosslinux.com/" />
+<meta name="dc.language" content="en_US" />
+<meta name="description" content="HandBrake 1.0 video converter got released with a slew of new features including support for Intel QuickSync Video H.265/HEVC encoding and support for Passthru of E-AC-3, FLAC, and TrueHD audio formats. It also comes with several handy presets for quick encoding. Full feature list of HandBrake is available here. In this&hellip;" />
+<link rel="canonical" href="https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm" />
+<script type="application/ld+json">{"@context" : "https://schema.org","@type" : "Organization","logo": "https:\/\/www.fosslinux.com\/wp-content\/uploads\/2017\/03\/FL_V2_logo_retina.png","name" : "FOSS Linux","url" : "https:\/\/www.fosslinux.com","sameAs" : ["https:\/\/www.facebook.com\/fosslinux\/", "https:\/\/twitter.com\/@FOSSLinux"]}</script>
+<meta property="og:url" content="https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm/" />
+<meta property="og:site_name" content="FOSS Linux" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="article:author" content="https://www.facebook.com/fosslinux/" />
+<meta property="article:publisher" content="https://www.facebook.com/fosslinux/" />
+<meta property="og:title" content="Install HandBrake on Linux Mint, Ubuntu, and elementary OS - FOSS Linux" />
+<meta property="og:description" content="HandBrake 1.0 video converter got released with a slew of new features including support for Intel QuickSync Video H.265/HEVC encoding and support for Passthru of E-AC-3, FLAC, and TrueHD audio formats. It also comes with several handy presets for quick encoding. Full feature list of HandBrake is available here. In this&hellip;" />
+<meta property="og:image" content="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg" />
+<meta property="og:image:secure_url" content="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg" />
+<meta property="og:image:width" content="950" />
+<meta property="og:image:height" content="450" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@FOSSLinux" />
+<meta name="twitter:creator" content="@FOSSLinux" />
+<meta name="twitter:title" content="Install HandBrake on Linux Mint, Ubuntu, and elementary OS - FOSS Linux" />
+<meta name="twitter:description" content="HandBrake 1.0 video converter got released with a slew of new features including support for Intel QuickSync Video H.265/HEVC encoding and support for Passthru of E-AC-3, FLAC, and TrueHD audio formats. It also comes with several handy presets for quick encoding. Full feature list of HandBrake is available here. In this&hellip;" />
+<meta name="twitter:image" content="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg" />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="FOSS Linux &raquo; Feed" href="https://www.fosslinux.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="FOSS Linux &raquo; Comments Feed" href="https://www.fosslinux.com/comments/feed" />
+<script type="application/ld+json">{"@context" : "https://schema.org","@type" : "LocalBusiness","image": "https:\/\/www.fosslinux.com\/wp-content\/uploads\/2017\/03\/FL_V2_logo_retina.png", "@id": "https:\/\/www.fosslinux.com","address": {
+				    "@type": "PostalAddress","streetAddress": "Plain CIty","addressLocality": "Columbus","addressRegion": "OH","postalCode": "43064","addressCountry": "United States"},"openingHoursSpecification": [{ "@type": "OpeningHoursSpecification","dayOfWeek": "Monday", "opens": "08:00","closes": "17:00"}, { "@type": "OpeningHoursSpecification","dayOfWeek": "Tuesday", "opens": "08:00","closes": "17:00"}, { "@type": "OpeningHoursSpecification","dayOfWeek": "Wednesday", "opens": "08:00","closes": "17:00"}, { "@type": "OpeningHoursSpecification","dayOfWeek": "Thursday", "opens": "08:00","closes": "17:00"}, { "@type": "OpeningHoursSpecification","dayOfWeek": "Friday", "opens": "08:00","closes": "17:00"} ],"name": "FOSS Linux"}</script>
+<link rel="alternate" type="application/rss+xml" title="FOSS Linux &raquo; Install HandBrake on Linux Mint, Ubuntu, and elementary OS Comments Feed" href="https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm/feed" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.fosslinux.com/wp-includes/css/dist/block-library/style.min.css?ver=c0915a4433458033ee5efd8f7cb1433e' type='text/css' media='all' />
+<link rel='stylesheet' id='mpp_gutenberg-css'  href='https://www.fosslinux.com/wp-content/plugins/metronet-profile-picture/dist/blocks.style.build.css?ver=2.2.8' type='text/css' media='all' />
+<link rel='stylesheet' id='cwp-style-css'  href='https://www.fosslinux.com/wp-content/plugins/comments-widget-plus/assets/css/cwp.css?ver=c0915a4433458033ee5efd8f7cb1433e' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.fosslinux.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.3' type='text/css' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='wpi_fonts-css'  href='https://fonts.googleapis.com/css?family=Neucha%3A300%2C400%2C600%2C700%7CRock+Salt%7COpen+Sans%3A300%2C400%2C600%2C700%7COpen+Sans+Condensed%3A300%2C700%7CPacifico%7COregano%7CChewy%7CCourgette%7CExo%7CGruppo%7CKite+One%7CKnewave%7CAllura%7CSatisfy%7CSource+Sans+Pro%3A200%2C400%2C600%2C700%7CCrafty+Girls%7CGreat+Vibes%7CSacramento%7COswald%7CUltra%7CAnton%7CRaleway%7CDroid+Sans%7CRoboto%3A100%2C300%2C400%2C700%7CExo+2%3A100%2C300%2C400%2C700%7CCapriola%7CCrimson+Text%7CLato%3A100%2C300%2C400%2C700%7CPlayfair+Display%3A300%2C400%2C700%7CSignika&#038;ver=c0915a4433458033ee5efd8f7cb1433e' type='text/css' media='all' />
+<link rel='stylesheet' id='tdb_posts_autoload_ajax_style-css'  href='https://www.fosslinux.com/wp-content/plugins/td-cloud-library/assets/css/tdb_less_ajax.css?ver=96be9388232cf6f1e9ad7a3c9f4e9872' type='text/css' media='all' />
+<link rel='stylesheet' id='td-plugin-newsletter-css'  href='https://www.fosslinux.com/wp-content/plugins/td-newsletter/style.css?ver=9.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='td-plugin-multi-purpose-css'  href='https://www.fosslinux.com/wp-content/plugins/td-composer/td-multi-purpose/style.css?ver=87aa69b3a2aab340715eee6578a06159' type='text/css' media='all' />
+<link rel='stylesheet' id='font_awesome-css'  href='https://www.fosslinux.com/wp-content/plugins/td-composer/assets/fonts/font-awesome/font-awesome.css?ver=87aa69b3a2aab340715eee6578a06159' type='text/css' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='google-fonts-style-css'  href='https://fonts.googleapis.com/css?family=Lato%3A400%7CPoppins%3A400%7CWork+Sans%3A400%7COpen+Sans%3A300italic%2C400%2C400italic%2C600%2C600italic%2C700%7CRoboto%3A300%2C400%2C400italic%2C500%2C500italic%2C700%2C900&#038;ver=9.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='newsletter-css'  href='https://www.fosslinux.com/wp-content/plugins/newsletter/style.css?ver=6.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='slb_core-css'  href='https://www.fosslinux.com/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://www.fosslinux.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wpi_designer_button-css'  href='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/style.css?t=556&#038;ver=2.5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='wpi_designer_button_preset_styles-css'  href='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/preset_styles.css?t=556&#038;ver=2.5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='wpi_designer_button_genericons-css'  href='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/genericons/genericons/genericons.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpi_designer_button_font-awesome-css'  href='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/font-awesome/css/font-awesome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-style-css'  href='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/custom_script.css?ver=c0915a4433458033ee5efd8f7cb1433e' type='text/css' media='all' />
+<style id='custom-style-inline-css' type='text/css'>
+.wpi_designer_button_845{font-family:Lato!important;font-size:16px!important;font-weight:400!important;border-width:0px!important;border-style:solid!important;padding:10px 20px!important;display:inline-block!important;min-width:!important;color:#ffffff!important;background-color:#ff6e40!important;border-color:#eeFFbb!important;background-image:none!important;border-radius:5px!important;-webkit-text-shadow:0px 0px 0px rgba(0,0,0,0.3);-moz-text-shadow:0px 0px 0px rgba(0,0,0,0.3);-o-text-shadow:0px 0px 0px rgba(0,0,0,0.3);text-shadow:0px 0px 0px rgba(0,0,0,0.3);-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);-o-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 0px rgba(0,0,0,0.3);}.wpi_designer_button_845:hover, .wpi_designer_button_845:visited:hover{color:#ffffff!important;background-color:#ff9800!important;border-color:#77DD66!important;}.wpi_designer_button_845:active, .wpi_designer_button_845:visited:active{color:#222222!important;background-color:#ffffff!important;border-color:#eeFFbb!important;}.wpi_designer_button_845:visited{color:!important;background-color:!important;border-color:!important;}.wpi_designer_button_845.wpi_no_text{padding:10px!important;}
+.wpi_twin_button_330 .wpi_designer_button{min-width:!important;}.wpi_twin_button_108 .wpi_designer_button{min-width:!important;}
+.wpi_slide_5469{min-height:300px;background-color:#111111;background-image:none;color:#ffffff;margin-left:auto;margin-right:auto;}.wpi_slide_5469 .wpi_slide_heading{font-size:52px;font-weight:700;font-family:Open Sans;margin-top:40px;margin-left:0px;margin-right:0px;margin-bottom:0px;padding:0px;border-width:0px;line-height:1.2em;letter-spacing:-3px;-webkit-text-shadow:0px 0px 0px rgba(0,0,0,0.3);-moz-text-shadow:0px 0px 0px rgba(0,0,0,0.3);-o-text-shadow:0px 0px 0px rgba(0,0,0,0.3);text-shadow:0px 0px 0px rgba(0,0,0,0.3);}.wpi_slide_5469 .wpi_slide_text{font-size:18px;font-weight:300;font-family:Open Sans;margin-top:30px;margin-left:0px;margin-right:0px;}.wpi_slide_5469 .wpi_slide_image{left:0px;top:0px;background-image:url(https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/images/bottom_lighting.png);opacity:1;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);filter:blur(0px);-webkit-filter:blur(0px);-moz-filter:blur(0px);-o-filter:blur(0px);}.wpi_slide_5469 .wpi_designer_button{margin-top:40px;margin-bottom:70px;}.wpi_slide_5469 .wpi_slide_footer{padding:0px;display:none;font-size:8px;}
+</style>
+<link rel='stylesheet' id='js_composer_front-css'  href='https://www.fosslinux.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='td-theme-css'  href='https://www.fosslinux.com/wp-content/themes/Newspaper/style.css?ver=9.7.2' type='text/css' media='all' />
+<style id='td-theme-inline-css' type='text/css'>
+    
+        @media (max-width: 767px) {
+            .td-header-desktop-wrap {
+                display: none;
+            }
+        }
+        @media (min-width: 767px) {
+            .td-header-mobile-wrap {
+                display: none;
+            }
+        }
+    
+	
+</style>
+<link rel='stylesheet' id='td-legacy-framework-front-style-css'  href='https://www.fosslinux.com/wp-content/plugins/td-composer/legacy/Newspaper/assets/css/td_legacy_main.css?ver=87aa69b3a2aab340715eee6578a06159' type='text/css' media='all' />
+<link rel='stylesheet' id='tdb_front_style-css'  href='https://www.fosslinux.com/wp-content/plugins/td-cloud-library/assets/css/tdb_less_front.css?ver=96be9388232cf6f1e9ad7a3c9f4e9872' type='text/css' media='all' />
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type='text/javascript'>
+/* <![CDATA[ */
+var WPiURLS = {"WPIDB_URL":"https:\/\/www.fosslinux.com\/wp-content\/plugins\/wpi-designer-button-shortcode\/"};
+var WPIDB_FONTS = ["Arial","sans-serif","Neucha","Rock Salt","Open Sans","Open Sans Condensed","Pacifico","Oregano","Chewy","Courgette","Exo","Gruppo","Kite One","Knewave","Allura","Satisfy","Source Sans Pro","Crafty Girls","Great Vibes","Sacramento","Oswald","Ultra","Anton","Raleway","Droid Sans","Roboto","Exo 2","Capriola","Crimson Text","Lato","Playfair Display","Signika"];
+var WPIDB_FONTS_SIZES = ["8px","9px","10px","12px","14px","16px","18px","20px","23px","26px","28px","30px","32px","36px","40px","44px","48px","52px","66px","72px","80px","100px","120px","140px","160px","180px","200px","220px","240px","260px","280px","300px","320px","340px"];
+var WPIDB_FONTS_WEIGHTS = ["100","300","400","600","700"];
+var WPIDB_LETTER_SPACING = ["0px","-5px","-4px","-3px","-2px","-1px","1px","2px","3px","4px","5px","6px","7px","8px","9px","10px","20px","30px","40px","50px","60px","70px","80px","90px","100px"];
+var WPIDB_MARGIN = ["0px","10px","20px","30px","40px","50px","60px","70px","80px","90px","100px","120px","130px","140px","150px","160px","170px","180px","190px","200px"];
+var WPIDB_BORDER_WIDTH = ["0px","1px","2px","3px","4px","5px","6px","7px","8px","9px","10px"];
+var WPIDB = {"fonts":["Arial","sans-serif","Neucha","Rock Salt","Open Sans","Open Sans Condensed","Pacifico","Oregano","Chewy","Courgette","Exo","Gruppo","Kite One","Knewave","Allura","Satisfy","Source Sans Pro","Crafty Girls","Great Vibes","Sacramento","Oswald","Ultra","Anton","Raleway","Droid Sans","Roboto","Exo 2","Capriola","Crimson Text","Lato","Playfair Display","Signika"],"font_sizes":["8px","9px","10px","12px","14px","16px","18px","20px","23px","26px","28px","30px","32px","36px","40px","44px","48px","52px","66px","72px","80px","100px","120px","140px","160px","180px","200px","220px","240px","260px","280px","300px","320px","340px"],"font_weights":[100,300,400,600,700],"letter_spacing":["0px","-5px","-4px","-3px","-2px","-1px","1px","2px","3px","4px","5px","6px","7px","8px","9px","10px","20px","30px","40px","50px","60px","70px","80px","90px","100px"],"margin":["0px","10px","20px","30px","40px","50px","60px","70px","80px","90px","100px","120px","130px","140px","150px","160px","170px","180px","190px","200px"],"border_width":["0px","1px","2px","3px","4px","5px","6px","7px","8px","9px","10px"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/inc/wpi_script.js?ver=c0915a4433458033ee5efd8f7cb1433e'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ctPublic = {"_ajax_nonce":"6ebe1b4e1d","_ajax_url":"https:\/\/www.fosslinux.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public.min.js?ver=5.121'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ctNocache = {"ajaxurl":"https:\/\/www.fosslinux.com\/wp-admin\/admin-ajax.php","info_flag":"","set_cookies_flag":"","blog_home":"https:\/\/www.fosslinux.com\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/cleantalk-spam-protect/js/cleantalk_nocache.min.js?ver=5.121'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/inc/front_global.js?t=556&#038;ver=2.5.9'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/wpi-designer-button-shortcode/inc/front_script.js?t=556&#038;ver=2.5.9'></script>
+<link rel='https://api.w.org/' href='https://www.fosslinux.com/wp-json/' />
+<link rel='prev' title='Solus releases First ISO Snapshot 2017.01.01.0' href='https://www.fosslinux.com/985/solus-releases-first-iso-snapshot-2017-01-01-0.htm' />
+<link rel='next' title='How to install Spotify in Linux Mint, Ubuntu, and elementary OS' href='https://www.fosslinux.com/1000/how-to-install-spotify-in-linux-mint-ubuntu-and-elementary-os.htm' />
+
+<link rel="alternate" type="application/json+oembed" href="https://www.fosslinux.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fosslinux.com%2F992%2Finstall-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.fosslinux.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fosslinux.com%2F992%2Finstall-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm&#038;format=xml" />
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <script>
+        window.tdb_globals = {"wpRestNonce":"85d31eeb45","wpRestUrl":"https:\/\/www.fosslinux.com\/wp-json\/","permalinkStructure":"\/%post_id%\/%postname%.htm","isAjax":true};
+    </script>
+    			<script>
+				window.tdwGlobal = {"adminUrl":"https:\/\/www.fosslinux.com\/wp-admin\/","wpRestNonce":"85d31eeb45","wpRestUrl":"https:\/\/www.fosslinux.com\/wp-json\/","permalinkStructure":"\/%post_id%\/%postname%.htm"};
+			</script>
+						<style type="text/css">.cwp-li {overflow: hidden;}.cwp-avatar {float: left;margin-top: .2em;margin-right: 1em;}.cwp-avatar.rounded .avatar{border-radius:50%;}.cwp-avatar.square .avatar{border-radius:0;}.cwp-comment-excerpt {display: block;color:#787878;}</style>
+		<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.fosslinux.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+<!-- JS generated by theme -->
+
+<script>
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+	        if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+	        if ( navigator.userAgent.indexOf("Edge") > -1 ) {
+                htmlTag.className += ' ieEdge';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":228},{"limitBottom":1018,"sidebarWidth":300},{"limitBottom":1140,"sidebarWidth":324}];
+var tdc_is_installed="yes";
+var td_ajax_url="https:\/\/www.fosslinux.com\/wp-admin\/admin-ajax.php?td_theme_name=Newspaper&v=9.7.2";
+var td_get_template_directory_uri="https:\/\/www.fosslinux.com\/wp-content\/themes\/Newspaper";
+var tds_snap_menu="snap";
+var tds_logo_on_sticky="show_header_logo";
+var tds_header_style="8";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var tds_more_articles_on_post_enable="";
+var tds_more_articles_on_post_time_to_wait="1";
+var tds_more_articles_on_post_pages_distance_from_top=2500;
+var tds_theme_color_site_wide="#4db2ec";
+var tds_smart_sidebar="";
+var tdThemeName="Newspaper";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var tdBlockNonce="4a6803aad2";
+var tdDateNamesI18n={"month_names":["January","February","March","April","May","June","July","August","September","October","November","December"],"month_names_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"day_names":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"day_names_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+.td-post-content h1,
+    .td-post-content h2,
+    .td-post-content h3,
+    .td-post-content h4,
+    .td-post-content h5,
+    .td-post-content h6 {
+    	color: #ff5722;
+    }
+
+    
+    .post .td-category a {
+        font-size:13px;
+	text-transform:uppercase;
+	
+    }
+</style>
+
+<link rel="icon" href="https://www.fosslinux.com/wp-content/uploads/2016/02/cropped-fosslinux512-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.fosslinux.com/wp-content/uploads/2016/02/cropped-fosslinux512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.fosslinux.com/wp-content/uploads/2016/02/cropped-fosslinux512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.fosslinux.com/wp-content/uploads/2016/02/cropped-fosslinux512-270x270.png" />
+
+<!-- Button style compiled by theme -->
+
+<style>
+    
+</style>
+
+
+<script async src='https://www.googletagmanager.com/gtag/js?id=UA-135103380-1'></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+gtag('config', 'UA-135103380-1' , {'allow_display_features': false,});
+
+</script>
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>	<style id="tdw-css-placeholder"></style>
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-992 single-format-standard wpi_db install-handbrake-on-linux-mint-ubuntu-and-elementary-os global-block-template-1 tdb_template_9655 wpb-js-composer js-comp-ver-5.4.5 vc_responsive  tdc-header-template td-full-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<div id="td-outer-wrap" class="td-theme-wrap">
+
+    <div id="tdb-autoload-article" data-autoload="on" data-autoload-org-post-id="992" data-autoload-type="same_cat_prev" data-autoload-count="5" >
+        <div class="td-main-content-wrap td-container-wrap">
+            <div class="tdc-content-wrap tdb-autoload-wrap">
+                <article
+                        id="template-id-9655"
+                    class="post-9655 tdb_templates type-tdb_templates status-publish post"                    itemscope itemtype="https://schema.org/Article"                     data-post-url="https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm"                     data-post-edit-url=""                     data-post-title="Install HandBrake on Linux Mint, Ubuntu, and elementary OS"                >
+                    <div id="td_uid_1_5d1fc0a1595fb" class="tdc-zone"><div class="tdc_zone td_uid_1_5d1fc0a15960f_rand  wpb_row td-pb-row"  >
+<style scoped>
+
+/* custom css */
+.td_uid_1_5d1fc0a15960f_rand {
+                    min-height: 0;
+                }
+</style><div id="td_uid_2_5d1fc0a15a44c" class="tdc-row stretch_row_1400 td-stretch-content"><div class="vc_row td_uid_2_5d1fc0a15a457_rand  wpb_row td-pb-row tdc-row-content-vert-center" >
+<style scoped>
+
+/* custom css */
+.td_uid_2_5d1fc0a15a457_rand {
+                    min-height: 0;
+                }
+
+                
+                .td_uid_2_5d1fc0a15a457_rand.tdc-row-content-vert-center,
+                .td_uid_2_5d1fc0a15a457_rand.tdc-row-content-vert-center .tdc-columns {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                }
+                .td_uid_2_5d1fc0a15a457_rand.tdc-row-content-vert-bottom,
+                .td_uid_2_5d1fc0a15a457_rand.tdc-row-content-vert-bottom .tdc-columns {
+                    display: flex;
+                    align-items: flex-end;
+                    flex: 1;
+                }
+                @media (max-width: 767px) {
+	                .td_uid_2_5d1fc0a15a457_rand,
+	                .td_uid_2_5d1fc0a15a457_rand .tdc-columns {
+	                	flex-direction: column;
+	                }
+                }
+                .td_uid_2_5d1fc0a15a457_rand.tdc-row-content-vert-center .td_block_wrap {
+                	vertical-align: middle;
+                }
+                .td_uid_2_5d1fc0a15a457_rand.tdc-row-content-vert-bottom .td_block_wrap {
+                	vertical-align: bottom;
+                }
+/* inline tdc_css att */
+
+.td_uid_2_5d1fc0a15a457_rand{
+margin-top:60px !important;
+margin-bottom:0px !important;
+z-index:1 !important;
+}
+
+.td_uid_2_5d1fc0a15a457_rand .td_block_wrap{ text-align:left }
+
+</style><div class="vc_column td_uid_3_5d1fc0a15a955_rand  wpb_column vc_column_container tdc-column td-pb-span6">
+<style scoped>
+
+/* custom css */
+.td_uid_3_5d1fc0a15a955_rand {
+                    vertical-align: baseline;
+                }
+/* inline tdc_css att */
+
+.td_uid_3_5d1fc0a15a955_rand{
+width:45% !important;
+}
+
+/* phone */
+@media (max-width: 767px)
+{
+.td_uid_3_5d1fc0a15a955_rand{
+width:100% !important;
+}
+}
+
+</style><div class="wpb_wrapper"><div class="td_block_wrap tdb_breadcrumbs td_uid_4_5d1fc0a15b5f9_rand td-pb-border-top td_block_template_1 tdb-breadcrumbs "  data-td-block-uid="td_uid_4_5d1fc0a15b5f9" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_4_5d1fc0a15b5f9_rand{
+padding-bottom:15px !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_4_5d1fc0a15b5f9_rand .tdb-bread-sep {
+                    font-size: 8px;
+                }
+                
+                .td_uid_4_5d1fc0a15b5f9_rand .tdb-bread-sep {
+                    margin: 0 5px;
+                }
+                 
+				.td-theme-wrap .td_uid_4_5d1fc0a15b5f9_rand {
+					text-align: left;
+				}
+</style><div class="tdb-block-inner td-fix-index"><span><a title="" class="tdb-entry-crumb" href="https://www.fosslinux.com/">Home</a></span> <i class="td-icon-right tdb-bread-sep"></i> <span><a title="View all posts in Downloads" class="tdb-entry-crumb" href="https://www.fosslinux.com/category/downloads">Downloads</a></span></div></div><script type="application/ld+json">
+                        {
+                            "@context": "http://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [{
+                            "@type": "ListItem",
+                            "position": 1,
+                                "item": {
+                                "@type": "WebSite",
+                                "@id": "https://www.fosslinux.com/",
+                                "name": "Home"                                               
+                            }
+                        },{
+                            "@type": "ListItem",
+                            "position": 2,
+                                "item": {
+                                "@type": "WebPage",
+                                "@id": "https://www.fosslinux.com/category/downloads",
+                                "name": "Downloads"
+                            }
+                        }    ]
+                        }
+                       </script><div class="td_block_wrap tdb_single_categories td_uid_5_5d1fc0a15d2e7_rand td-pb-border-top td_block_template_1 "   data-td-block-uid="td_uid_5_5d1fc0a15d2e7" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_5_5d1fc0a15d2e7_rand{
+margin-top:-20px !important;
+margin-bottom:20px !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_5_5d1fc0a15d2e7_rand .tdb-entry-category {
+					padding: 0px;
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-entry-category {
+					margin: 0 30px 10px 0;
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-bg {
+					border-width: 0px;
+				}
+				
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-entry-category {
+					color: rgba(0,0,0,0.1) !important;
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-bg {
+					background-color: rgba(255,255,255,0) !important;
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-bg:before {
+					background-color: rgba(255,255,255,0);
+				}
+				
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-entry-category:hover {
+					color: rgba(0,0,0,0.1) !important;
+				}
+				
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-bg {
+					border-color: rgba(255,255,255,0) !important;
+				}
+				
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-entry-category:hover .tdb-cat-bg {
+					border-color: rgba(255,255,255,0) !important;
+				}
+
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-sep {
+					font-size: 14px;
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-sep {
+					color: rgba(0,0,0,0.1);
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-text {
+					color: rgba(0,0,0,0.1);
+				}
+                
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-cat-text {
+					margin-right: 10px;
+				}
+				
+				.td-theme-wrap .td_uid_5_5d1fc0a15d2e7_rand {
+					text-align: left;
+				}
+				
+				.td_uid_5_5d1fc0a15d2e7_rand .tdb-entry-category {
+					font-family:GillSans, Calibri, Trebuchet, sans-serif !important;font-size:64px !important;line-height:1 !important;font-weight:700 !important;
+				}
+</style><div class="tdb-category td-fix-index"><a class="tdb-entry-category" href="https://www.fosslinux.com/category/downloads" ><span class="tdb-cat-bg"></span>Downloads</a></div></div><div class="td_block_wrap tdb_title td_uid_6_5d1fc0a15e6b4_rand tdb-single-title td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_6_5d1fc0a15e6b4" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_6_5d1fc0a15e6b4_rand{
+margin-bottom:15px !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-line  {
+				    display: inline-block;
+					width: 100px;
+				}
+				
+				.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-line:after  {
+					height: 2px;
+				}
+				
+				.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-line  {
+					height: 20px;
+				}
+				
+				.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-line:after   {
+					bottom: 100%;
+				}
+				
+				.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-line:after {
+					background: #dd9933;
+				}
+				
+				.td-theme-wrap .td_uid_6_5d1fc0a15e6b4_rand {
+					text-align: left;
+				}
+				.td_uid_6_5d1fc0a15e6b4_rand .tdb-first-letter {
+					left: -0.36em;
+					right: auto;
+				}
+				
+				.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-text {
+					font-family:Lato !important;font-size:40px !important;line-height:1.4 !important;font-weight:900 !important;
+				}
+
+/* phone */
+@media (max-width: 767px){
+.td_uid_6_5d1fc0a15e6b4_rand .tdb-title-text {
+					font-family:Lato !important;font-size:30px !important;line-height:1.4 !important;font-weight:900 !important;
+				}
+}
+</style><div class="tdb-block-inner td-fix-index"><div class="tdb-title-line"></div><h1 class="tdb-title-text">Install HandBrake on Linux Mint, Ubuntu, and elementary OS</h1><div></div></div></div></div></div><div class="vc_column td_uid_8_5d1fc0a15f8ba_rand  wpb_column vc_column_container tdc-column td-pb-span6">
+<style scoped>
+
+/* custom css */
+.td_uid_8_5d1fc0a15f8ba_rand {
+                    vertical-align: baseline;
+                }
+/* inline tdc_css att */
+
+.td_uid_8_5d1fc0a15f8ba_rand{
+width:55% !important;
+}
+
+/* phone */
+@media (max-width: 767px)
+{
+.td_uid_8_5d1fc0a15f8ba_rand{
+width:100% !important;
+}
+}
+
+</style><div class="wpb_wrapper"><div class="td_block_wrap tdb_single_bg_featured_image td_uid_9_5d1fc0a1601b7_rand td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_9_5d1fc0a1601b7" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_9_5d1fc0a1601b7_rand{
+margin-bottom:0px !important;
+box-shadow:0 4px 30px rgba(0,0,0,0.15) !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_9_5d1fc0a1601b7_rand .tdb-featured-image-bg {
+                        background: url('https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    .td_uid_9_5d1fc0a1601b7_rand .tdb-featured-image-bg {
+					    background-position: center 0%;
+                    }
+                    
+                    
+                    .td_uid_9_5d1fc0a1601b7_rand .tdb-featured-image-bg {
+                        padding-bottom: 450px;
+                    }
+
+/* phone */
+@media (max-width: 767px){
+.td_uid_9_5d1fc0a1601b7_rand .tdb-featured-image-bg {
+                        padding-bottom: 200px;
+                    }
+}
+</style><div class="tdb-featured-image-bg"></div></div></div></div></div></div><div id="td_uid_5_5d1fc0a16093b" class="tdc-row stretch_row_1400 td-stretch-content"><div class="vc_row td_uid_10_5d1fc0a160946_rand  wpb_row td-pb-row" >
+<style scoped>
+
+/* custom css */
+.td_uid_10_5d1fc0a160946_rand {
+                    min-height: 0;
+                }
+/* inline tdc_css att */
+
+.td_uid_10_5d1fc0a160946_rand{
+margin-top:-70px !important;
+margin-bottom:60px !important;
+z-index:0 !important;
+}
+
+.td_uid_10_5d1fc0a160946_rand .td_block_wrap{ text-align:left }
+
+</style><div class="vc_column td_uid_11_5d1fc0a160d41_rand  wpb_column vc_column_container tdc-column td-pb-span12">
+<style scoped>
+
+/* custom css */
+.td_uid_11_5d1fc0a160d41_rand {
+                    vertical-align: baseline;
+                }
+</style><div class="wpb_wrapper"><div class="td_block_wrap tdb_single_categories td_uid_12_5d1fc0a160fec_rand td-pb-border-top td_block_template_1 "   data-td-block-uid="td_uid_12_5d1fc0a160fec" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_12_5d1fc0a160fec_rand{
+margin-bottom:0px !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_12_5d1fc0a160fec_rand .tdb-entry-category {
+					padding: 0px;
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-entry-category {
+					margin: 0 60px;
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-bg {
+					border-width: 0px;
+				}
+				
+				.td_uid_12_5d1fc0a160fec_rand .tdb-entry-category {
+					color: rgba(0,0,0,0.03) !important;
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-bg {
+					background-color: rgba(255,255,255,0) !important;
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-bg:before {
+					background-color: rgba(255,255,255,0);
+				}
+				
+				.td_uid_12_5d1fc0a160fec_rand .tdb-entry-category:hover {
+					color: rgba(0,0,0,0.03) !important;
+				}
+				
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-bg {
+					border-color: rgba(255,255,255,0) !important;
+				}
+				
+				.td_uid_12_5d1fc0a160fec_rand .tdb-entry-category:hover .tdb-cat-bg {
+					border-color: rgba(255,255,255,0) !important;
+				}
+
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-sep {
+					font-size: 14px;
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-sep {
+					color: rgba(0,0,0,0.03);
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-text {
+					color: rgba(0,0,0,0.03);
+				}
+                
+				.td_uid_12_5d1fc0a160fec_rand .tdb-cat-text {
+					margin-right: 5px;
+				}
+				
+				.td-theme-wrap .td_uid_12_5d1fc0a160fec_rand {
+					text-align: center;
+				}
+				
+				.td_uid_12_5d1fc0a160fec_rand .tdb-entry-category {
+					font-family:GillSans, Calibri, Trebuchet, sans-serif !important;font-size:160px !important;line-height:1 !important;font-weight:900 !important;text-transform:uppercase !important;
+				}
+</style><div class="tdb-category td-fix-index"><a class="tdb-entry-category" href="https://www.fosslinux.com/category/downloads" ><span class="tdb-cat-bg"></span>Downloads</a></div></div></div></div></div></div><div id="td_uid_7_5d1fc0a1619d6" class="tdc-row stretch_row_1400 td-stretch-content"><div class="vc_row td_uid_13_5d1fc0a1619e0_rand  wpb_row td-pb-row tdc-row-content-vert-center" >
+<style scoped>
+
+/* custom css */
+.td_uid_13_5d1fc0a1619e0_rand {
+                    min-height: 0;
+                }
+
+                
+                .td_uid_13_5d1fc0a1619e0_rand.tdc-row-content-vert-center,
+                .td_uid_13_5d1fc0a1619e0_rand.tdc-row-content-vert-center .tdc-columns {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                }
+                .td_uid_13_5d1fc0a1619e0_rand.tdc-row-content-vert-bottom,
+                .td_uid_13_5d1fc0a1619e0_rand.tdc-row-content-vert-bottom .tdc-columns {
+                    display: flex;
+                    align-items: flex-end;
+                    flex: 1;
+                }
+                @media (max-width: 767px) {
+	                .td_uid_13_5d1fc0a1619e0_rand,
+	                .td_uid_13_5d1fc0a1619e0_rand .tdc-columns {
+	                	flex-direction: column;
+	                }
+                }
+                .td_uid_13_5d1fc0a1619e0_rand.tdc-row-content-vert-center .td_block_wrap {
+                	vertical-align: middle;
+                }
+                .td_uid_13_5d1fc0a1619e0_rand.tdc-row-content-vert-bottom .td_block_wrap {
+                	vertical-align: bottom;
+                }
+/* inline tdc_css att */
+
+.td_uid_13_5d1fc0a1619e0_rand{
+margin-bottom:80px !important;
+}
+
+.td_uid_13_5d1fc0a1619e0_rand .td_block_wrap{ text-align:left }
+
+</style><div class="vc_column td_uid_14_5d1fc0a161ea1_rand  wpb_column vc_column_container tdc-column td-pb-span4">
+<style scoped>
+
+/* custom css */
+.td_uid_14_5d1fc0a161ea1_rand {
+                    vertical-align: baseline;
+                }
+/* inline tdc_css att */
+
+.td_uid_14_5d1fc0a161ea1_rand{
+width:25% !important;
+}
+
+/* phone */
+@media (max-width: 767px)
+{
+.td_uid_14_5d1fc0a161ea1_rand{
+width:100% !important;
+}
+}
+
+</style><div class="wpb_wrapper"><div class="td_block_wrap tdb_single_post_share td_uid_15_5d1fc0a162a90_rand td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_15_5d1fc0a162a90" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_15_5d1fc0a162a90_rand{
+margin-bottom:0px !important;
+}
+
+</style><div id="td_uid_15_5d1fc0a162a90" class="td-post-sharing td-ps-bg td-ps-notext td-ps-rounded td-post-sharing-style3 "><div class="td-post-sharing-visible"><div class="td-social-sharing-button td-social-sharing-button-js td-social-handler td-social-share-text">
+                                        <div class="td-social-but-icon"><i class="td-icon-share"></i></div>
+                                        <div class="td-social-but-text">Share</div>
+                                    </div><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.fosslinux.com%2F992%2Finstall-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm">
+                                        <div class="td-social-but-icon"><i class="td-icon-facebook"></i></div>
+                                        <div class="td-social-but-text">Facebook</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-twitter" href="https://twitter.com/intent/tweet?text=Install+HandBrake+on+Linux+Mint%2C+Ubuntu%2C+and+elementary+OS&url=https%3A%2F%2Fwww.fosslinux.com%2F992%2Finstall-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm&via=FOSSLinux">
+                                        <div class="td-social-but-icon"><i class="td-icon-twitter"></i></div>
+                                        <div class="td-social-but-text">Twitter</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-whatsapp" href="whatsapp://send?text=Install+HandBrake+on+Linux+Mint%2C+Ubuntu%2C+and+elementary+OS %0A%0A https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm">
+                                        <div class="td-social-but-icon"><i class="td-icon-whatsapp"></i></div>
+                                        <div class="td-social-but-text">WhatsApp</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm&amp;media=https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg&description=Install+HandBrake+on+Linux+Mint%2C+Ubuntu%2C+and+elementary+OS">
+                                        <div class="td-social-but-icon"><i class="td-icon-pinterest"></i></div>
+                                        <div class="td-social-but-text">Pinterest</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm&title=Install+HandBrake+on+Linux+Mint%2C+Ubuntu%2C+and+elementary+OS">
+                                        <div class="td-social-but-icon"><i class="td-icon-linkedin"></i></div>
+                                        <div class="td-social-but-text">Linkedin</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-reddit" href="https://reddit.com/submit?url=https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm&title=Install+HandBrake+on+Linux+Mint%2C+Ubuntu%2C+and+elementary+OS">
+                                        <div class="td-social-but-icon"><i class="td-icon-reddit"></i></div>
+                                        <div class="td-social-but-text">ReddIt</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-mail" href="/cdn-cgi/l/email-protection#77480402151d1214034a3e190403161b1b573f1619133505161c12571819573b1e19020f573a1e19035b572215021903025b5716191357121b121a12190316050e573824511518130e4a1f030307044d585800000059111804041b1e19020f5914181a584e4e45581e190403161b1b5a1f1619131505161c125a18195a1b1e19020f5a1a1e19035a0215021903025a1619135a121b121a12190316050e5a1804591f031a">
+                                        <div class="td-social-but-icon"><i class="td-icon-mail"></i></div>
+                                        <div class="td-social-but-text">Email</div>
+                                    </a></div><div class="td-social-sharing-hidden"><ul class="td-pulldown-filter-list"></ul><a class="td-social-sharing-button td-social-handler td-social-expand-tabs" href="#" data-block-uid="td_uid_15_5d1fc0a162a90">
+                                    <div class="td-social-but-icon"><i class="td-icon-plus td-social-expand-tabs-icon"></i></div>
+                                </a></div></div></div></div></div><div class="vc_column td_uid_16_5d1fc0a164cff_rand  wpb_column vc_column_container tdc-column td-pb-span4">
+<style scoped>
+
+/* custom css */
+.td_uid_16_5d1fc0a164cff_rand {
+                    vertical-align: baseline;
+                }
+/* inline tdc_css att */
+
+.td_uid_16_5d1fc0a164cff_rand{
+width:50% !important;
+}
+
+</style><div class="wpb_wrapper"></div></div><div class="vc_column td_uid_17_5d1fc0a164e29_rand  wpb_column vc_column_container tdc-column td-pb-span4">
+<style scoped>
+
+/* custom css */
+.td_uid_17_5d1fc0a164e29_rand {
+                    vertical-align: baseline;
+                }
+/* inline tdc_css att */
+
+.td_uid_17_5d1fc0a164e29_rand{
+width:25% !important;
+}
+
+/* phone */
+@media (max-width: 767px)
+{
+.td_uid_17_5d1fc0a164e29_rand{
+width:100% !important;
+}
+}
+
+</style><div class="wpb_wrapper"><div class="td_block_wrap tdb_single_modified_date td_uid_18_5d1fc0a1656b7_rand td-pb-border-top td_block_template_1 tdb-post-meta"  data-td-block-uid="td_uid_18_5d1fc0a1656b7" >
+<style>
+/* custom css */
+.td_uid_18_5d1fc0a1656b7_rand i {
+                    font-size: 20px;
+                }
+                
+                .td_uid_18_5d1fc0a1656b7_rand i {
+                    margin-right: 5px;
+                }
+				
+				.td_uid_18_5d1fc0a1656b7_rand i {
+					color: #dd9933;
+				}
+				
+				
+				
+				.td_uid_18_5d1fc0a1656b7_rand {
+					font-family:Lato !important;font-size:20px !important;font-weight:600 !important;
+				}
+</style><div class="tdb-block-inner td-fix-index"><i class="tdc-font-fa tdc-font-fa-clock-o"></i><time class="entry-date updated td-module-date" datetime="2017-01-03T21:21:19+00:00" >Last Updated: January 29, 2017</time></div></div> <!-- ./block --></div></div></div></div><div id="td_uid_11_5d1fc0a165cc3" class="tdc-row stretch_row_1400 td-stretch-content"><div class="vc_row td_uid_19_5d1fc0a165ccd_rand td-ss-row wpb_row td-pb-row" >
+<style scoped>
+
+/* custom css */
+.td_uid_19_5d1fc0a165ccd_rand {
+                    min-height: 0;
+                }
+</style><div class="vc_column td_uid_20_5d1fc0a1660fb_rand  wpb_column vc_column_container tdc-column td-pb-span8">
+<style scoped>
+
+/* custom css */
+.td_uid_20_5d1fc0a1660fb_rand {
+                    vertical-align: baseline;
+                }
+</style><div class="wpb_wrapper"><div class="td_block_wrap tdb_single_content td_uid_21_5d1fc0a166b93_rand td-pb-border-top td_block_template_1 td-post-content"  data-td-block-uid="td_uid_21_5d1fc0a166b93" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_21_5d1fc0a166b93_rand{
+margin-top:0px !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_21_5d1fc0a166b93_rand,
+                .td_uid_21_5d1fc0a166b93_rand p {
+			        font-family:Lato !important;font-size:18px !important;line-height:1.6 !important;font-weight:400 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand h1 {
+			        font-family:Lato !important;font-weight:900 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand h2 {
+			        font-family:Lato !important;font-weight:900 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand h3 {
+			        font-family:Lato !important;font-weight:900 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand h4 {
+			        font-family:Lato !important;font-weight:900 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand h5 {
+			        font-family:Lato !important;font-weight:900 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand h6 {
+			        font-family:Lato !important;font-weight:900 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand li {
+			        font-family:Lato !important;font-size:18px !important;line-height:1.6 !important;font-weight:400 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand li:before {
+				    margin-top: 1px;
+			        line-height: 28.8px !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand blockquote p {
+			        font-family:Garamond, "Hoefler Text", "Times New Roman", Times, serif !important;font-size:32px !important;line-height:1.4 !important;font-weight:700 !important;
+		        }
+				
+				.td_uid_21_5d1fc0a166b93_rand,
+				.td_uid_21_5d1fc0a166b93_rand p {
+			        color: #444444;
+		        }
+</style><div class="tdb-block-inner td-fix-index"><div class="td-a-ad id_top_ad"><span class="td-adspot-title"></span><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- FED 2019 BELOW TITLE -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4052130819365638"
+     data-ad-slot="3414049879"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>HandBrake 1.0 video converter got released with a slew of new features including support for Intel QuickSync Video H.265/HEVC encoding and support for Passthru of E-AC-3, FLAC, and TrueHD audio formats. It also comes with several handy presets for quick encoding. Full feature list of HandBrake is available <a href="https://www.fosslinux.com/832/free-video-converter-handbrake-1-0-finally-released.htm">here</a>. In this article, I will talk about how to install it on Ubuntu, Linux Mint, and elementary OS Loki.</p>
+<p><img wpfc-lazyload-disable="true" wpfc-lazyload-disable="true" class="aligncenter size-full wp-image-994" src="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg" alt="" width="950" height="450" srcset="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg 950w, https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install-750x355.jpg 750w, https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install-300x142.jpg 300w" sizes="(max-width: 950px) 100vw, 950px" /></p>
+<h2><strong>Install HandBrake on Ubuntu and Linux Mint</strong></h2>
+<h3>GUI Way:</h3>
+<p>HandBrake is available in the &#8216;Software center&#8217;. Click &#8216;Menu&#8217; and search for &#8216;HandBrake&#8217;. You will see some 3 search results. Select <strong>Handbrake-gtk </strong>and proceed with the installation.</p>
+<h3>Command-line Way:</h3>
+<p>STEP 1: First step is to add the unsupported packages from the untrusted PPA. To do that launch &#8216;Terminal&#8217; and type the following command:</p>
+<pre>sudo add-apt-repository ppa:stebbins/handbrake-releases</pre>
+<pre>sudo apt-get update</pre>
+<p>Pay attention to the terminal. Enter the root password and &#8216;y&#8217; when prompted.</p>
+<div class="td-a-ad id_inline_ad_content-horiz-center"><span class="td-adspot-title"></span><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Article Bottom_RESPONSIVE -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4052130819365638"
+     data-ad-slot="3231827251"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>STEP 2: You can now install HandBrake GUI. Type the following command in the Terminal and hit enter.</p>
+<pre>sudo apt-get install handbrake-gtk</pre>
+<p>STEP 3: Optionally you can install Hand Brake CLI if you want.</p>
+<pre>sudo apt-get install handbrake-cli</pre>
+<p>That&#8217;s it. You can now launch HandBrake from &#8216;Applications&#8217;.</p>
+<p><figure id="attachment_835" aria-describedby="caption-attachment-835" style="width: 700px" class="wp-caption aligncenter"><img class="size-full wp-image-835" src="https://www.fosslinux.com/wp-content/uploads/2016/12/HandBrake_002.jpg" alt="HandBrake 1.0" width="700" height="478" srcset="https://www.fosslinux.com/wp-content/uploads/2016/12/HandBrake_002.jpg 700w, https://www.fosslinux.com/wp-content/uploads/2016/12/HandBrake_002-220x150.jpg 220w" sizes="(max-width: 700px) 100vw, 700px" /><figcaption id="caption-attachment-835" class="wp-caption-text">HandBrake 1.0</figcaption></figure></p>
+<h2>Install HandBrake on elementary OS Loki</h2>
+<p>The above methods works good for elementary OS Freya and below. But for elementary OS Loki you need to first enable PPA in case you chose the command-line way. Here are full set of instructions:</p>
+<p>Launch terminal and enter the following commands one at a time.</p>
+<pre>sudo apt-get update</pre>
+<pre>sudo apt-get upgrade</pre>
+<pre>sudo apt install software-properties-common</pre>
+<pre>sudo add-apt-repository ppa:stebbins/handbrake-releases</pre>
+<pre>sudo apt-get update</pre>
+<pre>sudo apt-get install handbrake-gtk</pre>
+<p>Optionally you can install Hand Brake CLI if you want.</p>
+<pre>sudo apt-get install handbrake-cli</pre>
+<p>That&#8217;s it!</p>
+<div class="td-a-ad id_bottom_ad"><span class="td-adspot-title"></span><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4052130819365638"
+     data-ad-slot="8473664196"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></div><div class="td_block_wrap tdb_single_tags td_uid_24_5d1fc0a177b78_rand td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_24_5d1fc0a177b78" >
+<style>
+
+/* inline tdc_css att */
+
+.td_uid_24_5d1fc0a177b78_rand{
+margin-bottom:48px !important;
+justify-content:center !important;
+text-align:center !important;
+}
+
+</style>
+<style>
+/* custom css */
+.td_uid_24_5d1fc0a177b78_rand span {
+                    margin-right: 5px;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand span {
+                    padding: 2px 18px 3px 18px;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand span {
+                    color: #fff;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand span {
+                    background-color: #222;
+                }
+                
+                
+                
+                .td_uid_24_5d1fc0a177b78_rand a {
+                    margin-right: 5px;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand a {
+                    padding: 1px 18px 2px 18px;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand a {
+                    border: 1px solid #ededed;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand a {
+                    color: #111;
+                }
+                
+                .td_uid_24_5d1fc0a177b78_rand a,
+                .td_uid_24_5d1fc0a177b78_rand span {
+                    border-radius: 100px;
+                }
+				
+				.td_uid_24_5d1fc0a177b78_rand span {
+					font-size:14px !important;
+				}
+				
+				.td_uid_24_5d1fc0a177b78_rand a {
+					font-size:14px !important;
+				}
+
+/* landscape */
+@media (min-width: 1019px) and (max-width: 1140px){
+.td_uid_24_5d1fc0a177b78_rand a {
+                    border: 1px solid #ededed;
+                }
+}
+
+/* portrait */
+@media (min-width: 768px) and (max-width: 1018px){
+.td_uid_24_5d1fc0a177b78_rand a {
+                    border: 1px solid #ededed;
+                }
+}
+
+/* phone */
+@media (max-width: 767px){
+.td_uid_24_5d1fc0a177b78_rand a {
+                    border: 1px solid #ededed;
+                }
+}
+</style><div class="tdb-block-inner td-fix-index"><ul class="tdb-tags"><li><span>Tags</span></li><li><a href="https://www.fosslinux.com/tag/sound-video">Sound &amp; Video</a></li></ul></div></div><div class="tdb-author-box td_block_wrap tdb_single_author_box td_uid_25_5d1fc0a17b29e_rand tdb-content-vert-top td-pb-border-top td_block_template_1"  data-td-block-uid="td_uid_25_5d1fc0a17b29e" >
+<style>
+/* custom css */
+.td_uid_25_5d1fc0a17b29e_rand {
+                    padding: 0px;
+                }
+                
+                .td_uid_25_5d1fc0a17b29e_rand {
+                    border: 0px solid #ededed;
+                }
+                
+                
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-photo,
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-info {
+                    display: table-cell;
+                }
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-info {
+                    width: auto;
+                }
+                
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-photo {
+                    width: 116px;
+                }
+                
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-photo {
+                    padding-bottom: 0;
+                    padding-right: 21px;
+                }
+                
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-photo img {
+                    border-radius: 50px;
+                }
+                
+                
+                
+                
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i {
+					font-size: 15px;
+					vertical-align: middle;
+				}
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i.td-icon-twitter,
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i.td-icon-linkedin,
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i.td-icon-pinterest,
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i.td-icon-blogger,
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i.td-icon-vimeo {
+					font-size: 12px;
+				}
+				
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item {
+					min-width: 15px;
+					height: 15px;
+				}
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item i {
+					line-height: 15px;
+				}
+				
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-social-item {
+				    margin: 7px 14px 7px 0;
+				}
+				
+				
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-author-name {
+					font-family:Lato !important;font-size:18px !important;line-height:1 !important;font-weight:900 !important;
+				}
+				
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-author-url {
+					font-family:Lato !important;font-style:normal !important;
+				}
+				
+				.td_uid_25_5d1fc0a17b29e_rand .tdb-author-descr {
+					font-family:Lato !important;font-size:16px !important;line-height:1.4 !important;font-weight:300 !important;
+				}
+
+/* landscape */
+@media (min-width: 1019px) and (max-width: 1140px){
+.td_uid_25_5d1fc0a17b29e_rand {
+                    border: 0px solid #ededed;
+                }
+}
+
+/* portrait */
+@media (min-width: 768px) and (max-width: 1018px){
+.td_uid_25_5d1fc0a17b29e_rand {
+                    border: 0px solid #ededed;
+                }
+}
+
+/* phone */
+@media (max-width: 767px){
+.td_uid_25_5d1fc0a17b29e_rand {
+                    border: 0px solid #ededed;
+                }
+                
+                
+                .td_uid_25_5d1fc0a17b29e_rand .tdb-author-photo {
+                    padding-bottom: 0;
+                    padding-right: 10px;
+                }
+}
+</style><div class="tdb-block-inner td-fix-index"><a href="https://www.fosslinux.com/author/kiran-kumar" class="tdb-author-photo"><img wpfc-lazyload-disable="true" width="116" height="116" src="https://www.fosslinux.com/wp-content/uploads/2016/02/kiran.jpeg" class="avatar avatar-116 photo" alt="" wpfc-lazyload-disable="true" /></a><div class="tdb-author-info"><a href="https://www.fosslinux.com/author/kiran-kumar" class="tdb-author-name">Kiran Kumar</a><a href=""  class="tdb-author-url"></a><div class="tdb-author-descr">Hi there! I'm Kiran Kumar, founder of FOSSLinux.com. I'm an avid Linux lover and enjoy hands-on with new promising distros. Currently, I'm using Ubuntu as a daily driver and run several other distros such as Fedora, Solus, Manjaro, Debian, and some new ones on my test PC and virtual machines. I have a day job as an Engineer, and this website is one of my favorite past time activities especially during Winter ;). When I'm not writing for FOSSLinux, I'm seen biking and hiking on scenic trails. Hope you enjoy using this website as much as I do writing for it. Feedback from readers is something that inspires me to do more, and spread Linux love!. If you find a time, drop me an email or feedback from the 'Contact' page. Or simply leave a comment below if you found this article useful. Have a good day!</div><div class="tdb-author-social"></div></div></div></div><div class="td_block_wrap tdb_single_related td_uid_26_5d1fc0a17f5ee_rand td_with_ajax_pagination td-pb-border-top td_block_template_15 tdb-single-related-posts"  data-td-block-uid="td_uid_26_5d1fc0a17f5ee" >
+<style>
+.td_uid_26_5d1fc0a17f5ee_rand .td-block-title:after {
+                border-color: rgba(255,255,255,0) !important;
+            }
+
+            
+            .td_uid_26_5d1fc0a17f5ee_rand .td-block-title:before {
+                background-color: #dd9933 !important;
+            }
+</style>
+<style>
+/* custom css */
+.td_uid_26_5d1fc0a17f5ee_rand .td-image-wrap {
+					padding-bottom: 60%;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .entry-thumb {
+					background-position: center 50%;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container {
+					flex-direction: column;
+				}
+                .td_uid_26_5d1fc0a17f5ee_rand .td-image-container {
+                	display: block; order: 0;
+                }
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-meta-info {
+					padding: 30px 30px 40px 30px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					width: 50%;
+					float: left;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .tdb-block-inner {
+					margin-left: -20px;
+					margin-right: -20px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container:before {
+					bottom: -15px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand {
+				    overflow: visible;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container {
+				    box-shadow:  0px 5px 20px 0px rgba(0,0,0,0.12);
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container:before {
+					border-color: #eaeaea;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-category {
+					margin: 0 7px 7px 0;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-category {
+					padding: 5px 13px;
+				}
+				
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-category {
+					border-radius: 100px;
+				}
+				
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-author-photo .avatar {
+				    width: 20px;
+				    height: 20px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-author-photo .avatar {
+				    margin-right: 6px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-author-photo .avatar {
+				    border-radius: 50%;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-excerpt {
+					display: none;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-read-more {
+					display: none;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-comments {
+					display: none;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-child(2n+1) {
+					clear: both;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(-n+2) {
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(-n+2) .td-module-container:before {
+					display: none;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-category {
+					background-color: #222222;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-author-name a {
+					color: #aaaaaa;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-date,
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-author-name span {
+					color: #aaaaaa;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .entry-title {
+					margin: 15px 0 40px 0;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-excerpt {
+					margin: 10px 0 0 0;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-excerpt {
+					column-count: 1;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-excerpt {
+					column-gap: 48px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-block-title a,
+				.td_uid_26_5d1fc0a17f5ee_rand .td-block-title span {
+					font-family:Lato !important;font-size:20px !important;line-height:1.8 !important;font-weight:900 !important;text-transform:uppercase !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .entry-title {
+					font-family:Lato !important;font-size:24px !important;line-height:1.4 !important;font-weight:900 !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-category {
+					font-size:12px !important;line-height:1.3 !important;font-weight:400 !important;text-transform:uppercase !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-editor-date,
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-comments a {
+					font-family:Work Sans !important;font-size:14px !important;text-transform:uppercase !important;
+				}
+
+/* landscape */
+@media (min-width: 1019px) and (max-width: 1140px){
+.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container:before {
+					bottom: -15px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					clear: none !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-child(2n+1) {
+					clear: both !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px !important;
+					margin-bottom: 15px !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(-n+2) {
+					margin-bottom: 0 !important;
+					padding-bottom: 0 !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap .td-module-container:before {
+					display: block !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(-n+2) .td-module-container:before {
+					display: none !important;
+				}
+}
+
+/* portrait */
+@media (min-width: 768px) and (max-width: 1018px){
+.td_uid_26_5d1fc0a17f5ee_rand .td-module-meta-info {
+					padding: 20px 15px 20px 15px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container:before {
+					bottom: -15px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					clear: none !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-child(2n+1) {
+					clear: both !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px !important;
+					margin-bottom: 15px !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(-n+2) {
+					margin-bottom: 0 !important;
+					padding-bottom: 0 !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap .td-module-container:before {
+					display: block !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(-n+2) .td-module-container:before {
+					display: none !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .entry-title {
+					margin: 10px 0 20px 0;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .entry-title {
+					font-family:Lato !important;font-size:15px !important;line-height:1.4 !important;font-weight:900 !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-post-category {
+					font-size:10px !important;line-height:1.3 !important;font-weight:400 !important;text-transform:uppercase !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td-editor-date,
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-comments a {
+					font-family:Work Sans !important;font-size:12px !important;line-height:1.3 !important;text-transform:uppercase !important;
+				}
+}
+
+/* phone */
+@media (max-width: 767px){
+.td_uid_26_5d1fc0a17f5ee_rand .td-module-meta-info {
+					margin: 0 0 10px 0;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					width: 100%;
+					float: left;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container:before {
+					bottom: -15px;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand {
+				    overflow: visible;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td-module-container {
+				    box-shadow:  0px 5px 50px 0px rgba(0,0,0,0.12);
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap {
+					padding-bottom: 15px !important;
+					margin-bottom: 15px !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(1) {
+					margin-bottom: 0 !important;
+					padding-bottom: 0 !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap .td-module-container:before {
+					display: block !important;
+				}
+				.td_uid_26_5d1fc0a17f5ee_rand .td_module_wrap:nth-last-child(1) .td-module-container:before {
+					display: none !important;
+				}
+				
+				.td_uid_26_5d1fc0a17f5ee_rand .entry-title {
+					font-family:Lato !important;font-size:20px !important;line-height:1.3 !important;font-weight:900 !important;
+				}
+}
+</style><script>var block_td_uid_26_5d1fc0a17f5ee = new tdBlock();
+block_td_uid_26_5d1fc0a17f5ee.id = "td_uid_26_5d1fc0a17f5ee";
+block_td_uid_26_5d1fc0a17f5ee.atts = '{"modules_on_row":"eyJhbGwiOiI1MCUiLCJwaG9uZSI6IjEwMCUifQ==","modules_category":"above","show_author":"","show_date":"","show_com":"none","show_excerpt":"none","show_btn":"none","block_template_id":"td_block_template_15","related_articles_posts_limit":"2","modules_divider":"","image_height":"60","meta_info_align":"","meta_padding":"eyJhbGwiOiIzMHB4IDMwcHggNDBweCAzMHB4IiwicG9ydHJhaXQiOiIyMHB4IDE1cHggMjBweCAxNXB4In0=","all_modules_space":"30","f_title_font_line_height":"eyJwb3J0cmFpdCI6IjEuNCIsInBob25lIjoiMS4zIiwiYWxsIjoiMS40In0=","art_excerpt":"10px 0 0 0","tdc_css":"eyJhbGwiOnsiZGlzcGxheSI6IiJ9fQ==","f_title_font_weight":"900","f_title_font_transform":"","show_cat":"","art_title":"eyJhbGwiOiIxNXB4IDAgNDBweCAwIiwicG9ydHJhaXQiOiIxMHB4IDAgMjBweCAwIn0=","f_title_font_size":"eyJhbGwiOiIyNCIsInBvcnRyYWl0IjoiMTUiLCJwaG9uZSI6IjIwIn0=","f_title_font_family":"325","meta_margin":"eyJwaG9uZSI6IjAgMCAxMHB4IDAifQ==","meta_info_border_color":"","modules_gap":"","f_meta_font_weight":"","f_meta_font_size":"eyJhbGwiOiIxNCIsInBvcnRyYWl0IjoiMTIifQ==","f_meta_font_family":"653","author_txt":"#aaaaaa","f_cat_font_size":"eyJhbGwiOiIxMiIsInBvcnRyYWl0IjoiMTAifQ==","f_cat_font_weight":"400","f_cat_font_line_height":"1.3","f_meta_font_transform":"uppercase","shadow_shadow_size":"eyJhbGwiOiIyMCIsInBob25lIjoiNTAifQ==","shadow_shadow_offset_vertical":"5","shadow_shadow_color":"rgba(0,0,0,0.12)","custom_title":"Related Posts","modules_category_padding":"5px 13px","f_cat_font_transform":"uppercase","modules_category_radius":"100","modules_category_spacing":"0 7px 7px 0","f_cat_font_family":"","date_txt":"#aaaaaa","cat_bg":"#222222","f_meta_font_line_height":"eyJwb3J0cmFpdCI6IjEuMyJ9","border_color":"rgba(255,255,255,0)","nextprev":"yes","f_header_font_size":"20","f_header_font_line_height":"1.8","f_header_font_weight":"900","f_header_font_family":"325","f_header_font_transform":"uppercase","top_border_color":"#dd9933","limit":"2","offset":0,"live_filter":"cur_post_same_categories","ajax_pagination":"next_prev","td_ajax_filter_type":"td_custom_related","live_filter_cur_post_id":992,"sample_posts_data":false,"separator":"","mc1_tl":"","mc1_el":"","related_articles_type":"","related_articles_posts_offset":"","container_width":"","m_padding":"","modules_divider_color":"#eaeaea","shadow_shadow_header":"","shadow_shadow_title":"Shadow","shadow_shadow_offset_horizontal":"","shadow_shadow_spread":"","h_effect":"","image_size":"","image_alignment":"50","image_width":"","image_floated":"no_float","image_radius":"","video_icon":"","meta_info_horiz":"content-horiz-left","meta_width":"","excerpt_col":"1","excerpt_gap":"","art_btn":"","meta_info_border_size":"","meta_info_border_style":"","modules_cat_border":"","author_photo":"","author_photo_size":"","author_photo_space":"","author_photo_radius":"","show_modified_date":"","excerpt_middle":"","excerpt_inline":"","meta_space":"","btn_title":"","btn_margin":"","btn_padding":"","btn_border_width":"","btn_radius":"","pag_space":"","pag_padding":"","pag_border_width":"","pag_border_radius":"","prev_tdicon":"","next_tdicon":"","pag_icons_size":"","f_header_font_header":"","f_header_font_title":"Block header","f_header_font_settings":"","f_header_font_style":"","f_header_font_spacing":"","f_header_":"","f_ajax_font_title":"Ajax categories","f_ajax_font_settings":"","f_ajax_font_family":"","f_ajax_font_size":"","f_ajax_font_line_height":"","f_ajax_font_style":"","f_ajax_font_weight":"","f_ajax_font_transform":"","f_ajax_font_spacing":"","f_ajax_":"","f_more_font_title":"Load more button","f_more_font_settings":"","f_more_font_family":"","f_more_font_size":"","f_more_font_line_height":"","f_more_font_style":"","f_more_font_weight":"","f_more_font_transform":"","f_more_font_spacing":"","f_more_":"","f_title_font_header":"","f_title_font_title":"Article title","f_title_font_settings":"","f_title_font_style":"","f_title_font_spacing":"","f_title_":"","f_cat_font_title":"Article category tag","f_cat_font_settings":"","f_cat_font_style":"","f_cat_font_spacing":"","f_cat_":"","f_meta_font_title":"Article meta info","f_meta_font_settings":"","f_meta_font_style":"","f_meta_font_spacing":"","f_meta_":"","f_ex_font_title":"Article excerpt","f_ex_font_settings":"","f_ex_font_family":"","f_ex_font_size":"","f_ex_font_line_height":"","f_ex_font_style":"","f_ex_font_weight":"","f_ex_font_transform":"","f_ex_font_spacing":"","f_ex_":"","f_btn_font_title":"Article read more button","f_btn_font_settings":"","f_btn_font_family":"","f_btn_font_size":"","f_btn_font_line_height":"","f_btn_font_style":"","f_btn_font_weight":"","f_btn_font_transform":"","f_btn_font_spacing":"","f_btn_":"","m_bg":"","color_overlay":"","title_txt":"","title_txt_hover":"","all_underline_color":"#000","all_underline_height":"","cat_bg_hover":"","cat_txt":"","cat_txt_hover":"","cat_border":"","cat_border_hover":"","meta_bg":"","author_txt_hover":"","ex_txt":"","com_bg":"","com_txt":"","shadow_m_shadow_header":"","shadow_m_shadow_title":"Meta info shadow","shadow_m_shadow_size":"","shadow_m_shadow_offset_horizontal":"","shadow_m_shadow_offset_vertical":"","shadow_m_shadow_spread":"","shadow_m_shadow_color":"","btn_bg":"","btn_bg_hover":"","btn_txt":"","btn_txt_hover":"","btn_border":"","btn_border_hover":"","nextprev_icon":"","nextprev_icon_h":"","nextprev_bg":"","nextprev_bg_h":"","nextprev_border":"","nextprev_border_h":"","el_class":"","live_filter_cur_post_author":"2","td_column_number":2,"header_color":"","ajax_pagination_infinite_stop":"","td_ajax_preloading":"","td_filter_default_txt":"","td_ajax_filter_ids":"","color_preset":"","border_top":"","css":"","class":"td_uid_26_5d1fc0a17f5ee_rand","tdc_css_class":"td_uid_26_5d1fc0a17f5ee_rand","tdc_css_class_style":"td_uid_26_5d1fc0a17f5ee_rand_style"}';
+block_td_uid_26_5d1fc0a17f5ee.td_column_number = "2";
+block_td_uid_26_5d1fc0a17f5ee.block_type = "tdb_single_related";
+block_td_uid_26_5d1fc0a17f5ee.post_count = "2";
+block_td_uid_26_5d1fc0a17f5ee.found_posts = "117";
+block_td_uid_26_5d1fc0a17f5ee.header_color = "";
+block_td_uid_26_5d1fc0a17f5ee.ajax_pagination_infinite_stop = "";
+block_td_uid_26_5d1fc0a17f5ee.max_num_pages = "59";
+tdBlocksArray.push(block_td_uid_26_5d1fc0a17f5ee);
+</script><div class="td-block-title-wrap"><h4 class="td-block-title"><span>Related Posts</span></h4></div><div id=td_uid_26_5d1fc0a17f5ee class="td_block_inner tdb-block-inner td-fix-index">
+        <div class="tdb_module_related td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-container td-category-pos-above">
+                <div class="td-image-container">
+                                        <div class="td-module-thumb"><a href="https://www.fosslinux.com/15139/krita-4-2-released-here-are-the-exciting-new-features.htm" rel="bookmark" class="td-image-wrap" title="Krita 4.2 released, here are the exciting new features"><span class="entry-thumb td-thumb-css " style="background-image: url(https://www.fosslinux.com/wp-content/uploads/2019/06/Krita-4.2-new-features-696x405.jpg)" ></span></a></div>                </div>
+
+                <div class="td-module-meta-info">
+                    <a href="https://www.fosslinux.com/category/news" class="td-post-category">News</a>
+                    <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/15139/krita-4-2-released-here-are-the-exciting-new-features.htm" rel="bookmark" title="Krita 4.2 released, here are the exciting new features">Krita 4.2 released, here are the exciting new features</a></h3>
+                    
+                    <div class="td-editor-date">
+                        
+                        <span class="td-author-date">
+                                                                                    <!--                            -->                                                    </span>
+                    </div>
+
+                    <div class="td-excerpt">Krita is an open-source painting tool, mostly used by concept artists, webcomic creators, and even the VFX industry. It is quite beginner friendly, which is the reason that is helpful for amateurs as well as professionals and has many useful and standard features.</div>
+                    <div class="td-read-more">
+                        <a href="https://www.fosslinux.com/15139/krita-4-2-released-here-are-the-exciting-new-features.htm">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="tdb_module_related td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-container td-category-pos-above">
+                <div class="td-image-container">
+                                        <div class="td-module-thumb"><a href="https://www.fosslinux.com/14991/install-maya-autodesk-on-ubuntu.htm" rel="bookmark" class="td-image-wrap" title="Install Maya Autodesk on Ubuntu"><span class="entry-thumb td-thumb-css " style="background-image: url(https://www.fosslinux.com/wp-content/uploads/2019/06/Install-Maya-Autodesk-on-Ubuntu-696x405.jpg)" ></span></a></div>                </div>
+
+                <div class="td-module-meta-info">
+                    <a href="https://www.fosslinux.com/category/downloads" class="td-post-category">Downloads</a>
+                    <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/14991/install-maya-autodesk-on-ubuntu.htm" rel="bookmark" title="Install Maya Autodesk on Ubuntu">Install Maya Autodesk on Ubuntu</a></h3>
+                    
+                    <div class="td-editor-date">
+                        
+                        <span class="td-author-date">
+                                                                                    <!--                            -->                                                    </span>
+                    </div>
+
+                    <div class="td-excerpt">In this tutorial, we are going to cover installing Autodesk Maya on Ubuntu. Though it is a little bit tricky process, we will try to keep it simple as we can.</div>
+                    <div class="td-read-more">
+                        <a href="https://www.fosslinux.com/14991/install-maya-autodesk-on-ubuntu.htm">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" id="prev-page-td_uid_26_5d1fc0a17f5ee" data-td_block_id="td_uid_26_5d1fc0a17f5ee"><i class="td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" id="next-page-td_uid_26_5d1fc0a17f5ee" data-td_block_id="td_uid_26_5d1fc0a17f5ee"><i class="td-icon-font td-icon-menu-right"></i></a></div></div><div class="td_block_wrap tdb_single_comments td_uid_27_5d1fc0a18aa7c_rand tdb-comm-layout2 td-pb-border-top td_block_template_8"  data-td-block-uid="td_uid_27_5d1fc0a18aa7c" ><div class="tdb-block-inner td-fix-index"><div class="comments" id="comments">	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">LEAVE A REPLY <small><a rel="nofollow" id="cancel-comment-reply-link" href="/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm?tdb_action=tdb_ajax#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.fosslinux.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<div class="clearfix"></div>
+                            <div class="comment-form-input-wrap td-form-comment">
+                                <textarea 
+                                    placeholder="Comment:" 
+                                    id="comment" 
+                                    name="comment" 
+                                    cols="45" 
+                                    rows="8" 
+                                    aria-required="true"
+                                ></textarea>
+                                <div class="td-warning-comment">Please enter your comment!</div>
+                            </div><div class="comment-form-input-wrap td-form-author">
+                                    <input 
+                                        class="" 
+                                        id="author" 
+                                        name="author" 
+                                        placeholder="Name:*" 
+                                        type="text" 
+                                        value="" 
+                                        size="30"  aria-required='true' 
+                                    />
+                                    <div class="td-warning-author">Please enter your name here</div>
+                                </div>
+<div class="comment-form-input-wrap td-form-email">
+                                    <input 
+                                        class="" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="Email:*" 
+                                        type="text" 
+                                        value="" 
+                                        size="30"  aria-required='true' 
+                                    />
+                                    <div class="td-warning-email-error">You have entered an incorrect email address!</div>
+                                    <div class="td-warning-email">Please enter your email address here</div>
+                                </div>
+<div class="comment-form-input-wrap td-form-url">
+                                <input 
+                                    class="" 
+                                    id="url" 
+                                    name="url" 
+                                    placeholder="Website:" 
+                                    type="text" 
+                                    value="" 
+                                    size="30" 
+                                />
+                             </div>
+<p class="comment-form-cookies-consent">
+                                <input 
+                                    id="wp-comment-cookies-consent" 
+                                    name="wp-comment-cookies-consent" 
+                                    type="checkbox" 
+                                    value="yes"
+                                     
+                                />
+                                <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+                              </p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='992' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><input type='hidden' id='ct_checkjs_59b90e1005a220e2ebc542eb9d950b1e' name='ct_checkjs' value='0' /><script type='text/javascript'>setTimeout(function(){apbct_sendAJAXRequest({action: 'apbct_js_keys__get'},{callback: apbct_js_keys__set_input_value, input_name: 'ct_checkjs_59b90e1005a220e2ebc542eb9d950b1e'});}, 1000);</script>			</form>
+			</div><!-- #respond -->
+	</div></div></div></div></div><div class="vc_column td_uid_28_5d1fc0a190bd7_rand  wpb_column vc_column_container tdc-column td-pb-span4">
+<style scoped>
+
+/* custom css */
+.td_uid_28_5d1fc0a190bd7_rand {
+                    vertical-align: baseline;
+                }
+</style><div class="wpb_wrapper"><div class="td_block_wrap td_block_social_counter td_uid_29_5d1fc0a19156c_rand td-pb-border-top td_block_template_8">
+<style>
+/* custom css */
+.td_uid_29_5d1fc0a19156c_rand .td-block-title a,
+                    .td_uid_29_5d1fc0a19156c_rand .td-block-title span {
+                        font-family:Lato !important;font-size:20px !important;
+                    }
+</style><div class="td-block-title-wrap"><h4 class="td-block-title"><span>STAY CONNECTED</span></h4></div><div class="td-social-list"><div class="td_social_type td-pb-margin-side td_social_facebook"><div class="td-social-box"><div class="td-sp td-sp-facebook"></div><span class="td_social_info">24,759</span><span class="td_social_info td_social_info_name">Fans</span><span class="td_social_button"><a href="https://www.facebook.com/fosslinux"  >Like</a></span></div></div><div class="td_social_type td-pb-margin-side td_social_twitter"><div class="td-social-box"><div class="td-sp td-sp-twitter"></div><span class="td_social_info">160</span><span class="td_social_info td_social_info_name">Followers</span><span class="td_social_button"><a href="https://twitter.com/FOSSLinux"  >Follow</a></span></div></div></div></div> <!-- ./block --><div class="td_block_wrap td_block_15 td_uid_30_5d1fc0a1926f6_rand td_with_ajax_pagination td-pb-border-top td_block_template_8 td_ajax_preloading_preload td-column-1 td_block_padding"  data-td-block-uid="td_uid_30_5d1fc0a1926f6" >
+<style>
+.td_uid_30_5d1fc0a1926f6_rand .td_module_wrap:hover .entry-title a,
+            .td_uid_30_5d1fc0a1926f6_rand .td-pulldown-filter-link:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td_quote_on_blocks,
+            .td_uid_30_5d1fc0a1926f6_rand .td-opacity-cat .td-post-category:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td-opacity-read .td-read-more a:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td-opacity-author .td-post-author-name a:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td-instagram-user a,
+            .td_uid_30_5d1fc0a1926f6_rand .td-pulldown-filter-item .td-cur-simple-item,
+            .td_uid_30_5d1fc0a1926f6_rand .td-pulldown-filter-link:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td-pulldown-filter-display-option:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td-pulldown-filter-display-option:hover i {
+                color: #dd9933 !important;
+            }
+
+            .td_uid_30_5d1fc0a1926f6_rand .td-next-prev-wrap a:hover,
+            .td_uid_30_5d1fc0a1926f6_rand .td-load-more-wrap a:hover {
+                background-color: #dd9933 !important;
+                border-color: #dd9933 !important;
+            }
+
+            .td_uid_30_5d1fc0a1926f6_rand .td-read-more a,
+            .td_uid_30_5d1fc0a1926f6_rand .td-weather-information:before,
+            .td_uid_30_5d1fc0a1926f6_rand .td-weather-week:before,
+            .td_uid_30_5d1fc0a1926f6_rand .td-exchange-header:before,
+            .td-footer-wrapper .td_uid_30_5d1fc0a1926f6_rand .td-post-category,
+            .td_uid_30_5d1fc0a1926f6_rand .td-post-category:hover {
+                background-color: #dd9933 !important;
+            }
+</style>
+<style>
+/* custom css */
+.td_uid_30_5d1fc0a1926f6_rand .td-block-title a,
+				.td_uid_30_5d1fc0a1926f6_rand .td-block-title span {
+					font-family:Lato !important;font-size:20px !important;line-height:1 !important;font-weight:900 !important;
+				}
+</style><script>var block_td_uid_30_5d1fc0a1926f6 = new tdBlock();
+block_td_uid_30_5d1fc0a1926f6.id = "td_uid_30_5d1fc0a1926f6";
+block_td_uid_30_5d1fc0a1926f6.atts = '{"image_align":"center","meta_info_align":"bottom","color_overlay":"eyJ0eXBlIjoiZ3JhZGllbnQiLCJjb2xvcjEiOiJyZ2JhKDAsMCwwLDApIiwiY29sb3IyIjoicmdiYSgwLDAsMCwwLjYpIiwibWl4ZWRDb2xvcnMiOltdLCJjc3MiOiJiYWNrZ3JvdW5kOiAtd2Via2l0LWxpbmVhci1ncmFkaWVudCgwZGVnLHJnYmEoMCwwLDAsMC42KSxyZ2JhKDAsMCwwLDApKTtiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZyxyZ2JhKDAsMCwwLDAuNikscmdiYSgwLDAsMCwwKSk7IiwiY3NzUGFyYW1zIjoiMGRlZyxyZ2JhKDAsMCwwLDAuNikscmdiYSgwLDAsMCwwKSJ9","image_margin":"0","modules_height":"260","show_excerpt":"none","show_com":"none","show_date":"none","show_author":"none","show_cat":"","modules_category":"above","art_excerpt":"0","art_title":"0","meta_padding":"20px","custom_title":"LATEST ARTICLES","block_template_id":"td_block_template_8","f_header_font_size":"20","f_header_font_weight":"900","f_header_font_line_height":"1","f_header_font_family":"325","f_title_font_family":"325","f_title_font_weight":"900","f_title_font_size":"24","f_title_font_line_height":"1.4","limit":"6","ajax_pagination":"load_more","td_ajax_preloading":"preload","accent_text_color":"#dd9933","mc2_tl":"0","image_margin_right":"","separator":"","custom_url":"","mx4_tl":"","post_ids":"","category_id":"","category_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","sort":"","offset":"","show_modified_date":"","el_class":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","f_header_font_header":"","f_header_font_title":"Block header","f_header_font_settings":"","f_header_font_style":"","f_header_font_transform":"","f_header_font_spacing":"","f_header_":"","f_ajax_font_title":"Ajax categories","f_ajax_font_settings":"","f_ajax_font_family":"","f_ajax_font_size":"","f_ajax_font_line_height":"","f_ajax_font_style":"","f_ajax_font_weight":"","f_ajax_font_transform":"","f_ajax_font_spacing":"","f_ajax_":"","f_more_font_title":"Load more button","f_more_font_settings":"","f_more_font_family":"","f_more_font_size":"","f_more_font_line_height":"","f_more_font_style":"","f_more_font_weight":"","f_more_font_transform":"","f_more_font_spacing":"","f_more_":"","mx4f_title_font_header":"","mx4f_title_font_title":"Article title","mx4f_title_font_settings":"","mx4f_title_font_family":"","mx4f_title_font_size":"","mx4f_title_font_line_height":"","mx4f_title_font_style":"","mx4f_title_font_weight":"","mx4f_title_font_transform":"","mx4f_title_font_spacing":"","mx4f_title_":"","mx4f_cat_font_title":"Article category tag","mx4f_cat_font_settings":"","mx4f_cat_font_family":"","mx4f_cat_font_size":"","mx4f_cat_font_line_height":"","mx4f_cat_font_style":"","mx4f_cat_font_weight":"","mx4f_cat_font_transform":"","mx4f_cat_font_spacing":"","mx4f_cat_":"","ajax_pagination_infinite_stop":"","css":"","tdc_css":"","td_column_number":1,"header_color":"","color_preset":"","border_top":"","class":"td_uid_30_5d1fc0a1926f6_rand","tdc_css_class":"td_uid_30_5d1fc0a1926f6_rand","tdc_css_class_style":"td_uid_30_5d1fc0a1926f6_rand_style"}';
+block_td_uid_30_5d1fc0a1926f6.td_column_number = "1";
+block_td_uid_30_5d1fc0a1926f6.block_type = "td_block_15";
+block_td_uid_30_5d1fc0a1926f6.post_count = "6";
+block_td_uid_30_5d1fc0a1926f6.found_posts = "483";
+block_td_uid_30_5d1fc0a1926f6.header_color = "";
+block_td_uid_30_5d1fc0a1926f6.ajax_pagination_infinite_stop = "";
+block_td_uid_30_5d1fc0a1926f6.max_num_pages = "81";
+tdBlocksArray.push(block_td_uid_30_5d1fc0a1926f6);
+</script><div class="td-block-title-wrap"><h4 class="td-block-title"><span>LATEST ARTICLES</span></h4></div><div id=td_uid_30_5d1fc0a1926f6 class="td_block_inner td-column-1"><div class="td-cust-row">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_mx4 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.fosslinux.com/16457/how-to-create-a-lamp-server-on-centos-7.htm" rel="bookmark" class="td-image-wrap" title="How to create a LAMP server on CentOS 7"><img width="218" height="150" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2019/07/creating-lamp-server-218x150.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2019/07/creating-lamp-server-218x150.jpg 218w, https://www.fosslinux.com/wp-content/uploads/2019/07/creating-lamp-server-100x70.jpg 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="creating lamp server" title="How to create a LAMP server on CentOS 7" /></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/16457/how-to-create-a-lamp-server-on-centos-7.htm" rel="bookmark" title="How to create a LAMP server on CentOS 7">How to create a LAMP server on CentOS 7</a></h3>
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_mx4 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.fosslinux.com/16631/linux-mint-powered-mintbox3-to-be-the-most-powerful-mintbox-ever-made.htm" rel="bookmark" class="td-image-wrap" title="Linux Mint-powered MintBox3 to be the most powerful MintBox ever made"><img width="218" height="150" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2019/07/MintBox3-218x150.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2019/07/MintBox3-218x150.jpg 218w, https://www.fosslinux.com/wp-content/uploads/2019/07/MintBox3-100x70.jpg 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="MintBox3" title="Linux Mint-powered MintBox3 to be the most powerful MintBox ever made" /></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/16631/linux-mint-powered-mintbox3-to-be-the-most-powerful-mintbox-ever-made.htm" rel="bookmark" title="Linux Mint-powered MintBox3 to be the most powerful MintBox ever made">Linux Mint-powered MintBox3 to be the most powerful MintBox ever made</a></h3>
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div><div class="td-cust-row">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_mx4 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.fosslinux.com/16633/linux-mint-32-bit-edition-axed-starting-from-linux-mint-20-onwards.htm" rel="bookmark" class="td-image-wrap" title="Linux Mint 32-bit edition axed starting from Linux Mint 20 onwards"><img width="218" height="150" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2019/07/Linux-Mint-19-218x150.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2019/07/Linux-Mint-19-218x150.jpg 218w, https://www.fosslinux.com/wp-content/uploads/2019/07/Linux-Mint-19-100x70.jpg 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="Linux Mint 19" title="Linux Mint 32-bit edition axed starting from Linux Mint 20 onwards" /></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/16633/linux-mint-32-bit-edition-axed-starting-from-linux-mint-20-onwards.htm" rel="bookmark" title="Linux Mint 32-bit edition axed starting from Linux Mint 20 onwards">Linux Mint 32-bit edition axed starting from Linux Mint 20 onwards</a></h3>
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_mx4 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.fosslinux.com/16536/kaos-2019-07-just-dropped-with-exciting-new-features.htm" rel="bookmark" class="td-image-wrap" title="KaOS 2019.07 just dropped with exciting new features"><img width="218" height="150" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2019/07/KaOS-2019-07-218x150.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2019/07/KaOS-2019-07-218x150.jpg 218w, https://www.fosslinux.com/wp-content/uploads/2019/07/KaOS-2019-07-100x70.jpg 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="KaOS 2019-07" title="KaOS 2019.07 just dropped with exciting new features" /></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/16536/kaos-2019-07-just-dropped-with-exciting-new-features.htm" rel="bookmark" title="KaOS 2019.07 just dropped with exciting new features">KaOS 2019.07 just dropped with exciting new features</a></h3>
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div><div class="td-cust-row">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_mx4 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.fosslinux.com/16360/how-to-install-ubuntu-in-virtualbox-on-windows-pc.htm" rel="bookmark" class="td-image-wrap" title="How to install Ubuntu in VirtualBox on Windows PC"><img width="218" height="150" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2019/07/Install-Ubuntu-Virtual-Box-WIndows-218x150.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2019/07/Install-Ubuntu-Virtual-Box-WIndows-218x150.jpg 218w, https://www.fosslinux.com/wp-content/uploads/2019/07/Install-Ubuntu-Virtual-Box-WIndows-100x70.jpg 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="Install Ubuntu Virtual Box WIndows" title="How to install Ubuntu in VirtualBox on Windows PC" /></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/16360/how-to-install-ubuntu-in-virtualbox-on-windows-pc.htm" rel="bookmark" title="How to install Ubuntu in VirtualBox on Windows PC">How to install Ubuntu in VirtualBox on Windows PC</a></h3>
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_mx4 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.fosslinux.com/16520/linux-apps-can-now-access-android-devices-over-usb-with-chrome-os-75.htm" rel="bookmark" class="td-image-wrap" title="Linux apps can now access Android devices over USB with Chrome OS 75"><img width="218" height="150" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2019/07/Chrome-OS-Apps-218x150.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2019/07/Chrome-OS-Apps-218x150.jpg 218w, https://www.fosslinux.com/wp-content/uploads/2019/07/Chrome-OS-Apps-100x70.jpg 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="Chrome OS Apps" title="Linux apps can now access Android devices over USB with Chrome OS 75" /></a></div>                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/16520/linux-apps-can-now-access-android-devices-over-usb-with-chrome-os-75.htm" rel="bookmark" title="Linux apps can now access Android devices over USB with Chrome OS 75">Linux apps can now access Android devices over USB with Chrome...</a></h3>
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div><div class="td-load-more-wrap"><a href="#" class="td_ajax_load_more td_ajax_load_more_js" id="next-page-td_uid_30_5d1fc0a1926f6" data-td_block_id="td_uid_30_5d1fc0a1926f6">Load more<i class="td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block --><div class="clearfix"></div><div class="td_block_wrap td_block_22 td_uid_31_5d1fc0a19a773_rand td_with_ajax_pagination td-pb-border-top td_block_template_14 td_ajax_preloading_preload td-column-1"  data-td-block-uid="td_uid_31_5d1fc0a19a773" >
+<style>
+.td_uid_31_5d1fc0a19a773_rand .td-block-title {
+                background-color: #dd8500 !important;
+            }
+</style>
+<style>
+/* custom css */
+.td_uid_31_5d1fc0a19a773_rand .td-block-title a,
+				.td_uid_31_5d1fc0a19a773_rand .td-block-title span {
+					font-family:Lato !important;font-size:19px !important;font-weight:600 !important;
+				}
+				
+				.td_uid_31_5d1fc0a19a773_rand .td_module_17 .entry-title {
+					font-family:Lato !important;font-size:22px !important;font-weight:600 !important;
+				}
+</style><script>var block_td_uid_31_5d1fc0a19a773 = new tdBlock();
+block_td_uid_31_5d1fc0a19a773.id = "td_uid_31_5d1fc0a19a773";
+block_td_uid_31_5d1fc0a19a773.atts = '{"limit":"1","category_id":"19","ajax_pagination":"next_prev","custom_title":"CREATE YOUR FAVORITE LIVE USB","block_template_id":"td_block_template_14","m17_el":"0","m17_tl":"25","td_ajax_filter_type":"","header_color":"#dd8500","custom_url":"https:\/\/www.fosslinux.com\/category\/live-usb","f_header_font_size":"19","f_header_font_family":"325","f_header_font_weight":"600","sort":"random_posts","td_ajax_preloading":"preload","m17f_title_font_size":"22","m17f_title_font_family":"325","m17f_title_font_weight":"600","separator":"","post_ids":"","category_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","offset":"","show_modified_date":"","el_class":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","f_header_font_header":"","f_header_font_title":"Block header","f_header_font_settings":"","f_header_font_line_height":"","f_header_font_style":"","f_header_font_transform":"","f_header_font_spacing":"","f_header_":"","f_ajax_font_title":"Ajax categories","f_ajax_font_settings":"","f_ajax_font_family":"","f_ajax_font_size":"","f_ajax_font_line_height":"","f_ajax_font_style":"","f_ajax_font_weight":"","f_ajax_font_transform":"","f_ajax_font_spacing":"","f_ajax_":"","f_more_font_title":"Load more button","f_more_font_settings":"","f_more_font_family":"","f_more_font_size":"","f_more_font_line_height":"","f_more_font_style":"","f_more_font_weight":"","f_more_font_transform":"","f_more_font_spacing":"","f_more_":"","m17f_title_font_header":"","m17f_title_font_title":"Article title","m17f_title_font_settings":"","m17f_title_font_line_height":"","m17f_title_font_style":"","m17f_title_font_transform":"","m17f_title_font_spacing":"","m17f_title_":"","m17f_cat_font_title":"Article category tag","m17f_cat_font_settings":"","m17f_cat_font_family":"","m17f_cat_font_size":"","m17f_cat_font_line_height":"","m17f_cat_font_style":"","m17f_cat_font_weight":"","m17f_cat_font_transform":"","m17f_cat_font_spacing":"","m17f_cat_":"","m17f_meta_font_title":"Article meta info","m17f_meta_font_settings":"","m17f_meta_font_family":"","m17f_meta_font_size":"","m17f_meta_font_line_height":"","m17f_meta_font_style":"","m17f_meta_font_weight":"","m17f_meta_font_transform":"","m17f_meta_font_spacing":"","m17f_meta_":"","m17f_ex_font_title":"Article excerpt","m17f_ex_font_settings":"","m17f_ex_font_family":"","m17f_ex_font_size":"","m17f_ex_font_line_height":"","m17f_ex_font_style":"","m17f_ex_font_weight":"","m17f_ex_font_transform":"","m17f_ex_font_spacing":"","m17f_ex_":"","m17f_btn_font_title":"Article read more button","m17f_btn_font_settings":"","m17f_btn_font_family":"","m17f_btn_font_size":"","m17f_btn_font_line_height":"","m17f_btn_font_style":"","m17f_btn_font_weight":"","m17f_btn_font_transform":"","m17f_btn_font_spacing":"","m17f_btn_":"","ajax_pagination_infinite_stop":"","css":"","tdc_css":"","td_column_number":1,"color_preset":"","border_top":"","class":"td_uid_31_5d1fc0a19a773_rand","tdc_css_class":"td_uid_31_5d1fc0a19a773_rand","tdc_css_class_style":"td_uid_31_5d1fc0a19a773_rand_style"}';
+block_td_uid_31_5d1fc0a19a773.td_column_number = "1";
+block_td_uid_31_5d1fc0a19a773.block_type = "td_block_22";
+block_td_uid_31_5d1fc0a19a773.post_count = "1";
+block_td_uid_31_5d1fc0a19a773.found_posts = "13";
+block_td_uid_31_5d1fc0a19a773.header_color = "#dd8500";
+block_td_uid_31_5d1fc0a19a773.ajax_pagination_infinite_stop = "";
+block_td_uid_31_5d1fc0a19a773.max_num_pages = "13";
+tdBlocksArray.push(block_td_uid_31_5d1fc0a19a773);
+</script><div class="td-block-title-wrap"><h4 class="td-block-title"><a href="https://www.fosslinux.com/category/live-usb">CREATE YOUR FAVORITE LIVE USB</a></h4></div><div id=td_uid_31_5d1fc0a19a773 class="td_block_inner td-column-1 td-opacity-read">
+        <div class="td_module_17 td_module_wrap td-animation-stack td-meta-info-hide">
+            <div class="meta-info-container">
+                <h3 class="entry-title td-module-title"><a href="https://www.fosslinux.com/274/how-to-create-linux-mint-live-usb-drive-on-windows.htm" rel="bookmark" title="How to create an Linux Mint Live USB drive on Windows">How to create an Linux Mint Live USB drive on Windows</a></h3>
+                <div class="td-module-image">
+                    <div class="td-module-thumb"><a href="https://www.fosslinux.com/274/how-to-create-linux-mint-live-usb-drive-on-windows.htm" rel="bookmark" class="td-image-wrap" title="How to create an Linux Mint Live USB drive on Windows"><img wpfc-lazyload-disable="true" width="696" height="317" class="entry-thumb" src="https://www.fosslinux.com/wp-content/uploads/2016/03/Linux-Mint-Live-USB-drive.jpg"  srcset="https://www.fosslinux.com/wp-content/uploads/2016/03/Linux-Mint-Live-USB-drive.jpg 1000w, https://www.fosslinux.com/wp-content/uploads/2016/03/Linux-Mint-Live-USB-drive-750x342.jpg 750w, https://www.fosslinux.com/wp-content/uploads/2016/03/Linux-Mint-Live-USB-drive-300x137.jpg 300w" sizes="(max-width: 696px) 100vw, 696px"  alt="Linux Mint Live USB drive" title="How to create an Linux Mint Live USB drive on Windows" /></a></div>                    <div class="td-module-meta-holder">
+                        <div class="td-left-meta">
+                                                                                </div>
+                                            </div>
+                    <div class="td-category-corner">
+                                            </div>
+                </div>
+
+                <div class="td-excerpt">
+                                    </div>
+
+                <div class="td-read-more">
+                    <a href="https://www.fosslinux.com/274/how-to-create-linux-mint-live-usb-drive-on-windows.htm">Read more<i class="td-icon-menu-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        </div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" id="prev-page-td_uid_31_5d1fc0a19a773" data-td_block_id="td_uid_31_5d1fc0a19a773"><i class="td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" id="next-page-td_uid_31_5d1fc0a19a773" data-td_block_id="td_uid_31_5d1fc0a19a773"><i class="td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block --></div></div></div></div></div></div>                    <span class="td-page-meta" itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Kiran Kumar"></span><meta itemprop="datePublished" content="2017-01-03T21:21:19+00:00"><meta itemprop="dateModified" content="2017-01-29T20:48:07-04:00"><meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://www.fosslinux.com/992/install-handbrake-on-linux-mint-ubuntu-and-elementary-os.htm"/><span class="td-page-meta" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span class="td-page-meta" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://www.fosslinux.com/wp-content/uploads/2017/03/FL_V2_logo_mobile.png"></span><meta itemprop="name" content="FOSS Linux"></span><meta itemprop="headline" content="Install HandBrake on Linux Mint, Ubuntu, and elementary OS"><span class="td-page-meta" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://www.fosslinux.com/wp-content/uploads/2017/01/handbrake-install.jpg"><meta itemprop="width" content="950"><meta itemprop="height" content="450"></span>                </article>
+            </div>
+        </div>
+        
+    </div> <!-- #tdb-autoload-article -->
+
+
+</div><!--close td-outer-wrap-->
+
+    
+
+    <!--
+
+        Theme: Newspaper by tagDiv.com 2019
+        Version: 9.7.2 (rara)
+        Deploy mode: deploy
+        
+        uid: 5d1fc0a1b21ef
+    -->
+
+    
+<!-- Custom css from theme panel -->
+<style type="text/css" media="screen">
+/* custom css theme panel */
+.td-category a {
+    background-color: #d73d32;
+}
+.td-trending-now-title {
+    background-color: #d73d32;
+}
+.td-a-ad id_inline_ad_content-horiz-center {
+    margin-bottom:10px;
+}
+</style>
+
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/metronet-profile-picture/js/mpp-frontend.js?ver=2.2.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.fosslinux.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.3'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LdRJY0UAAAAAPj3v4hg21ppSX5px3B9htbCM3E1&#038;ver=3.0'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/td-composer/legacy/common/wp_booster/js_dev/tdModalPostImages.js?ver=9.7.2'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/td-cloud-library/assets/js/js_posts_autoload_ajax.min.js?ver=96be9388232cf6f1e9ad7a3c9f4e9872'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/themes/Newspaper/js/tagdiv_theme.min.js?ver=9.7.2'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-includes/js/comment-reply.min.js?ver=c0915a4433458033ee5efd8f7cb1433e'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var newsletter = {"messages":{"email_error":"The email is not correct","name_error":"The name is not correct","surname_error":"The last name is not correct","profile_error":"","privacy_error":"You must accept the privacy statement"},"profile_max":"20"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/newsletter/subscription/validate.js?ver=6.0.4'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/reduce-bounce-rate/js/analyticsjs.js?ver=c0915a4433458033ee5efd8f7cb1433e'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-content/plugins/td-cloud-library/assets/js/js_files_for_front.min.js?ver=96be9388232cf6f1e9ad7a3c9f4e9872'></script>
+<script type='text/javascript' src='https://www.fosslinux.com/wp-includes/js/wp-embed.min.js?ver=c0915a4433458033ee5efd8f7cb1433e'></script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+<script type="text/javascript">
+( function( grecaptcha, sitekey, actions ) {
+
+	var wpcf7recaptcha = {
+
+		execute: function( action ) {
+			grecaptcha.execute(
+				sitekey,
+				{ action: action }
+			).then( function( token ) {
+				var forms = document.getElementsByTagName( 'form' );
+
+				for ( var i = 0; i < forms.length; i++ ) {
+					var fields = forms[ i ].getElementsByTagName( 'input' );
+
+					for ( var j = 0; j < fields.length; j++ ) {
+						var field = fields[ j ];
+
+						if ( 'g-recaptcha-response' === field.getAttribute( 'name' ) ) {
+							field.setAttribute( 'value', token );
+							break;
+						}
+					}
+				}
+			} );
+		},
+
+		executeOnHomepage: function() {
+			wpcf7recaptcha.execute( actions[ 'homepage' ] );
+		},
+
+		executeOnContactform: function() {
+			wpcf7recaptcha.execute( actions[ 'contactform' ] );
+		},
+
+	};
+
+	grecaptcha.ready(
+		wpcf7recaptcha.executeOnHomepage
+	);
+
+	document.addEventListener( 'change',
+		wpcf7recaptcha.executeOnContactform, false
+	);
+
+	document.addEventListener( 'wpcf7submit',
+		wpcf7recaptcha.executeOnHomepage, false
+	);
+
+} )(
+	grecaptcha,
+	'6LdRJY0UAAAAAPj3v4hg21ppSX5px3B9htbCM3E1',
+	{"homepage":"homepage","contactform":"contactform"}
+);
+</script>
+
+<!-- JS generated by theme -->
+
+<script>
+    
+
+	
+
+		(function(){
+			var html_jquery_obj = jQuery('html');
+
+			if (html_jquery_obj.length && (html_jquery_obj.is('.ie8') || html_jquery_obj.is('.ie9'))) {
+
+				var path = 'https://www.fosslinux.com/wp-content/themes/Newspaper/style.css';
+
+				jQuery.get(path, function(data) {
+
+					var str_split_separator = '#td_css_split_separator';
+					var arr_splits = data.split(str_split_separator);
+					var arr_length = arr_splits.length;
+
+					if (arr_length > 1) {
+
+						var dir_path = 'https://www.fosslinux.com/wp-content/themes/Newspaper';
+						var splited_css = '';
+
+						for (var i = 0; i < arr_length; i++) {
+							if (i > 0) {
+								arr_splits[i] = str_split_separator + ' ' + arr_splits[i];
+							}
+							//jQuery('head').append('<style>' + arr_splits[i] + '</style>');
+
+							var formated_str = arr_splits[i].replace(/\surl\(\'(?!data\:)/gi, function regex_function(str) {
+								return ' url(\'' + dir_path + '/' + str.replace(/url\(\'/gi, '').replace(/^\s+|\s+$/gm,'');
+							});
+
+							splited_css += "<style>" + formated_str + "</style>";
+						}
+
+						var td_theme_css = jQuery('link#td-theme-css');
+
+						if (td_theme_css.length) {
+							td_theme_css.after(splited_css);
+						}
+					}
+				});
+			}
+		})();
+
+	
+	
+</script>
+
+</body>
+</html>
+    

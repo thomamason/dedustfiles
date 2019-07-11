@@ -1,0 +1,740 @@
+/*section.page {
+    margin-top: -19px;
+}*/
+#ToggleMenu {
+    background: transparent;
+    width: 100px;
+    text-indent: unset;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: left;
+}
+#ToggleMenu span {
+    background: url("//cdn10.bigcommerce.com/s-hczpll0y/templates/__custom/images/wizard_icon.png?t=1562140319") no-repeat 50% -19px;
+    display: inline-block;
+    height: 15px;
+    width: 30px;
+    vertical-align: middle;
+}
+@media (max-width: 480px) {
+    #LogoImage {
+        max-width: 150px;
+        }
+    }
+#PayPalExpressCheckoutButton{padding-top: 25px;}
+
+.SubCategoryListGrid ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.SubCategoryListGrid ul li {
+    border-bottom: 0 !important;
+    margin:  0;
+    padding: 10px;
+    width: 20%;
+}
+.SubCategoryListGrid ul li > a:first-child{
+    /* display: block; */
+    /* min-height: 175px; */
+}
+.SubCategoryListGrid ul li:last-child {
+    display: none;
+}
+
+@media (max-width: 1199px) {
+    .SubCategoryListGrid ul li {
+        width: 25%;
+    }
+}
+/*@media (max-width: 768px){
+
+#HomeSlideShow.flexslider .slides img {
+    width: 100%;
+    height: 230px; 
+}
+}*/
+
+@media (max-width: 600px) {
+    .SubCategoryListGrid ul li {
+        width: 33.33%;
+    }
+
+    #ChooseShippingAddress form dl dt {
+      width: 100%;
+      text-align: left;
+    }
+    #ChooseShippingAddress form dl dd {
+      margin-left: 0;
+      width: 100% !important;
+    }
+    #ChooseShippingAddress form #FormField_13,
+    #ChooseShippingAddress form #FormField_23 {
+      min-width: auto;
+      width: 150px !important;
+    }
+}
+
+ #first_cp_button_id,
+ #second_cp_button_id {
+   margin:  0 !important;
+ }
+ #first_cp_button_id{
+     padding:9px 29px 8px;
+ }
+@media (max-width: 480px) {
+    .SubCategoryListGrid ul li {
+        width: 50%;
+    }
+}
+
+#BrandContent {
+    width: 100%;
+}
+body.productPage .Left .left-banner {
+    padding-top: 0;
+}
+
+
+.facet-container {
+    position: relative;
+    float: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body.faceted-search #LayoutColumn1 {
+        width: 25%;
+    }
+    body.faceted-search #LayoutColumn2.Content.Wide {
+        width: 75%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body.faceted-search #SearchProduct_Container #LayoutColumn1 {
+        width: 35%;
+    }
+    body.faceted-search #SearchProduct_Container #LayoutColumn2.Content.Wide {
+        width: 65%;
+    }
+}
+@media (max-width: 480px) {
+    .SearchSorting.SortBox {
+        float: none;
+        padding-top: 10px;
+        display: block;
+        clear:  both;
+    }
+}
+#SearchResultsCategory ul li {
+    padding:  5px 0;
+}
+
+
+.kb-basket-button, .kb-wrapper .kb-customise-page .kb-change-view-button, .kb-button-single-item-checkout-final-page {
+    display: none !important;
+}
+
+p.top-message {
+    margin-bottom: 25px;
+}
+
+#CartStatusMessage .InfoMessage {
+  background-color: #ffd46f;
+  background-image: url('../images/info-black.png');
+  font-size: 13px;
+}
+
+.CategoryDescriptionHasImage{width: 100%; }
+
+/* Custom three block */
+
+.HL-infoblock{
+    float: left;
+    width: 100%;
+    border: 1px solid #dbdcdb;
+}
+.HL-infoblock > div{margin: 7px 0; padding:0 20px; font-size: 13px;  display: -webkit-flex; /* Safari */ -webkit-align-items: center; /* Safari 7.0+ */ display: flex;
+    align-items: center; min-height:50px; }
+.HL-infoblock > div.second{border-left: 1px solid #dbdcdb; border-right: 1px solid #dbdcdb;}
+.HL-infoblock > div > span{float:left; width:72px;}
+.HL-infoblock > div > span img{padding-top: 9px;width:52px;}
+.HL-infoblock > div > p{ margin-bottom:0; float:left; width:80%;}
+
+/* .HL-infoblock > div.second > span{width:14%;} */
+/* .HL-infoblock > div.second > span img{padding-top: 0px;} */
+/* .HL-infoblock > div.second > p{width:86%;} */
+
+/* .HL-infoblock > div.last > span{width:112px;} */
+/* .HL-infoblock > div.last > span img{padding-top: 9px; width:92px;} */
+/* .HL-infoblock > div.last > p{padding-left:20px; padding-top:0px; width:70%;} */
+
+
+.HL-infoblock > div > p > a{font-weight:500; color:#1515ce; }
+.HL-infoblock > div > p > a:hover{color:#cc0000; }
+.HL-infoblock .Ratings{font-size: 15px; float:left; width:100%; color:#ef2d18; }
+
+/*@media (min-width: 992px) and (max-width: 1271px) {
+    .HL-infoblock > div.last > p{width: 69%;}
+    .HL-infoblock > div.second > p{padding-top:0;}
+}
+
+@media (min-width: 768px) and (max-width: 1700px) {
+    .HL-infoblock > div > p{padding-left:20px; }
+    .HL-infoblock > div img{width:100%; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .HL-infoblock > div > p{padding-top:0px; }
+    
+}
+
+@media (max-width: 767px) {
+    .HL-infoblock > div > span{text-align:center; }
+
+    .HL-infoblock > div > span,
+    .HL-infoblock > div > p,
+    .HL-infoblock > div.second > span,
+    .HL-infoblock > div.second > p,
+    .HL-infoblock > div.last > span,
+    .HL-infoblock > div.last > p{width:100%;}
+    .HL-infoblock > div.last > p{padding-left:0; padding-top:20px;}
+
+    .HL-infoblock > div > p{padding-left:0;}
+    .HL-infoblock > div.last{padding-bottom:17px;}
+    .HL-infoblock > div img{width:auto; }
+
+}
+
+@media (max-width: 580px) {
+    .HL-infoblock > div.last img{width:100%; }
+}
+
+@media (max-width: 350px) {
+    .HL-infoblock > div{width:100%; border-top: 1px solid #e5e5e5; text-align: center; }
+    .HL-infoblock > div.last img{width:auto; }
+}*/
+
+
+
+li.menu-parent > a[href="https://www.toolden.co.uk/tool-brands/"] ~ ul.menu-container-level-1 {
+    /*display: none !important;*/
+}
+.PageMenu .side-menu > ul > .HL-HasMegamenu:hover > ul.Wrapper-Megamenu,
+.PageMenu .side-menu > ul > .menu-parent > ul.menu-container-level-1{
+    /*display: none !important;*/
+}
+
+/*Left Pane hided for mobiles on Product Details Page*/
+@media (max-width: 767px) {
+    .ProductDetail .Left {
+        display: none
+    }
+}
+/* Quote Ninja*/
+
+.qn-btn {
+    border-radius: 0!important;
+}
+#productDetailsAddToCartForm .add-to-cart, #CartContent .CheckoutButton .btn, .DropdownCart .CheckoutButton .btn {
+    background-color: #ae0000;
+    border-color: #ae0000;
+}
+#productDetailsAddToCartForm .add-to-cart:hover, #CartContent .CheckoutButton .btn:hover, .DropdownCart .CheckoutButton .btn:hover {
+    background-color: #57698f;
+    border-color: #57698f;
+}
+#CartContent .CheckoutButton .btn {
+    float: none;
+}
+.addto .BulkDiscount {
+    margin-right: 15px;
+}
+.ProductAddToCart .BulkDiscount .btn.qn-btn {
+    padding: 14px 53.5px;
+}
+.QuoteButton .qn-btn {
+    float: none;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    display: block;
+    padding: 13px 0;
+    height: auto;
+    margin: 0;
+    color: #FFF;
+    font-family: Montserrat,Roboto,Georgia,"Times New Roman",Times,serif;
+}
+.DropdownCart .QuoteButton {
+    text-align: right;
+}
+.DropdownCart .QuoteButton .qn-btn {
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    letter-spacing: 0.1em;
+    line-height: 17px;
+    margin: 0 0 7px 10px;
+    padding: 10px 29px;
+    text-transform: uppercase;
+    width: 206px;
+    float: none;
+    display: inline-block;
+}
+.main #cartFormButtons{
+    float:left;
+}
+.DropdownCart #cartFormButtons .qn-btn  {
+    display: none;
+}
+#cartFormButtons .qn-btn {
+    font-family: Montserrat,Roboto,Georgia,"Times New Roman",Times,serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    min-width: 189px;
+    padding: 10px 29px;
+}
+
+.in-stock-icon img{
+    margin-top: -25px;
+    margin-left: 30px;
+}
+.in-stock-icon.mobile-view img{
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0;
+}
+
+.orders-massage {
+    padding-bottom: 20px;
+}
+
+#email-modal #socnet ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.sort-box-top{
+    margin-top: 20px;
+}
+.PageMenu li ul, .PageMenu li ul.menu-container-level-1, .PageMenu .sf-menu>li.sfHover ul{
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.PageMenu .side-menu>ul>li.HL-HasMegamenu .WrapperCategory>ul>li:hover>a{
+    color: #000 !important;
+}
+.PageMenu li.HL-HasMegamenu .WrapperCategory>ul>li>a, .PageMenu .side-menu>ul>li.HL-HasMegamenu .WrapperCategory>ul>li>a{
+    color: #000 !important;
+}
+.PageMenu .side-menu>ul>li.HL-HasMegamenu .WrapperCategory>ul>li>ul>li a{
+    color: #000 !important;
+}
+.PageMenu .side-menu>ul>li.HL-HasMegamenu .WrapperCategory>ul>li>ul li:hover>a{
+    color: #000 !important;
+}
+.PageMenu li ul li a{
+    color: #000 !important;
+}
+.PageMenu li ul li a:hover, .PageMenu li li:hover>a:hover, .PageMenu .sf-menu li ul li:hover>a{
+    color: #000 !important;
+}
+
+.footer-payment a img{
+    width: 5%;
+    margin-right: 2px;
+}
+
+.CustomDes-ScrewGuns {
+    font-size: 0;
+    width: 100%;
+}
+.CustomDes-ScrewGuns > .DesScrewGuns-item {
+    display: inline-block;
+    width: 33.333%;
+    padding: 5px;
+}
+.CustomDes-ScrewGuns > .DesScrewGuns-item img {
+    height: auto;
+    max-width: 100%;
+    display: inline-block;
+}
+@media (max-width: 480px){
+    .footer-payment a img{
+        width: 10%;
+    }
+    .CategoryContent .ProductList > li {
+        width: 50%;
+    }
+    .ProductList .pname {
+        min-height: 80px;
+    }
+    .ProductList em.p-price {
+        min-height: 64px;
+    }
+   /* .ProductList .ProductPriceRating {
+        min-height: 21px;
+    }*/
+    .ProductList .ProductImage > a:after {
+        content: '';
+        height: 0;
+        width: 100%;
+        display: block;
+        padding-bottom: 100%;
+    }
+    .ProductList .ProductImage > a > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+}
+@media(max-width: 320px) {
+    .btn {
+        padding: 9px 14px;
+    }
+}
+#kitBuilder .kb-wrapper .kb-categories .kb-category:nth-child(3) {
+    display: none;
+}
+#kitBuilder .kb-wrapper .kb-nav .kb-nav-item-1:nth-child(3) {
+    display: none;
+}
+.block-banner-home ul li a:nth-child(2) {
+    display: none;
+}
+.header-image .custom-header-image2 > li.custom-header-image2-item1 {
+    float: right;
+    margin-top: 2%;
+    margin-right: 0;
+}
+.header-image .custom-header-image2 > li.custom-header-image2-item2 {
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
+}
+@media(max-width: 1199px) {
+    .header-image .custom-header-image2 > li.custom-header-image2-item1 {
+        margin-top: 1%;
+    }
+}
+@media(max-width: 479px) {
+    .header-image .custom-header-image2 > li.custom-header-image2-item2 {
+        margin-right: 0;
+    }
+    #home .ProductList {
+        width: 100%;
+    }
+}
+@media(min-width: 1200px) {
+    .ProductList .ProductImage > a:after {
+        content: '';
+        height: 0;
+        width: 100%;
+        display: block;
+        padding-bottom: 90%;
+    }
+    .ProductList .ProductImage > a > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+}
+.home-brands-slider {
+    padding-top: 45px;
+}
+@media (min-width: 1200px) {
+    .home-brands-slider .owl-buttons .owl-prev {
+        left: -3%;
+    }
+    .home-brands-slider .owl-buttons .owl-next {
+        right: -3%;
+    }
+}
+@media(min-width: 1401px) {
+    .TopMenu li.wrapSearch {
+        float: left;
+        display: inline-block;
+        width: calc(100% - 800px);
+    }
+    .TopMenu li.wrapSearch #SearchForm {
+        width: 100%;
+        display: block;
+        max-width: 500px;
+        margin: 10px auto 0;
+        float: none;
+    }
+    .TopMenu .myAcc .Phone-number {
+        text-transform: initial;
+        margin-top: 5px;
+    }
+    .TopMenu li.wrapSearch #SearchForm #search_query {
+        width: calc(100% - 64px);
+    }
+    .TopMenu li.mainMenu {
+        margin-top: 15px;
+    }
+    .TopMenu li.myAcc {
+        padding-right: 0;
+        margin-top: 0;
+    }
+    .TopMenu li.CartLink {
+        padding-left: 20px;
+        margin-top: 0;
+    }
+}
+.TopMenu li.wrapSearch #SearchForm #search_query {
+    color: #333333;
+    float: left;
+    border-bottom: 0;
+    background: #fff !important;
+    border-radius: 3px 0 0 3px !important;
+    border: 1px solid #fff !important;
+    opacity: 1;
+    height: 28px;
+    vertical-align: top;
+}
+.TopMenu li.wrapSearch #SearchForm .Button {
+    width: 28px;
+    float: left;
+    background-color: #8F8F8F !important;
+    border: 1px solid #8F8F8F !important;
+    border-radius: 0 3px 3px 0;
+    vertical-align: top;
+    margin-top: 2px;
+}
+.TopMenu .cthd-iconDesk {
+    width: 37px;
+    height: 40px;
+    vertical-align: baseline;
+}
+.TopMenu .cthd-imgPhone {
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+.TopMenu .CartLink #items-count {
+    width: 17px;
+    height: 17px;
+    background-color: red;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: -28px;
+    left: -8px;
+}
+.TopMenu li.myAcc > a {
+    font-size: 0;
+}
+.TopMenu li.myAcc > a:hover {
+    border-bottom: none;
+}
+@media(min-width: 768px) {
+    .TopMenu li.mainMenu .PageMenu #SideCategoryList .SideCategoryListFlyout ul.sf-menu li[data-menu-item="https://www.toolden.co.uk/kit-builder/"] > a > span {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ededed;
+    }
+}
+@media(max-width: 767px) {
+    .home-brands-slider {
+        padding-top: 20px;
+    }
+    .FeaturedProducts#HomeFeaturedProducts {
+        padding-top: 20px;
+    }
+    .TopMenu li.CartLink {
+        width: 25%;
+        padding-top: 5px;
+    }
+    .TopMenu li.myAcc {
+        width: 50%;
+        padding-top: 5px;
+    }
+    .TopMenu .cthd-menuMb {
+        display: block !important;
+        width: 25%;
+        float: left;
+        padding: 5px 0 0;
+        border: 1px solid #2f2f30;
+        border-left: 0;
+        min-height: 56px;
+    }
+    .TopMenu .cthd-menuMb #Header {
+        position: relative;
+    }
+    .TopMenu .cthd-menuMb #Header #ToggleMenu {
+        position: relative;
+        text-indent: unset;
+        top: unset;
+        left: unset;
+        text-align: center;
+    }
+    .TopMenu .cthd-menuMb #Header #ToggleMenu span {
+        background: unset;
+        height: auto;
+        width: auto;
+        min-height: 41px;
+    }
+    .TopMenu .cthd-menuMb #Header #ToggleMenu .cthd-imgMenu {
+        width: 45px;
+        height: auto;
+    }
+    .TopMenu #SearchForm input#search_query {
+        width: calc(100% - 64px)
+    }
+    .TopMenu li.myAcc .Phone-number-Desk {
+        display: none;
+    }
+    .TopMenu li.myAcc .Phone-number-Mb {
+        display: block !important;
+        width: 50%;
+        margin-right: 0;
+        text-align: center;
+        border-right: 1px solid #2f2f30;
+    }
+    .TopMenu li .cthd-imgPhoneMB {
+        width: 38px;
+        height: auto;
+    }
+    .TopMenu li.myAcc a:hover {
+        border-bottom: none;
+    }
+    .TopMenu li.myAcc > a {
+        width: 50%;
+    }
+    .TopMenu li .cthd-imgCartMB {
+        width: 38px;
+        height: auto;
+    }
+    .TopMenu li.CartLink, .TopMenu li.cthd-menuMb, .TopMenu li.myAcc {
+        padding-bottom: 5px;
+    }
+    .TopMenu li.CartLink .mobileOnly span {
+        display: none;
+    }
+    .TopMenu li.CartLink .mobileOnly #items-count {
+        display: inline-block;
+        top: 5px;
+    }
+    .TopMenu li.myAcc .cthd-imgAccMB {
+        width: 48px;
+        height: auto;
+    }
+    .TopMenu li.logo {
+        margin-bottom: 0;
+    }
+    .TopMenu li.logo #LogoImage {
+        margin-top: 0;
+    }
+    .header .cthd-infoblockMB {
+        display: block !important;
+        background-color: #333;
+        border: none;
+    }
+    .header .cthd-infoblockMB .col-xs-4 {
+        margin: 0;
+    }
+    .header .cthd-infoblockMB .col-xs-4 img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .TopMenu {
+        padding: 5px 0 32px 0;
+    }
+}
+@media (max-width: 1200px) and (min-width: 768px) {
+    .TopMenu #SearchForm {
+        width: 100%;
+    }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+    .TopMenu #SearchForm input#search_query {
+        width: 81%;
+    }
+    .TopMenu .CartLink #items-count {
+        top: 0;
+    }
+    .TopMenu > ul > li.myAcc {
+        padding: 10px 8px 10px 8px !important;
+    }
+    .TopMenu > ul > li.CartLink {
+        padding: 8px 20px 10px 20px !important;
+    }
+}
+@media (max-width: 1400px) and (min-width: 1024px) {
+    .TopMenu > ul > li.CartLink {
+        padding: 10px 20px 7px 20px !important;
+    }
+    .TopMenu > ul > li.wrapSearch {
+        padding: 12px 0px !important;
+    }
+    .TopMenu > ul > li.logo {
+        padding: 6px 25px !important;
+    }
+    .TopMenu .CartLink #items-count {
+        top: 0;
+    }
+    .TopMenu > ul > li.myAcc {
+        padding: 10px 10px 3px 10px !important;
+    }
+}
+.owl-buttons > div:hover {
+    opacity: 0.5;
+}
+@media(max-width: 480px) {
+    .home-brands-slider .home-brands-content .owl-buttons .owl-prev {
+        background-position: -310px -100px;
+        background-color: transparent;
+        left: -28px;
+        top: -9px;
+        width: 45px;
+    }
+    .home-brands-slider .home-brands-content .owl-buttons .owl-next {
+        background-position: -406px -100px;
+        background-color: transparent;
+        right: -28px;
+        top: -9px;
+        width: 45px;
+    }
+    #HomeFeaturedProducts .owl-buttons .owl-prev {
+        background-position: -310px -100px;
+        background-color: transparent;
+        left: -28px;
+        top: 80px;
+        width: 45px;
+    }
+    #HomeFeaturedProducts .owl-buttons .owl-next {
+        background-position: -406px -100px;
+        background-color: transparent;
+        right: -28px;
+        top: 80px;
+        width: 45px;
+    }
+    .header .cthd-infoblockMB .col-xs-4.one {
+        padding: 0 5px;
+    }
+    .header .cthd-infoblockMB .col-xs-4.one img {
+        min-height: 25px;
+    }
+}
+.TopMenu .SideCategoryListFlyout li[data-menu-item="https://www.toolden.co.uk/kit-builder/"] {
+    display: none;
+}

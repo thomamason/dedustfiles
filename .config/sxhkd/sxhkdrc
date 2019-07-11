@@ -2,15 +2,15 @@
 super + Return
 	$TERMINAL
 super + d
-	dmenu_run
+	i3-dmenu-desktop
 super + r
 	$TERMINAL -e $FILE
 super + e
-	$TERMINAL -e neomutt
+	exec steam
 super + m
 	$TERMINAL -e ncmpcpp
 super + n
-	$TERMINAL -e newsboat
+	exec spotify
 super + i
 	$TERMINAL -e htop
 super + y
@@ -22,9 +22,9 @@ super + shift + c
 super + shift + e
 	tutorialvids
 super + w
-	webby | xargs -r $BROWSER
+	exec chromium
 super + shift + w
-	$BROWSER
+	exec surf
 super + shift + g
 	gimp
 
