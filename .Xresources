@@ -1,5 +1,5 @@
-*.font:	TerminessTTFNerdFontMono:pixelsize=13:antialias=true:autohint=true;
-*.alpha: 0.72
+*.font:TerminessTTF Nerd Font Mono:pixelsize=13:antialias=true:autohint=true;
+*.alpha: 0.65
 *.color0: #111
 
 Xft.dpi:       96
