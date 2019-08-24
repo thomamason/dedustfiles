@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Deus Ex Revision
+Exec=env WINEPREFIX="/home/thomamason/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/thomamason/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/GOG.com/Deus\\ Ex\\ GOTY/Deus\\ Ex\\ Revision.lnk
+Type=Application
+StartupNotify=true
+Comment=Deus Ex Revision
+Path=/home/thomamason/.wine/dosdevices/z:/home/thomamason/games/Deus Ex GOTY/
+Icon=26B3_Revision.0
+StartupWMClass=revision.exe
