@@ -9,8 +9,8 @@
 
 # #---Basic Definitions---# #
 for_window [class="^.*"] border pixel 1
-gaps inner 9
-gaps outer 9
+gaps inner 8
+gaps outer 2
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 
@@ -27,13 +27,13 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 
-bar {
+#bar {
 	font pango:Terminess TTF Nerd Font Mono 10
-	status_command i3blocks
-	position top
-	mode dock
-	modifier None
-}
+#	status_command i3blocks
+#	position top
+#	mode dock
+#	modifier None
+#}
 
 # #---Basic Bindings---# #
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
@@ -45,7 +45,7 @@ bindsym $mod+Escape		workspace prev
 bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 
 #STOP/HIDE EVERYTHING:
-bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 7; exec $term -e htop ; exec $term -e $FILE
+bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 7; exec $term -e htop ; exec $term -e c-tui -c
 
 # #---Letter Key Bindings---# #
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
@@ -197,4 +197,6 @@ bindsym $mod+Shift+Right 	move right
 
 assign [class="Steam*"] $ws10
 
+exec --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no_startup-id compton --blur-background --blur-method kawase --blur-strength 12 --opacity-rule 85:'class_g="st" --backend glx
 
