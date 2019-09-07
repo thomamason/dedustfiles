@@ -197,6 +197,5 @@ bindsym $mod+Shift+Right 	move right
 
 assign [class="Steam*"] $ws10
 
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no_startup-id compton --blur-background --blur-method kawase --blur-strength 12 --opacity-rule 85:'class_g="st" --backend glx
-
