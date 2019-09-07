@@ -1,0 +1,545 @@
+PPPPPPPolybar by thomamason
+
+include-file = ~/.config/polybar/colors.ini
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/bars.ini
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[colors]
+background = ${color.trans}
+background-transparent = ${color.trans}
+foreground = ${color.fg}
+
+; Text
+primary = #00FF00
+; Focused text light
+secondary = ${xrdb:color5}
+; Dark secondary
+tertiary = ${xrdb:color2}
+; Urgent text
+urgency = ${xrdb:color3}
+; Alert text
+alert = #CB4B16
+
+[fonts]
+font-0 = "Terminess TTF Nerd Font Mono:size=10:antialias=true;2"
+font-1 = "FontAwesome:pixelsize=10;2"
+font-2 = "FontAwesome:weight=Bold:pixelsize=4;-2"
+font-3 = "Noto Sans CJK JP:size=10:antialias=true;2"
+
+[variables]
+bar-height = 20
+bar-border-size = 0
+
+locale = en_GB.UTF-8
+
+label-padding = 1
+label-maxlen = 50
+
+eth=enp0s25
+wlan=wlp3s0
+
+#### /Variable #####
+
+[bar/top]
+;monitor = ${env:MONITOR:HDMI-1}
+height = ${variables.bar-height}
+bottom = false
+fixed-center = false
+
+border-bottom-size = ${variables.bar-border-size}
+border-color = ${colors.background}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+font-3 = ${fonts.font-3}
+
+
+modules-left = i3
+modules-center =
+modules-right = filesystem sp2 network-wifi sp2 pulseaudio sp2 memory sp2 temperature sp2 battery sp2 date sp2 time
+
+tray-position = right
+;tray-detached = false
+;tray-maxsize = 15
+;tray-transparent = true
+;tray-background = ${colors.highlight}
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 1
+;tray-scale = 1.0
+
+
+
+###### _____MODULE_____#####
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspace = false
+enable-click = true
+enable-scroll = false
+
+icon-0 = code;
+icon-1 = www;
+icon-2 = graphics;
+icon-3 = mail;
+icon-4 = office;
+
+
+format = <label-state>
+label-monitor = %name%
+label-active = %name%
+label-active-foregroud = ${colors.foreground}
+label-active-backgroud = ${colors.backround}
+
+label-occupied = %name%
+
+label-urgent = %name%
+label-urgent-foregroud = ${colors.foreground}
+label-urgent-backgroud = ${colors.backround-alt}
+
+label-empty = %icon%
+label-empty-foregroud = ${colors.foreground}
+
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+-----Xwindow -----
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+format-padding = 0
+
+label = " %title:0:30:...%"
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+label-empty =
+label-empty-foreground = ${colors.background}
+
+-----Xkeyboard------
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format = <label-indicator>
+format-spacing = 0
+
+format-prefix = " "
+format-prefix-foreground = ${colors.alert}
+format-prefix-background = ${colors.background}
+
+label-layout = "%layout%"
+label-layout-foreground = ${colors.foreground}
+label-layout-background = ${colors.background}
+
+label-indicator-padding = 0
+label-indicator-margin = 0
+label-indicator = %{T4} CAPS %{T-}
+label-indicator-foreground = ${colors.alert}
+label-indicator-background = ${colors.background}
+
+
+;-----------------------------------------------------------------MODUL:MEMORY
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+interval = 1
+
+format-online = <icon-prev> <toggle> <icon-next> <label-time> <label-song>
+label-song =  %title:0:30:...%
+label-offline = 
+
+icon-play = 
+icon-next = 
+icon-pause = 
+icon-prev = 
+
+toggle-on-foreground = ${colors.foreground-alt}
+toggle-off-foreground = ${colors.foreground}
+
+
+[module/memory]
+type = internal/memory
+interval = 1
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+
+label = "%percentage_used%%"
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+;-------------------------------------------------------------------MODULE:CPU
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+;format-underline = ${colors.foreground}
+label = "%percentage:2%%"
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+;------------------------------------------------------------MODULE:FILESYSTEM
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = " %percentage_used%%"
+label-mounted-foreground = ${colors.foreground}
+label-mounted-background = ${colors.background}
+
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground}
+
+;-----------------------------------------------------------MODULE:TEMPERATURE
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 80
+
+format = "<ramp><label>"
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label = "%temperature-c%"
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+format-warn = <ramp><label-warn>
+label-warn = "%temperature-c%"
+label-warn-foreground = ${colors.alert}
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+ramp-3 = " "
+ramp-4 = " "
+ramp-foreground = ${colors.foreground}
+ramp-background = ${colors.background}
+
+;------------------------------------------------------------------MODULE:DATE
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %a %d %b
+date-alt = "%a %Y/%m/%d"
+
+time = %H:%M
+time-alt = " %H:%M"
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+
+label = %date%
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+
+;---------------------------------------------------------------MODULE:NETWORK
+
+[module/network-wifi]
+
+type = internal/network
+interface = eth0
+
+[module/wireless-network]
+type = internal/network
+interface = wlp3s0
+
+; Normal Module
+[module/network]
+type = internal/network
+interface = wlp3s0
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 1.0
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+;ping-interval = 3
+
+; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
+; Minimum output width of upload/download rate
+; Default: 3
+;;udspeed-minwidth = 5
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices have an unknown state, even when they're running
+; Default: false
+unknown-as-up = true
+
+; Available tags:
+;   <label-connected> (default)
+;   <ramp-signal>
+format-connected = <ramp-signal> <label-connected>
+
+; Available tags:
+;   <label-disconnected> (default)
+format-disconnected = <label-disconnected>
+
+; Available tags:
+;   <label-connected> (default)
+;   <label-packetloss>
+;   <animation-packetloss>
+;;format-packetloss = <animation-packetloss> <label-connected>
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %local_ip6% [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: %ifname% %local_ip%
+label-connected = "%essid%    ^d   %downspeed:8%    ^d   %upspeed:8%"
+;;label-connected-foreground = #eefafafa
+
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+; Default: (none)
+label-disconnected =    ^h^{ "Not Connected"
+;;label-disconnected-foreground = #66ffffff
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %local_ip6% [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: (none)
+;label-packetloss = %essid%
+;label-packetloss-foreground = #eefafafa
+
+; Only applies if <ramp-signal> is used
+ramp-signal-0 =    ^h^x
+ramp-signal-1 =    ^h^y
+ramp-signal-2 =    ^h^z
+ramp-signal-3 =    ^h^z
+ramp-signal-4 =    ^h^z
+
+; Only applies if <animation-packetloss> is used
+;;animation-packetloss-0 =    ^z
+;;animation-packetloss-0-foreground = #ffa64c
+;;animation-packetloss-1 =    ^z
+;;animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+;;animation-packetloss-framerate = 500
+
+
+;---------------------------------------------------------------MODULE:BATTERY
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 95
+
+format-charging = "<animation-charging><label-charging>"
+;format-charging-underline = ${colors.foreground}
+label-charging-foreground = ${colors.foreground}
+label-charging-background = ${colors.background}
+
+format-discharging = "<ramp-capacity><label-discharging>"
+;format-discharging-underline = ${self.format-charging-underline}
+label-discharging-foreground = ${colors.foreground}
+label-discharging-background = ${colors.background}
+
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-background = ${colors.background}
+;format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = "  "
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-background = ${colors.background}
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-foreground = ${colors.foreground}
+animation-charging-background = ${colors.background}
+animation-charging-framerate = 750
+
+;------------------------------------------------------------------MODULE:TEXT
+
+[module/windows]
+type = custom/text
+content = " %{T3}%{T-} MENU "
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+
+[module/karnel]
+type = custom/script
+exec = ~/.config/polybar/karnel.sh
+interval = 5
+label-foreground=${colors.foreground}
+format-padding
+
+[module/profile]
+type = custom/text
+content = " %{T3}%{T-} ASUNA"
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+[module/sp1]
+type = custom/text
+content = " "
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+[module/sp2]
+type = custom/text
+;content = " | "
+content = " | "
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+[module/backlight]
+type = custom/script
+interval = 0.2
+exec = sh ~/.config/polybar/backlight.sh
+
+scrolling-up = exec light -A 5
+scrolling-down = exec light -U 5
+
+format-prefix =" "
+label= %output%%b
+label-foreground=${colors.foreground}
+
+
+[module/time]
+type = internal/date
+interval = 1
+time = %H:%M
+
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+label = " %time% "
+
+[module/powermenu]
+type = custom/menu
+
+label-open = " POWER"
+label-open-foreground =${colors.foreground}
+label-close = " cancel"
+label-close-foreground = ${colors.foreground}
+label-separator = "  "
+lanel-separator-foreground = ${colors.foreground}
+
+menu-0-0 = " reboot"
+menu-0-0-exec = reboot
+
+menu-0-1 = " power off"
+menu-0-1-exec = poweroff
+
+menu-0-2 = " exit "
+menu-0-2-exec = i3 exit
+
+;---------------------------------------------------------------------SETTINGS
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = true
+compositing-background = over
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = true
+
+;--------------------------------------------------------------------GLOBAL/WM
+
+
