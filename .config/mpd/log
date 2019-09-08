@@ -187,3 +187,8 @@ Jul 11 11:49 : client: [5] opened from 127.0.0.1:56788
 Jul 11 11:49 : client: [5] closed
 Jul 11 11:50 : client: [6] opened from 127.0.0.1:56824
 Jul 11 11:50 : client: [6] closed
+Sep 08 14:06 : client: [1] opened from 127.0.0.1:51614
+Sep 08 14:06 : client: [1] closed
+Sep 08 15:55 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Sep 08 15:55 : exception: inotify_add_watch() has failed: No such file or directory
+Sep 08 15:55 : client: [0] opened from 127.0.0.1:60290

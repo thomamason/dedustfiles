@@ -199,3 +199,4 @@ assign [class="Steam*"] $ws10
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no_startup-id compton --blur-background --blur-method kawase --blur-strength 12 --opacity-rule 85:'class_g="st" --backend glx
+exec_always --no-startup-id notify-send -i ~/.local/share/larbs/larbs.png 'Welcome to LARBS:' 'Press Super+F1 for the manual.' -t 10000
