@@ -9,8 +9,8 @@
 
 # #---Basic Definitions---# #
 for_window [class="^.*"] border pixel 1
-gaps inner 8
-gaps outer 2
+gaps inner 4
+gaps outer 1
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 
@@ -199,3 +199,4 @@ assign [class="Steam*"] $ws10
 assign [class="Itch*"] $ws9
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id redshift-gtk

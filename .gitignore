@@ -11,6 +11,7 @@
 Downloads
 go
 ##.local/share
+.local/share/applications/mimeinfo.cache
 .local/share/applications/wine
 .local/share/Steam
 .local/share/larbs
@@ -32,4 +33,5 @@ go
 .config/itch
 .config/yay
 .config/yup
+.config/mpd
 
