@@ -19,6 +19,7 @@
 .wine/
 .nicotine/
 .esd_auth
+.gitconfig
 Music
 Downloads
 go
@@ -65,3 +66,4 @@ Games
 .config/pulse/
 .config/pcmanfm
 .config/vifm/
+.config/cmus/
