@@ -20,6 +20,17 @@
 .nicotine/
 .esd_auth
 .gitconfig
+.gnupg/
+.gsutil/
+.minecraft/
+.paradoxinteractive/
+.renpy/
+.thumbnails/
+.vpython-root/
+.vpython_cipd_cache/
+Sub\ Rosa/
+Unity/
+VirtualBox\ VMs/
 Music
 Downloads
 go
@@ -69,3 +80,7 @@ Documents
 .config/pcmanfm
 .config/vifm/
 .config/cmus/
+.config/transmission**
+.config/pamac
+.config/s-tui
+
