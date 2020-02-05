@@ -1,4 +1,7 @@
 ##home
+LICENSE
+README.md
+.gitignore
 .calcurse
 .cache
 .steam/
@@ -28,6 +31,7 @@
 .thumbnails/
 .vpython-root/
 .vpython_cipd_cache/
+.pulse-cookie
 Sub\ Rosa/
 Unity/
 VirtualBox\ VMs/
@@ -83,4 +87,4 @@ Documents
 .config/transmission**
 .config/pamac
 .config/s-tui
-
+.config/nvim/*
