@@ -197,3 +197,4 @@ no_focus [title="mpvfloat"]
 bindsym $mod+F2         restart
 
 
+exec_always --no-startup-id notify-send -i ~/.local/share/larbs/larbs.png 'Welcome to LARBS:' 'Press Super+F1 for the manual.' -t 10000
