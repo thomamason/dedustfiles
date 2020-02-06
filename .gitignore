@@ -88,3 +88,4 @@ Documents
 .config/pamac
 .config/s-tui
 .config/nvim/*
+.config/retroarch/

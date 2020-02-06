@@ -34,6 +34,7 @@ font pango:Terminess TTF Nerd Font Mono 10
 
 # startup apps
 exec_always --no-startup-id nm-applet
+exec_always --no-startup-id blueman-applet
 exec --no-startup-id compton
 exec_always --no-startup-id pasystray
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -196,5 +197,3 @@ no_focus [title="mpvfloat"]
 # reload the configuration file
 bindsym $mod+F2         restart
 
-
-exec_always --no-startup-id notify-send -i ~/.local/share/larbs/larbs.png 'Welcome to LARBS:' 'Press Super+F1 for the manual.' -t 10000
