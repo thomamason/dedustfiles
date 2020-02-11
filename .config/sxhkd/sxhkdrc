@@ -10,7 +10,7 @@ super + e
 super + m
 	$TERMINAL -e cmus
 super + n
-	exec spotify
+	$TERMINAL -e newsboat
 super + i
 	$TERMINAL -e htop
 super + y

@@ -1,6 +1,6 @@
 
 # basic stuff
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 4
 gaps outer 1
 set $term --no-startup-id $TERMINAL
@@ -17,6 +17,18 @@ for_window [instance="dropdown_dropdowncalc"] resize set 800 300
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
+
+
+# class                 border  backgr. text    indicator child_border
+client.focused #555555 #555555 #ffffff #2e9ef4     #CC0000
+#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
 
 # Font for window titles.
 font pango:Terminess TTF Nerd Font Mono 10
@@ -36,16 +48,16 @@ font pango:Terminess TTF Nerd Font Mono 10
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec --no-startup-id compton
-exec_always --no-startup-id pasystray
+exec --no-startup-id pasystray
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
+exec_always --no-startup-id autorandr
+exec --no-startup-id pcmanfm -d
 
 bindsym $mod+Shift+Return       exec --no-startup-id samedir
 bindsym $mod+Shift+space        floating toggle
 bindsym $mod+space              focus mode_toggle
 bindsym $mod+Escape             workspace prev
 bindsym $mod+Shift+Escape       exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
-
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -73,7 +85,7 @@ bindsym $mod+Shift+Right        move right
 
 
 #incognito mode:
-bindsym $mod+Shift+Delete       exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 10; exec $term -e htop ; exec $term -e c-tui -c
+bindsym $mod+Shift+Delete       exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 10; exec $term -e htop ; layout splitv ; exec $term -e s-tui -c ; layout splith ; exec $term -e asciiquarium
 
 # #---Letter Key Bindings---# #
 bindsym $mod+t                  split toggle
