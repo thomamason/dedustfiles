@@ -11,5 +11,4 @@ unclutter &		# Remove mouse when idle
 xcompmgr &		# xcompmgr for transparency
 dunst &			# dunst for notifications
 
-sleep 3
 /home/thomamason/.screenlayout/projector.sh
