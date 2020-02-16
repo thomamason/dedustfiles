@@ -45,13 +45,13 @@ font pango:Terminess TTF Nerd Font Mono 10
 
 
 # startup apps
+exec_always --no-startup-id compton -b --backend glx --blur-method kawase  --blur-background --blur-strength 14
+exec_always --no-startup-id autorandr
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
-exec --no-startup-id compton
 exec --no-startup-id pasystray
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id autorandr
-exec --no-startup-id pcmanfm -d
+
 
 bindsym $mod+Shift+Return       exec --no-startup-id samedir
 bindsym $mod+Shift+space        floating toggle
