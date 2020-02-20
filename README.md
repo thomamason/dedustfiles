@@ -7,4 +7,14 @@ The 'V3' of this file is for the 3rd Arch install I've performed on this machine
 As such, many of these files are [luke smith's](https://www.lukesmith.xyz) 'larbs' & 'voidrice' repo's ripped apart and hacked together again to better suit my needs.	
 
 ![rice](dedustrice.png)
-Format: ![Alt Text](url)
+
+
+_The Catch_ : Between i3 and dmenu, Linux is the better way for me to work and I only wish I'd gotten here sooner. I'm trying to gear my system towards convinience and efficacy, but not at the expense of getting my daily grind done, so updates here are sparse. That said, here's a list of stuff I've got planned for the future...
+
+**TO DO:**
+	* Switch back to i3bar from polybar. Maybe.
+	* Make script to toggle compositor transparency on/off.
+	* Update scripts readme in .local/bin to explain new additions.
+	* Automate syslinux "rice"
+	* Tidy up my 'LARBS' fork.
+	* Consider whether a seperate dotfiles directory with symlinks might be more efficient.
