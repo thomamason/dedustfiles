@@ -45,7 +45,7 @@ font pango:Terminess TTF Nerd Font Mono 10
 
 
 # startup apps
-exec_always --no-startup-id compton -b --backend glx --blur-method kawase  --blur-background --blur-strength 14
+exec_always --no-startup-id compton -b --backend glx --blur-method kawase  --blur-background --blur-strength 14 --blur-kern 7x7gaussian
 exec_always --no-startup-id autorandr
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
