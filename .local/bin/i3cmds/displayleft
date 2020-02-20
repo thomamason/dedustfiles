@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#a script to display a hdmi connection to the left of the primary monitor.
+#based on luke smiths 'displayselect' script (lukesmith.xyz)
+
+
+
+
+xrandr --output LVDS1 --auto --output HDMI1 --left-of LVDS1
+
+
+setbg		# Fix background if screen size/arangement has changed.
+remaps		# Re-remap keys if keyboard added (for laptop bases)
+pgrep -x dunst >/dev/null && killall dunst && setsid dunst & # Restart dunst to ensure proper location on screen

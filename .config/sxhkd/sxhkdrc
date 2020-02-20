@@ -104,9 +104,9 @@ super + {_,shift +} bracketleft
 	lmc back {10,120}
 
 # Function keys
-# Show readme
+# Restart/rescan wifi/eth networks
 super + F1
-	groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
+	sudo -A systemctl restart NetworkManager
 # F2 is restart in i3 right now.
 # Change display
 super + F3
@@ -114,18 +114,18 @@ super + F3
 # Hibernate
 super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
-# Restart/rescan wifi/eth networks
+#
 super + F5
-	sudo -A systemctl restart NetworkManager
+	
 # Start torrent daemon/open interface
 super + F6
-	torwrap
-# toggle torrent daemon
-super + F7
 	td-toggle
-# sync email
+# display secondary monitor to left of primary
+super + F7
+	displayleft
+# display secondary monitor to right of primary
 super + F8
-	mailsync
+	displayright
 # Mount a USB drive or Android device
 super + F9
 	dmenumount
