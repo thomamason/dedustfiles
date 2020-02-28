@@ -34,14 +34,14 @@ client.background       #ffffff
 font pango:Terminess TTF Nerd Font Mono 10
 #font pango:DejaVu Sans Mono 8
 
-## dat bar
-#bar {
-#	font pango:Terminess TTF Nerd Font Mono 10
-#       status_command i3blocks
-#       position top
-#       mode dock
-#       modifier None
-#}
+#dat bar
+bar {
+	font pango:Terminess TTF Nerd Font Mono 10
+       status_command i3blocks
+       position top
+       mode dock
+       modifier None
+}
 
 
 # startup apps
@@ -50,7 +50,7 @@ exec_always --no-startup-id autorandr
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec --no-startup-id pasystray
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
 bindsym $mod+Shift+Return       exec --no-startup-id samedir
