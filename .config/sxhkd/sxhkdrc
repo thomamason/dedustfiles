@@ -5,6 +5,8 @@ super + d
 	i3-dmenu-desktop
 super + r
 	$TERMINAL -e $FILE
+super + shift + r
+	pcmanfm
 super + e
 	exec steam
 super + m
