@@ -8,7 +8,12 @@ setxkbmap -option caps:super -layout gb && killall xcape 2>/dev/null ; xcape -e 
 xmodmap -e 'keycode 135 = Super_R' &
 xset r rate 300 50 &	# Speed xrate up
 unclutter &		# Remove mouse when idle
-xcompmgr &		# xcompmgr for transparency
+#xcompmgr &		# xcompmgr for transparency
+compton -b --backend glx --blur-method kawase  --blur-background --blur-strength 14 --blur-kern 7x7gaussian &
 dunst &			# dunst for notifications
+autorandr &
+nm-applet &
+blueman-applet &
+pasystray &
+sh ~/.local/bin/dwmbar &
 
-/home/thomamason/.screenlayout/projector.sh
