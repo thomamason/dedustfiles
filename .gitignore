@@ -124,4 +124,6 @@ Documents
         installed.txt
         pic-full-200225-1608-43.png
         voidrice/
+  .newsboat/cache.db
+ .newsboat/cache.db.lock
 
