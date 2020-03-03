@@ -1,8 +1,8 @@
 # Basic binds
 super + Return
 	$TERMINAL
-super + d
-	i3-dmenu-desktop
+#super + d
+#	i3-dmenu-desktop
 super + r
 	$TERMINAL -e $FILE
 super + shift + r
