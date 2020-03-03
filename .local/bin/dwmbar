@@ -27,6 +27,9 @@ export SEP2="]"
 . "$DIR/bar-functions/dwm_pulse.sh"
 . "$DIR/bar-functions/dwm_vpn.sh"
 . "$DIR/bar-functions/dwm_date.sh"
+. "$DIR/bar-functions/dwm_transmission.sh"
+
+
 
 # Update dwm status bar every second
 while true
