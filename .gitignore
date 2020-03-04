@@ -126,4 +126,58 @@ Documents
         voidrice/
   .newsboat/cache.db
  .newsboat/cache.db.lock
+ .asciiportal/
+        .config/Electron/
+        .config/QtProject.conf
+        .config/VirtualBox/
+        .config/ardour6/
+        .config/autorandr/
+        .config/brutal-doom/
+        .config/calcurse/
+        .config/cef_user_data/
+        .config/compton/
+        .config/emoji
+        .config/gzdoom/
+        .config/i3/workspace-1.json
+        .config/i3blocks/
+        .config/mimeapps.list
+        .config/rncbc.org/
+        .config/surf/
+        .config/whatsapp-nativefier-d52542/
+        .config/zdoom/
+        .jackdrc
+        .lesshst
+        .mono/
+        .screen.log
+        .viminfo
+        .vnc/
+        .zenmap/
+
+ .asciiportal/
+        .config/Electron/
+        .config/QtProject.conf
+        .config/VirtualBox/
+        .config/ardour6/
+        .config/autorandr/
+        .config/brutal-doom/
+        .config/calcurse/
+        .config/cef_user_data/
+        .config/compton/
+        .config/emoji
+        .config/gzdoom/
+        .config/i3/workspace-1.json
+        .config/i3blocks/
+        .config/mimeapps.list
+        .config/rncbc.org/
+        .config/surf/
+        .config/whatsapp-nativefier-d52542/
+        .config/zdoom/
+        .jackdrc
+        .lesshst
+        .mono/
+        .screen.log
+        .viminfo
+        .vnc/
+        .zenmap/
+
 
