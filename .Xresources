@@ -1,4 +1,4 @@
 *.font:TerminessTTF Nerd Font Mono:pixelsize=15:antialias=true:autohint=true;
-*.alpha: 0.65
+*.alpha:0.85
 *.color0: #111
 
