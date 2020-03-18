@@ -12,13 +12,13 @@ dwm_pulse () {
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
         if [ "$VOL" = "muted" ] || [ "$VOL" -eq 0 ]; then
-            printf "🔇"
+            printf ""
         elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
-            printf "🔈 %s%%" "$VOL"
+            printf " %s%%" "$VOL"
         elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
-            printf "🔉 %s%%" "$VOL"
+            printf " %s%%" "$VOL"
         else
-            printf "🔊 %s%%" "$VOL"
+            printf " %s%%" "$VOL"
         fi
     else
         if [ "$VOL" = "muted" ] || [ "$VOL" -eq 0 ]; then
