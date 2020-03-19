@@ -25,6 +25,10 @@ super + w
 	exec chromium
 super + shift + w
 	exec surf
+super + v
+	exec vncviewer
+super + c
+	exec nicotine
 
 # Et cetera...
 super + grave
