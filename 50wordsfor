@@ -1,0 +1,17 @@
+#!/bin/sh
+#https://thomamason.github.io
+
+#shuf -n 50 codes >> shufcode
+#cat shufcode | awk -v ORS="+" '{print $2}'
+
+result() {
+SAMPLE=$(echo "<----" | dmenu -i -p "what word would you like to translate?")
+CODE=$(shuf -n 50 codes | awk -v ORS="+" '{print $2}')
+LAANG=$(shuf -n 50 codes | awk '{print $1}')
+SCRIPT=$(trans -e bing -b "$SAMPLE" "=""$CODE")
+
+echo 50 words for "$SAMPLE";
+echo $SCRIPT
+}
+
+result

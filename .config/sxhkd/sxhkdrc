@@ -9,8 +9,12 @@ super + shift + r
 	pcmanfm
 super + e
 	exec steam
+super + shift + e
+	exec discord
 super + m
 	$TERMINAL -e cmus
+super + shift + m
+	exec nicotine
 super + n
 	$TERMINAL -e newsboat
 super + i
@@ -22,13 +26,13 @@ super + shift + a
 super + shift + c
 	camtoggle
 super + w
-	exec chromium
+	exec brave
 super + shift + w
 	exec surf
 super + v
-	exec vncviewer
-super + c
-	exec nicotine
+	exec vncviewer -useaddressbook ThomMSI
+super + shift + v
+	exec virtualbox
 
 # Et cetera...
 super + grave
