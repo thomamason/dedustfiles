@@ -1,6 +1,7 @@
 ##home
 LICENSE
 README.md
+.vnc
 .gitignore
 .calcurse
 .cache
@@ -89,7 +90,7 @@ Documents
 .config/s-tui
 .config/nvim/*
 .config/retroarch/
-
+.config/BraveSoftware
  .asciiportal/
         .config/Electron/
         .config/QtProject.conf
