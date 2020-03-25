@@ -20,7 +20,7 @@ dwm_resources () {
 
     printf "%s" "$SEP1"
     if [ "$IDENTIFIER" = "unicode" ]; then
-        printf "%s/%s  %s" "$STAVAIL" "$STOTOT" "$TEMP"
+        printf "%s/%s%s%s%s" "$STAVAIL" "$STOTOT" "$SEP2" "$SEP1" "$TEMP"
     else
         printf "STA | MEM %s/%s CPU %s STO %s/%s: %s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT" "$STOPER" "$TEMP"
     fi
