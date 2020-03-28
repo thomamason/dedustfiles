@@ -10,7 +10,7 @@ super + shift + r
 super + e
 	exec steam
 super + shift + e
-	exec discord
+	exec teamspeak3
 super + m
 	$TERMINAL -e cmus
 super + shift + m
@@ -132,10 +132,10 @@ super + F6
 	td-toggle
 # display secondary monitor to left of primary
 super + F7
-	displayleft
+	hover
 # display secondary monitor to right of primary
 super + F8
-	displayright
+	hoveright
 # Mount a USB drive or Android device
 super + F9
 	dmenumount
