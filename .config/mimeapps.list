@@ -1,3 +1,11 @@
-
 [Default Applications]
 x-scheme-handler/msteams=teams.desktop
+image/png=sxiv.desktop
+text/plain=nvim.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+
+[Added Associations]
+image/png=sxiv.desktop;
+text/plain=nvim.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;nvim.desktop;
+application/x-ole-storage=libreoffice-writer.desktop;

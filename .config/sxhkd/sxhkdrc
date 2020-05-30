@@ -81,6 +81,9 @@ XF86MonBrightnessUp
 # Take screenshot
 Print
 	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+#drag screenshot with scrot
+super + shift + Print
+	exec scrot -s
 # Pick screenshot type
 shift + Print
 	maimpick
@@ -117,16 +120,16 @@ super + {_,shift +} bracketleft
 # Restart/rescan wifi/eth networks
 super + F1
 	sudo -A systemctl restart NetworkManager
-# F2 is restart in i3 right now.
+# super + F2 is restarts dwm without killing X.
 # Change display
 super + F3
 	displayselect
 # Hibernate
 super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
-#
+#transmission ncurses interface
 super + F5
-	
+	exec transmission-remote-cli
 # Start torrent daemon/open interface
 super + F6
 	td-toggle
@@ -148,5 +151,3 @@ super + F11
 # Network Manager interface
 super + F12
 	$TERMINAL -e sudo -A nmtui
-
-

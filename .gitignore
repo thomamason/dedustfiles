@@ -184,4 +184,26 @@ Documents
         .vnc/
         .zenmap/
 
+	 .config/Microsoft/
+        .config/QtProject.conf
+        .config/VirtualBox/
+        .config/cef_user_data/
+        .config/easytag/
+        .config/kdeglobals
+        .config/kolourpaintrc
+        .config/netsurf/
+        .config/whatsapp-nativefier-d40211/
+        .config/zoomus.conf
+        .java/
+        .local/bin/f2py
+        .local/bin/f2py3
+        .local/bin/f2py3.8
+        .local/lib/
+        .ts3client/
+        docs/
+        downloads/
+        games/
+        music/
+
+
 
