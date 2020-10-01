@@ -11,6 +11,8 @@ super + e
 	exec steam
 super + shift + e
 	exec teamspeak3
+super + control + e
+	exec discord-canary
 super + m
 	$TERMINAL -e cmus
 super + shift + m
@@ -30,7 +32,7 @@ super + w
 super + shift + w
 	exec surf
 super + v
-	exec vncviewer -useaddressbook ThomMSI
+	exec vncviewer -useaddressbook msi
 super + shift + v
 	exec virtualbox
 
@@ -129,7 +131,7 @@ super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
 #transmission ncurses interface
 super + F5
-	exec transmission-remote-cli
+	exec tremc
 # Start torrent daemon/open interface
 super + F6
 	td-toggle
