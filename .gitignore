@@ -183,7 +183,6 @@ Documents
         .viminfo
         .vnc/
         .zenmap/
-
 	 .config/Microsoft/
         .config/QtProject.conf
         .config/VirtualBox/

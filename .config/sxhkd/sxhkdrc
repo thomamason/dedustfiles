@@ -9,6 +9,8 @@ super + shift + r
 	pcmanfm
 super + e
 	exec steam
+super + c
+	$TERMINAL -e calcurse
 super + shift + e
 	exec teamspeak3
 super + control + e
@@ -27,10 +29,12 @@ super + shift + a
 	$TERMINAL -e pulsemixer; pkill -RTMIN+10 i3blocks
 super + shift + c
 	camtoggle
+super + shift + b
+	exec blueman-manager
 super + w
 	exec brave
 super + shift + w
-	exec surf
+	exec qtwaw
 super + v
 	exec vncviewer -useaddressbook msi
 super + shift + v
@@ -85,7 +89,8 @@ Print
 	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
 #drag screenshot with scrot
 super + shift + Print
-	exec scrot -s
+#	maim -s pic-selected-"$(date '+%y%m%d-%H%M-%S').png"
+	scrot -s
 # Pick screenshot type
 shift + Print
 	maimpick
@@ -122,7 +127,7 @@ super + {_,shift +} bracketleft
 # Restart/rescan wifi/eth networks
 super + F1
 	sudo -A systemctl restart NetworkManager
-# super + F2 is restarts dwm without killing X.
+# super + F2 restarts dwm without killing x
 # Change display
 super + F3
 	displayselect
@@ -131,7 +136,7 @@ super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
 #transmission ncurses interface
 super + F5
-	exec tremc
+	$TERMINAL -e tremc
 # Start torrent daemon/open interface
 super + F6
 	td-toggle

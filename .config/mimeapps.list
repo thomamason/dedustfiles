@@ -4,7 +4,7 @@ image/jpeg=sxiv.desktop
 text/plain=nvim.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 inode/directory=pcmanfm.desktop
-application/pdf=libreoffice-draw.desktop
+application/pdf=zathura.desktop
 
 [Added Associations]
 image/png=sxiv.desktop;
@@ -13,5 +13,5 @@ text/plain=sqlitebrowser.desktop;nvim.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;nvim.desktop;
 application/x-ole-storage=libreoffice-writer.desktop;
 inode/directory=pcmanfm.desktop;
-application/pdf=org.kde.kolourpaint.desktop;libreoffice-draw.desktop;
+application/pdf=zathura.desktop
 image/gif=brave-browser.desktop;
