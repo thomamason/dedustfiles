@@ -205,4 +205,50 @@ Documents
         music/
 
 
+	 .config/EDMarketConnector/
+        .config/QtProject.conf
+        .config/QtWAW/
+        .config/VirtualBox/
+        .config/aseprite/
+        .config/boxtron.conf
+        .config/calcurse/
+        .config/cef_user_data/
+        .config/discordcanary/
+        .config/easytag/
+        .config/enchant/
+        .config/getkeys
+        .config/kdeglobals
+        .config/kolourpaintrc
+        .config/netsurf/
+        .config/scummvm/
+        .config/sqlitebrowser/
+        .config/whatsapp-nativefier-d40211/
+        .config/zoomus.conf
+        .dbgl/
+        .dosbox/
+        .gnome/
+        .java/
+        .local/lib/
+        .mono/
+        .swt/
+        .ts3client/
+        .update-timestamp
+        031220
+        2020-10-18-200143_934x323_scrot.png
+        2020-12-09-152451_664x592_scrot.png
+        2020-12-14-212051_431x428_scrot.png
+        2020-12-14-212107_585x481_scrot.png
+        2021-01-06-134438_755x622_scrot.png
+        Baldur's Gate - Enhanced Edition/
+        Baldur's Gate II - Enhanced Edition/
+        Icewind Dale - Enhanced Edition/
+        Infinity Engine - Enhanced Edition/
+        Planescape Torment - Enhanced Edition/
+        agency-s1ep2
+        agency-s1ep3
+        docs/
+        dosdevices/
+        downloads/
+        drive_c/
+        games/
 
