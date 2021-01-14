@@ -1,0 +1,4 @@
+#!/bin/bash
+export WINEPREFIX=$HOME
+cd $WINEPREFIX/games/Icewind\ Dale\ Enhanced\ Edition/
+wine Icewind.exe

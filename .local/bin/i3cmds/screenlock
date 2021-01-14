@@ -21,7 +21,7 @@ done
 
 
 # Add lock icon, pixelate and convert back to png
-magick convert -gravity center -font "TerminessTTF Nerd Font" \
+magick convert -gravity center -font "fontawesome" \
     -pointsize 200 -draw "text 0,0 ''" -channel RGBA -fill '#bf616a' \
     $bmpfile $pngfile
 

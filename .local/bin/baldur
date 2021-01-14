@@ -1,0 +1,4 @@
+#!/bin/bash
+export WINEPREFIX=$HOME
+cd $WINEPREFIX/games/Baldur\'s\ Gate\ II\ -\ Enhanced\ Edition/
+wine Baldur.exe

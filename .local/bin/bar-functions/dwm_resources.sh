@@ -6,8 +6,8 @@
 
 dwm_resources () {
     # Used and total memory
-    # MEMUSED=$(free -h | awk '(NR == 2) {print $3}')
-    # MEMTOT=$(free -h |awk '(NR == 2) {print $2}')
+     MEMUSED=$(free -h | awk '(NR == 2) {print $3}')
+     MEMTOT=$(free -h |awk '(NR == 2) {print $2}')
     # CPU temperature
     # CPU=$(sysctl -n hw.sensors.cpu0.temp0 | cut -d. -f1)
     # Used and total storage in /home (rounded to 1024B)
