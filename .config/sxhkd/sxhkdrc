@@ -9,6 +9,8 @@ super + shift + r
 	pcmanfm
 super + e
 	exec steam
+super + shift + e
+	exec steamlink
 super + c
 	$TERMINAL -e calcurse
 super + shift + e
@@ -34,9 +36,11 @@ super + shift + b
 super + w
 	exec brave
 super + shift + w
+	surf-open.sh google.com
+super + control + w
 	exec qtwaw
 super + v
-	exec vncviewer -useaddressbook msi
+	exec vncviewer -useaddressbook thommsi
 super + shift + v
 	exec virtualbox
 
@@ -102,11 +106,11 @@ super + Delete
 	dmenurecord kill
 
 # Pause audio
-super + {_,shift +} p
-	lmc {toggle,pause}
+#super + {_,shift +} p
+#	lmc {toggle,pause}
 # Changes to next/previous tracks
-super + {comma,period}
-	lmc {prev,next}
+#super + {comma,period}
+#	lmc {prev,next}
 # Restart track
 super + shift + less
 	lmc replay

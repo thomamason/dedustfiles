@@ -15,3 +15,4 @@ application/x-ole-storage=libreoffice-writer.desktop;
 inode/directory=pcmanfm.desktop;
 application/pdf=zathura.desktop
 image/gif=brave-browser.desktop;
+application/octet-stream=nvim.desktop;

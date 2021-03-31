@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/thomamason/docs/surf-distrotube'
+let g:netrw_dirhist_6='/home/thomamason/docs/picodev/musicmacro'
+let g:netrw_dirhist_5='/etc/modules-load.d'
+let g:netrw_dirhist_4='/home/thomamason/docs/dwm'
 let g:netrw_dirhist_3='/home/thomamason/.local/bin/statusbar'
 let g:netrw_dirhist_2='/home/thomamason/.git'
 let g:netrw_dirhist_1='/home/thomamason/dedustfiles/.vim'
